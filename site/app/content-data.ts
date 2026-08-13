@@ -19,7 +19,7 @@ export interface Post extends PostMeta {
 
 export const indexMeta = {
   "title": "David Lindgreen — Lab Notes",
-  "tagline": "Real data, real findings, honest limits — across AI, physics, astrophysics, biology, climate, and neuroscience."
+  "tagline": "Real data, inspectable systems, honest limits — across AI, physics, astrophysics, biology, climate, neuroscience, and data observability."
 } as const;
 
 export const indexBody = `## What this is
@@ -99,7 +99,9 @@ The [Robustness Lab](https://fairshift-lab.lindgreendavid.chatgpt.site/#robustne
     repo: "https://github.com/lindgreendavid/three-body-lab",
     tool: "https://three-body-lab-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/three-body-lab/blob/main/docs/research-report.md",
-    body: `## The question
+    body: `**Stable release:** [Three-Body Lab v1.0.0](https://github.com/lindgreendavid/three-body-lab/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 study and its 42-cell registry remain unchanged and reproducible.
+
+## The question
 
 Put three bodies in mutual gravitational orbit and there's no general formula that predicts where they'll be at any future time — this was proven by Poincaré in 1890, and it's not what this project is about. The actually interesting question is narrower and answerable: within a specific numerical method, where does the *chaos* actually show up? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region, the way textbook intuition suggests they should?
 
@@ -133,7 +135,9 @@ The [live simulator](https://three-body-lab-interactive.lindgreendavid.workers.d
     repo: "https://github.com/lindgreendavid/frb-atlas",
     tool: "https://frb-atlas-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/frb-atlas/blob/main/docs/research-report.md",
-    body: `## The question
+    body: `**Stable release:** [FRB Atlas v1.0.0](https://github.com/lindgreendavid/frb-atlas/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 catalog analysis remains unchanged and reproducible.
+
+## The question
 
 Fast radio bursts (FRBs) are millisecond-long flashes of radio energy from deep space. Some sources burst once; others repeat. The CHIME/FRB Collaboration's landmark 2021 catalog paper concluded that repeating and non-repeating bursts show *statistically indistinguishable* dispersion measures (a proxy for how much intervening gas the signal passed through), while differing clearly in pulse width and spectral bandwidth. We asked a simple question: using the same real, public 536-burst catalog, does that specific claim actually replicate?
 
@@ -168,7 +172,9 @@ The [interactive comparison](https://frb-atlas-interactive.lindgreendavid.worker
     repo: "https://github.com/lindgreendavid/foldings-edge",
     tool: "https://foldings-edge-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/foldings-edge/blob/main/docs/research-report.md",
-    body: `## The question
+    body: `**Stable release:** [Folding’s Edge v1.0.0](https://github.com/lindgreendavid/foldings-edge/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 analysis and committed evidence snapshot remain unchanged and reproducible.
+
+## The question
 
 AlphaFold2 predicts protein structures and, crucially, tells you how confident it is in each part of that prediction — a per-residue score called pLDDT. A 2023 PNAS paper by Alderson et al. showed that low pLDDT is a useful signal for genuinely disordered protein regions — floppy, unstructured stretches with no fixed shape — but that some disordered regions still get *confident* pLDDT scores, because they can "conditionally fold" into structure when they bind a partner. We asked: on a fresh, independently drawn sample of real, curated data, does that relationship hold — and specifically where does it break?
 
@@ -202,7 +208,9 @@ The [interactive threshold explorer](https://foldings-edge-interactive.lindgreen
     repo: "https://github.com/lindgreendavid/climate-twin-frankfurt",
     tool: "https://climate-twin-frankfurt-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/docs/research-report.md",
-    body: `## The question
+    body: `**Stable release:** [Climate Twin Frankfurt v1.0.0](https://github.com/lindgreendavid/climate-twin-frankfurt/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 paired-station study remains unchanged and reproducible.
+
+## The question
 
 "Cities are warmer than their surroundings" is one of the most repeated facts in climate communication — the urban heat island effect. It's real, well-documented globally, and also frequently stated without a number, a source, or an uncertainty range attached. We asked a narrower, answerable version for one specific city: how much warmer is urban Frankfurt than its designated rural reference station, with an actual confidence interval, and has that gap changed over the last four decades?
 
@@ -235,7 +243,9 @@ The [interactive site](https://climate-twin-frankfurt-interactive.lindgreendavid
     repo: "https://github.com/lindgreendavid/neuro-signal-lab",
     tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
     report: "https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md",
-    body: `## The question
+    body: `**Stable release:** [Neuro Signal Lab v1.0.0](https://github.com/lindgreendavid/neuro-signal-lab/releases/tag/v1.0.0). The product is stable; its frozen endpoint, exclusions, confirmatory result, and sensitivity analyses remain unchanged and reproducible.
+
+## The question
 
 When a rare, task-relevant stimulus appears among frequent standard stimuli, EEG recordings often
 show a positive posterior voltage deflection called the P3 or P3b. It is one of cognitive
@@ -292,5 +302,62 @@ pretend that a drawing is measured data.
 - Delorme, *EEG data from an auditory oddball task*, OpenNeuro ds003061 version 1.1.0 — the independent public dataset.
 - Pernet et al. (2019), *EEG-BIDS, an extension to the brain imaging data structure for electroencephalography*, Scientific Data 6, 103 — the data-organization standard used by the dataset.
 - The [source code](https://github.com/lindgreendavid/neuro-signal-lab), [frozen protocol](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/protocol.md), and [machine-readable result](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/results/summary.json) disclose the full path from public data to every number above.`,
+  },
+  {
+    slug: "data-contract-observatory-revision-evidence",
+    title: "A data pipeline can keep running while its meaning changes. This observatory records the difference.",
+    project: "Data Contract Observatory",
+    field: "Data Engineering / Observability",
+    date: "2026-08-13",
+    repo: "https://github.com/lindgreendavid/data-contract-observatory",
+    tool: "https://lindgreendavid.github.io/data-contract-observatory/",
+    report: "https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md",
+    body: `**Stable software release:** [Data Contract Observatory v1.0.0](https://github.com/lindgreendavid/data-contract-observatory/releases/tag/v1.0.0). The software is stable; prospective longitudinal evidence has only just begun.
+
+## The question
+
+A public data feed may return HTTP 200 every day while quietly changing its columns, series
+identity, types, ordering, historical values, or publication timing. When does a response cease to
+satisfy a consumer's declared contract—and how can that operational failure be kept separate from
+an unusual but valid observation?
+
+## What we actually did
+
+We froze a versioned contract for the European Central Bank's daily US-dollar/euro reference-rate
+series, \`EXR.D.USD.EUR.SP00.A\`. Hard checks cover transport, schema, identity, numeric validity,
+duplicate dates, ordering, and TARGET-day freshness. A robust six-MAD signal for the latest log
+return lives in a separate review channel: it can request inspection, but cannot label an exchange
+rate or its publisher wrong.
+
+Version 1.0.0 adds three deliberately separate evidence layers. A nine-fault synthetic suite
+injects one known failure at a time. A retrospective replay evaluates 7,010 prefixes of the current
+historical data vintage. An append-only evidence branch records future live runs, source hashes,
+normalized states, and date/value/status revisions relative to the previous run.
+
+## What we found
+
+The fault suite classified all nine controlled faults as expected; its one clean control raised no
+false alert. The retrospective replay produced no hard contract failures and nine statistical
+review signals. The current live response inspected 385 recent observations through 13 August
+2026 and passed the hard contract with no review signal.
+
+Those numbers do **not** establish long-run reliability. The fault cases are synthetic. The replay
+uses one present-day historical vintage, so it cannot reveal revisions that occurred between past
+publications. At release there is exactly one real prospective evidence run. One run cannot support
+a detection-rate, delay, or false-alarm claim about production history.
+
+## Try it yourself
+
+The [interactive failure lab](https://lindgreendavid.github.io/data-contract-observatory/#simulator)
+lets you remove a required field, change the series identity, simulate lateness, or inject an
+extreme return. The page shows the permitted conclusion for each change and keeps product version,
+prospective runs, retrospective prefixes, and synthetic cases in separate counters.
+
+## Learn more
+
+- [ECB Data Portal](https://data.ecb.europa.eu/data/datasets/EXR/EXR.D.USD.EUR.SP00.A) — the primary series and publisher.
+- [Frozen protocol](https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/protocol.md) — the contract, review threshold, and epistemic boundary.
+- [Machine-readable v1 evaluation](https://github.com/lindgreendavid/data-contract-observatory/blob/main/reports/v1-evaluation.json) — case counts, Wilson intervals, replay results, and explicit evidence labels.
+- [Prospective evidence branch](https://github.com/lindgreendavid/data-contract-observatory/tree/evidence) — immutable runs and revision-aware normalized state.`,
   }
 ];

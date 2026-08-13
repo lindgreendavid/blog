@@ -9,6 +9,8 @@ tool: https://frb-atlas-interactive.lindgreendavid.workers.dev
 report: https://github.com/lindgreendavid/frb-atlas/blob/main/docs/research-report.md
 ---
 
+**Stable release:** [FRB Atlas v1.0.0](https://github.com/lindgreendavid/frb-atlas/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 catalog analysis remains unchanged and reproducible.
+
 ## The question
 
 Fast radio bursts (FRBs) are millisecond-long flashes of radio energy from deep space. Some sources burst once; others repeat. The CHIME/FRB Collaboration's landmark 2021 catalog paper concluded that repeating and non-repeating bursts show *statistically indistinguishable* dispersion measures (a proxy for how much intervening gas the signal passed through), while differing clearly in pulse width and spectral bandwidth. We asked a simple question: using the same real, public 536-burst catalog, does that specific claim actually replicate?

@@ -20,6 +20,10 @@ const teasers: Record<string, string> = {
     "228,662 residues of real AlphaFold and DisProt data test whether confidence scores predict protein disorder, and exactly where that prediction breaks down.",
   "climate-twin-frankfurt-heat-island":
     "Forty years of real DWD weather-station data, paired and bootstrapped, to put an actual confidence interval on Frankfurt's urban heat island.",
+  "neuro-signal-lab-p3b-robustness":
+    "A preregistered P3b endpoint crosses from a reference protocol into an independent public EEG dataset, with every participant and sensitivity analysis inspectable.",
+  "data-contract-observatory-revision-evidence":
+    "A real ECB feed, a frozen consumer contract, and three clearly separated evidence layers for failures, replay, and future revisions.",
 };
 
 export default function Home() {

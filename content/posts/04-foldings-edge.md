@@ -9,6 +9,8 @@ tool: https://foldings-edge-interactive.lindgreendavid.workers.dev
 report: https://github.com/lindgreendavid/foldings-edge/blob/main/docs/research-report.md
 ---
 
+**Stable release:** [Folding’s Edge v1.0.0](https://github.com/lindgreendavid/foldings-edge/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 analysis and committed evidence snapshot remain unchanged and reproducible.
+
 ## The question
 
 AlphaFold2 predicts protein structures and, crucially, tells you how confident it is in each part of that prediction — a per-residue score called pLDDT. A 2023 PNAS paper by Alderson et al. showed that low pLDDT is a useful signal for genuinely disordered protein regions — floppy, unstructured stretches with no fixed shape — but that some disordered regions still get *confident* pLDDT scores, because they can "conditionally fold" into structure when they bind a partner. We asked: on a fresh, independently drawn sample of real, curated data, does that relationship hold — and specifically where does it break?
