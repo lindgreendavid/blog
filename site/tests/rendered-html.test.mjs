@@ -73,6 +73,7 @@ test("server-renders the home page listing every published post", async () => {
   assert.match(html, /Full portfolio/);
   assert.match(html, /Researched roadmap/);
   assert.match(html, /Skip to main content/);
+  assert.match(html, /class="hero-visual" aria-hidden="true"/);
   for (const post of posts) {
     assert.match(html, new RegExp(`href="/posts/${post.route.split("/posts/")[1]}"`));
     assert.match(html, new RegExp(post.project.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));

@@ -168,8 +168,16 @@ section {
 /* Hero */
 
 .hero {
-  padding: 72px 6vw 48px;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(440px, 0.8fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 112px);
+  padding: 72px 6vw 64px;
+  max-width: 1500px;
+}
+
+.hero__copy {
+  max-width: 720px;
 }
 
 .eyebrow {
@@ -200,6 +208,196 @@ section {
   gap: 12px;
   margin-top: 28px;
   flex-wrap: wrap;
+}
+
+.hero-visual {
+  width: min(100%, 560px);
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 92%), rgb(243 227 225 / 48%));
+  box-shadow: 0 24px 70px rgb(68 35 31 / 8%);
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.hero-visual__header,
+.hero-visual__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 46px;
+  padding: 0 18px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-visual__header {
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-visual__footer {
+  justify-content: flex-start;
+  border-top: 1px solid var(--line);
+}
+
+.hero-visual__footer span + span::before {
+  content: "·";
+  margin-right: 16px;
+  color: var(--accent);
+}
+
+.hero-visual__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+}
+
+.hero-visual__status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgb(122 35 49 / 11%);
+  animation: hero-status 2.4s ease-in-out infinite;
+}
+
+.hero-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-visual__grid-line {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 0.7;
+  opacity: 0.55;
+}
+
+.hero-visual__loop {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.hero-visual__signal {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 3 16;
+  stroke-linecap: round;
+  animation: hero-signal 16s linear infinite;
+}
+
+.hero-visual__core {
+  transform-origin: 280px 218px;
+  animation: hero-core 6s ease-in-out infinite;
+}
+
+.hero-visual__core-ring {
+  fill: var(--accent-wash);
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 2 7;
+}
+
+.hero-visual__core-fill {
+  fill: var(--paper);
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.hero-visual__core-kicker,
+.hero-visual__core-meta,
+.hero-visual__node text {
+  fill: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.08em;
+}
+
+.hero-visual__core-kicker,
+.hero-visual__core-meta {
+  font-size: 9px;
+}
+
+.hero-visual__core-title {
+  fill: var(--ink);
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.hero-visual__node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hero-node 5s ease-in-out infinite;
+}
+
+.hero-visual__node--two {
+  animation-delay: -1.25s;
+}
+
+.hero-visual__node--three {
+  animation-delay: -2.5s;
+}
+
+.hero-visual__node--four {
+  animation-delay: -3.75s;
+}
+
+.hero-visual__node circle {
+  fill: var(--white);
+  stroke: var(--accent);
+  stroke-width: 1.4;
+}
+
+.hero-visual__node text {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hero-visual__node .hero-visual__node-label {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
+.hero-visual__traveller {
+  fill: var(--accent);
+  stroke: var(--white);
+  stroke-width: 3;
+}
+
+@keyframes hero-signal {
+  to {
+    stroke-dashoffset: -190;
+  }
+}
+
+@keyframes hero-status {
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 2px rgb(122 35 49 / 8%);
+  }
+}
+
+@keyframes hero-core {
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes hero-node {
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Prose sections (rendered markdown) */
@@ -711,6 +909,17 @@ footer a {
     padding-right: 5vw;
   }
 
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 48px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    justify-self: stretch;
+  }
+
   .post-list {
     grid-template-columns: 1fr;
   }
@@ -752,6 +961,17 @@ footer a {
 
   .skip-link {
     transition: none;
+  }
+
+  .hero-visual__status::before,
+  .hero-visual__signal,
+  .hero-visual__core,
+  .hero-visual__node {
+    animation: none;
+  }
+
+  .hero-visual__traveller {
+    display: none;
   }
 }
 

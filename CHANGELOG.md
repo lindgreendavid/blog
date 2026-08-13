@@ -7,6 +7,9 @@ All notable changes to this project are documented here. Format loosely follows
 
 ### Added
 
+- A responsive, code-native research-cycle animation in the home-page hero that uses the formerly
+  empty desktop column, scales into the mobile reading flow, and becomes static when reduced motion
+  is requested.
 - An interactive research explorer that filters the five projects by portfolio track and exposes
   each study's question, evidence, finding, and principal boundary before linking to the article
   and live laboratory.

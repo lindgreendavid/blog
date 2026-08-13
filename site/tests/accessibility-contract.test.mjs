@@ -74,6 +74,19 @@ test("keeps reflow, contrast preference, and forced-colors support", async () =>
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /@media \(prefers-contrast: more\)/);
   assert.match(styles, /@media \(forced-colors: active\)/);
+  assert.match(styles, /\.hero-visual__traveller \{\s*display: none;/);
+});
+
+test("keeps the animated hero decorative and motion-optional", async () => {
+  const [page, visual, styles] = await Promise.all([
+    source("app/page.tsx"),
+    source("app/hero-visual.tsx"),
+    source("app/globals.css"),
+  ]);
+  assert.match(page, /<HeroVisual \/>/);
+  assert.match(visual, /className="hero-visual" aria-hidden="true"/);
+  assert.match(visual, /focusable="false"/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.hero-visual__signal/);
 });
 
 test("keeps normal-text palette combinations above WCAG AA contrast (4.5:1)", async () => {

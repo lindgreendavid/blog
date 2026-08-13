@@ -4,6 +4,7 @@ import { parseSections, renderMarkdown } from "./lib/markdown";
 import SiteNav from "./site-nav";
 import SiteFooter from "./site-footer";
 import ResearchExplorer from "./research-explorer";
+import HeroVisual from "./hero-visual";
 
 // Hand-written navigation copy, not part of the fact-checked content files --
 // one sentence per post so the home page reads as a list rather than a wall
@@ -35,17 +36,20 @@ export default function Home() {
       <SiteNav />
       <main id="main-content">
         <section className="hero" aria-labelledby="site-title">
-          <p className="eyebrow">Lab Notes</p>
-          <h1 id="site-title">{indexMeta.title}</h1>
-          <p className="hero__lead">{indexMeta.tagline}</p>
-          <div className="hero__actions">
-            <a className="button button--primary" href="#explore">
-              Explore the research
-            </a>
-            <a className="button button--ghost" href="#articles">
-              Read the articles
-            </a>
+          <div className="hero__copy">
+            <p className="eyebrow">Lab Notes</p>
+            <h1 id="site-title">{indexMeta.title}</h1>
+            <p className="hero__lead">{indexMeta.tagline}</p>
+            <div className="hero__actions">
+              <a className="button button--primary" href="#explore">
+                Explore the research
+              </a>
+              <a className="button button--ghost" href="#articles">
+                Read the articles
+              </a>
+            </div>
           </div>
+          <HeroVisual />
         </section>
 
         <section className="prose" aria-labelledby="what-this-is">
