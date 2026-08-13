@@ -52,15 +52,17 @@ export default function Home() {
           <HeroVisual />
         </section>
 
-        <section className="prose" aria-labelledby="what-this-is">
-          <h2 id="what-this-is">What this is</h2>
-          {renderMarkdown(sections["What this is"] ?? "")}
-        </section>
+        <div className="intro-grid">
+          <section className="prose" aria-labelledby="what-this-is">
+            <h2 id="what-this-is">What this is</h2>
+            {renderMarkdown(sections["What this is"] ?? "")}
+          </section>
 
-        <section className="prose" aria-labelledby="why-this-exists">
-          <h2 id="why-this-exists">Why this exists</h2>
-          {renderMarkdown(sections["Why this exists"] ?? "")}
-        </section>
+          <section className="prose" aria-labelledby="why-this-exists">
+            <h2 id="why-this-exists">Why this exists</h2>
+            {renderMarkdown(sections["Why this exists"] ?? "")}
+          </section>
+        </div>
 
         <ResearchExplorer />
 

@@ -77,12 +77,17 @@ test("keeps reflow, contrast preference, and forced-colors support", async () =>
   assert.match(styles, /\.hero-visual__traveller \{\s*display: none;/);
 });
 
-test("keeps wide-screen sections on one centered page shell", async () => {
-  const styles = await source("app/globals.css");
-  assert.match(styles, /--page-shell: 1440px/);
-  assert.match(styles, /\.hero \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
-  assert.match(styles, /\.prose \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
-  assert.match(styles, /\.articles \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
+test("keeps wide-screen sections fluid while preserving readable prose", async () => {
+  const [page, styles] = await Promise.all([
+    source("app/page.tsx"),
+    source("app/globals.css"),
+  ]);
+  assert.match(styles, /--page-gutter: clamp\(20px, 4vw, 80px\)/);
+  assert.match(styles, /\.hero \{[\s\S]*?padding: 72px var\(--page-gutter\) 64px;[\s\S]*?width: 100%;/);
+  assert.match(styles, /\.intro-grid \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(styles, /\.intro-grid \.prose p,[\s\S]*?max-width: 56ch;/);
+  assert.match(styles, /@media \(max-width: 1000px\)[\s\S]*?\.intro-grid \{[\s\S]*?grid-template-columns: 1fr;/);
+  assert.match(page, /<div className="intro-grid">/);
 });
 
 test("keeps the animated hero decorative and motion-optional", async () => {
