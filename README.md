@@ -1,5 +1,9 @@
 # Lab Notes
 
+<p><a href="https://github.com/lindgreendavid/lindgreendavid/tree/main/brand"><img src="https://raw.githubusercontent.com/lindgreendavid/lindgreendavid/main/brand/lab-notes-mark.svg" width="52" align="right" alt="Lab Notes research-cycle mark"></a></p>
+
+**Editorial home of the [Lab Notes Research Portfolio](https://github.com/lindgreendavid/lindgreendavid/tree/main/brand)** · Question → evidence → finding → boundary
+
 A growing, text-forward publication that indexes and writes up the interactive research projects
 in this portfolio — one real, falsifiable question per project, one honest account of what was
 actually found.
