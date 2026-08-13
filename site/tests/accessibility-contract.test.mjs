@@ -77,6 +77,14 @@ test("keeps reflow, contrast preference, and forced-colors support", async () =>
   assert.match(styles, /\.hero-visual__traveller \{\s*display: none;/);
 });
 
+test("keeps wide-screen sections on one centered page shell", async () => {
+  const styles = await source("app/globals.css");
+  assert.match(styles, /--page-shell: 1440px/);
+  assert.match(styles, /\.hero \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
+  assert.match(styles, /\.prose \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
+  assert.match(styles, /\.articles \{[\s\S]*?max-width: var\(--page-shell\);[\s\S]*?margin-inline: auto;/);
+});
+
 test("keeps the animated hero decorative and motion-optional", async () => {
   const [page, visual, styles] = await Promise.all([
     source("app/page.tsx"),
