@@ -58,7 +58,7 @@ const posts = [
   },
 ];
 
-test("server-renders the home page listing all five posts", async () => {
+test("server-renders the home page listing every published post", async () => {
   const response = await render("/");
   assert.equal(response.status, 200);
   const html = await response.text();
@@ -66,7 +66,7 @@ test("server-renders the home page listing all five posts", async () => {
   assert.match(html, /What this is/);
   assert.match(html, /Why this exists/);
   assert.match(html, /Explore further/);
-  assert.match(html, /Five questions\. Five inspectable answers\./);
+  assert.match(html, /Research questions\. Inspectable answers\./);
   assert.match(html, /How to read a scientific result/);
   assert.match(html, /Read uncertainty first/);
   assert.match(html, /Filter projects by research track/);

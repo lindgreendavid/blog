@@ -24,9 +24,10 @@ export const indexMeta = {
 
 export const indexBody = `## What this is
 
-Five interactive research projects, five real findings, written up in plain language. Every
-project here started with a bounded, falsifiable question, was preregistered before any result
-existed, and reports what was actually found — including the parts that didn't confirm cleanly.
+A growing collection of interactive research projects and real findings, written up in plain
+language. Every project here started with a bounded, falsifiable question, was preregistered before
+any result existed, and reports what was actually found — including the parts that didn't confirm
+cleanly.
 Nothing here claims to be peer-reviewed novel science. What it claims is narrower and checkable:
 real public data, a documented method, and an honest account of where that method holds up and
 where it doesn't.
@@ -43,7 +44,7 @@ any of these repos and check our work.
 
 ## The articles
 
-(Rendered as a list of the five posts, newest first, each linking to its interactive tool and
+(Rendered as a list of published posts, newest first, each linking to its interactive tool and
 source repo.)
 
 ## Explore further

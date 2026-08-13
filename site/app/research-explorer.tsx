@@ -111,7 +111,7 @@ export default function ResearchExplorer() {
     <section className="research-explorer" id="explore" aria-labelledby="explore-title">
       <div className="section-heading">
         <p className="eyebrow">Explore the evidence</p>
-        <h2 id="explore-title">Five questions. Five inspectable answers.</h2>
+        <h2 id="explore-title">Research questions. Inspectable answers.</h2>
         <p>
           Filter the portfolio, choose a study, and inspect its question, evidence,
           result, and boundary before opening the full laboratory.
