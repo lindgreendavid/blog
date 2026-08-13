@@ -1,6 +1,6 @@
 ---
 title: "David Lindgreen — Lab Notes"
-tagline: "Real data, real findings, honest limits — across AI, physics, astrophysics, biology, and climate."
+tagline: "Real data, real findings, honest limits — across AI, physics, astrophysics, biology, climate, and neuroscience."
 ---
 
 ## What this is

@@ -89,6 +89,20 @@ const projects: Project[] = [
     article: "/posts/three-body-lab-chaos-boundary",
     tool: "https://three-body-lab-interactive.lindgreendavid.workers.dev",
   },
+  {
+    slug: "neuro-signal",
+    name: "Neuro Signal Lab",
+    field: "Neuroscience",
+    track: "science",
+    question: "Does a fixed P3b target enhancement survive an independent auditory dataset?",
+    evidence: "38 eligible runs from 13 participants in OpenNeuro ds003061 v1.1.0",
+    finding:
+      "All 13 participant contrasts were positive; the mean was +5.65 µV with a 95% CI from +4.83 to +6.48 µV.",
+    boundary:
+      "A cross-paradigm robustness confirmation, not a direct replication, brain localization, or diagnostic result.",
+    article: "/posts/neuro-signal-lab-p3b-robustness",
+    tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
+  },
 ];
 
 const filters: { value: Track; label: string }[] = [

@@ -56,6 +56,14 @@ const posts = [
     repo: "https://github.com/lindgreendavid/climate-twin-frankfurt",
     report: "https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/docs/research-report.md",
   },
+  {
+    route: "/posts/neuro-signal-lab-p3b-robustness",
+    title: "A classic brain response survived a new dataset",
+    project: "Neuro Signal Lab",
+    tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
+    repo: "https://github.com/lindgreendavid/neuro-signal-lab",
+    report: "https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -112,6 +120,7 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/03-frb-atlas.md", root), "utf8"),
     readFile(new URL("../content/posts/04-foldings-edge.md", root), "utf8"),
     readFile(new URL("../content/posts/05-climate-twin-frankfurt.md", root), "utf8"),
+    readFile(new URL("../content/posts/06-neuro-signal-lab.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
