@@ -1,7 +1,7 @@
 # Lab Notes
 
-A small, text-forward blog that indexes and writes up the five interactive research projects in
-this portfolio — one real, falsifiable question per project, one honest write-up of what was
+A growing, text-forward publication that indexes and writes up the interactive research projects
+in this portfolio — one real, falsifiable question per project, one honest account of what was
 actually found.
 
 **[Open the live site](https://blog-interactive.lindgreendavid.workers.dev)**
@@ -10,12 +10,12 @@ actually found.
 
 - A home page rendering `content/00-index.md`'s framing copy ("What this is", "Why this
   exists"), an interactive research explorer, a reusable four-step guide to reading scientific
-  results, all five posts, and the "Explore further" links to the rest of the portfolio.
+  results, every published post, and the "Explore further" links to the rest of the portfolio.
 - The explorer filters the portfolio by track and presents every project using the same
   inspectable structure: bounded question, evidence, finding, and boundary, with direct links to
   the article and live laboratory. Its facts are drawn from the projects' frozen reports; it
   does not calculate or invent new results.
-- Five posts, each at its own route (`/posts/<slug>`, using the `slug` from that post's
+- Each post has its own route (`/posts/<slug>`, using the `slug` from that post's
   frontmatter), rendering `content/posts/*.md` verbatim and linking prominently to that
   project's live interactive tool, source repository, and full research report.
 - Nothing here is generated or paraphrased by this site's build — every sentence in
@@ -29,8 +29,8 @@ actually found.
   this portfolio (`fairshift-lab`, `three-body-lab`, `frb-atlas`, `foldings-edge`,
   `climate-twin-frankfurt`).
 - Each post is a real file-based route (`site/app/posts/<slug>/page.tsx`), not a client-side
-  router or a single-page scroll — five fixed, known posts don't need a generic CMS or routing
-  layer, so this repo doesn't add one.
+  router or a single-page scroll. The deliberately small publication does not need a generic CMS,
+  so this repo keeps each growing entry explicit and reviewable.
 - Content flows one way: `content/00-index.md` and `content/posts/*.md` are the source of truth.
   `site/scripts/sync-content.mjs` reads them and writes `site/app/content-data.ts`, a generated
   TypeScript module the Cloudflare Worker can import at build time (Workers can't read arbitrary
@@ -38,7 +38,7 @@ actually found.
   bytes — it never reflows, edits, or "cleans up" a sentence.
 - A small hand-written markdown-to-JSX renderer (`site/app/lib/markdown.tsx`) turns each post's
   body into semantic HTML (`##` → `<h2>`, `- ` → `<ul><li>`, `**bold**`, `*italic*`,
-  `[text](url)` → `<a>`). It supports exactly the subset of markdown the five posts actually use
+  `[text](url)` → `<a>`). It supports exactly the subset of markdown the published posts use
   — no third-party markdown/MDX dependency.
 - Editorial, text-forward design: a serif reading typeface for headings and body copy, a distinct
   ivory/ink/burgundy color palette (not shared with any sibling project), and WCAG AA contrast
@@ -51,7 +51,7 @@ actually found.
 
 ```
 content/00-index.md          home page framing copy (verbatim, fact-checked, do not edit here)
-content/posts/*.md           the five posts, one per project (verbatim, fact-checked)
+content/posts/*.md           published posts, one per project (verbatim, fact-checked)
 site/                         the vinext/Cloudflare Workers site
   app/content-data.ts         generated from content/ — do not hand-edit, see below
   app/lib/markdown.tsx         the small markdown-to-JSX renderer

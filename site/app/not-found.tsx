@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main className="status-page">
       <span className="brand__mark" aria-hidden="true">LN</span>
-      <p>404 · not one of the five articles</p>
+      <p>404 · not a Lab Notes article</p>
       <h1>This page does not exist.</h1>
       <Link className="button button--primary" href="/">
         Return to Lab Notes
