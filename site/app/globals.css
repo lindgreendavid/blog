@@ -10,6 +10,7 @@
   --white: #ffffff;
   --focus: #1f3a8a;
   --measure: 40em;
+  --page-shell: 1440px;
 }
 
 * {
@@ -173,7 +174,9 @@ section {
   align-items: center;
   gap: clamp(48px, 7vw, 112px);
   padding: 72px 6vw 64px;
-  max-width: 1500px;
+  width: 100%;
+  max-width: var(--page-shell);
+  margin-inline: auto;
 }
 
 .hero__copy {
@@ -404,7 +407,9 @@ section {
 
 .prose {
   padding: 8px 6vw 48px;
-  max-width: 900px;
+  width: 100%;
+  max-width: var(--page-shell);
+  margin-inline: auto;
 }
 
 .prose h2 {
@@ -438,6 +443,9 @@ section {
 .research-explorer,
 .study-guide {
   padding: 26px 6vw 64px;
+  width: 100%;
+  max-width: var(--page-shell);
+  margin-inline: auto;
 }
 
 .section-heading {
@@ -492,7 +500,7 @@ section {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.6fr);
   gap: 1px;
-  max-width: 1120px;
+  width: 100%;
   border: 1px solid var(--line);
   background: var(--line);
 }
@@ -610,7 +618,7 @@ section {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 1120px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
@@ -650,6 +658,9 @@ section {
 
 .articles {
   padding: 8px 6vw 48px;
+  width: 100%;
+  max-width: var(--page-shell);
+  margin-inline: auto;
 }
 
 .articles h2 {
@@ -755,6 +766,7 @@ section {
 .post {
   padding: 8px 6vw 64px;
   max-width: 900px;
+  margin-inline: auto;
 }
 
 .post-header {

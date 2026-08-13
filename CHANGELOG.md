@@ -10,6 +10,7 @@ All notable changes to this project are documented here. Format loosely follows
 - A responsive, code-native research-cycle animation in the home-page hero that uses the formerly
   empty desktop column, scales into the mobile reading flow, and becomes static when reduced motion
   is requested.
+
 - An interactive research explorer that filters the five projects by portfolio track and exposes
   each study's question, evidence, finding, and principal boundary before linking to the article
   and live laboratory.
@@ -40,6 +41,11 @@ All notable changes to this project are documented here. Format loosely follows
 - Full repository hygiene: `ACCESSIBILITY.md` and CI workflows (`ci.yml`, `codeql.yml`).
   `CITATION.cff` was intentionally not added — see the note in this project's build report; this
   is a blog indexing five already-citable research projects, not itself a research artifact.
+
+### Changed
+
+- A shared centered page shell now aligns the hero, editorial sections, evidence explorer, study
+  guide, and article grid consistently on wide screens without changing their mobile reflow.
 
 ## [Initial content]
 
