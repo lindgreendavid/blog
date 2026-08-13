@@ -9,6 +9,8 @@ tool: https://climate-twin-frankfurt-interactive.lindgreendavid.workers.dev
 report: https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/docs/research-report.md
 ---
 
+**Stable release:** [Climate Twin Frankfurt v1.0.0](https://github.com/lindgreendavid/climate-twin-frankfurt/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 paired-station study remains unchanged and reproducible.
+
 ## The question
 
 "Cities are warmer than their surroundings" is one of the most repeated facts in climate communication — the urban heat island effect. It's real, well-documented globally, and also frequently stated without a number, a source, or an uncertainty range attached. We asked a narrower, answerable version for one specific city: how much warmer is urban Frankfurt than its designated rural reference station, with an actual confidence interval, and has that gap changed over the last four decades?

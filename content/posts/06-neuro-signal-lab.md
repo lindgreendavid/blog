@@ -9,6 +9,8 @@ tool: https://lindgreendavid.github.io/neuro-signal-lab/
 report: https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md
 ---
 
+**Stable release:** [Neuro Signal Lab v1.0.0](https://github.com/lindgreendavid/neuro-signal-lab/releases/tag/v1.0.0). The product is stable; its frozen endpoint, exclusions, confirmatory result, and sensitivity analyses remain unchanged and reproducible.
+
 ## The question
 
 When a rare, task-relevant stimulus appears among frequent standard stimuli, EEG recordings often

@@ -9,6 +9,8 @@ tool: https://three-body-lab-interactive.lindgreendavid.workers.dev
 report: https://github.com/lindgreendavid/three-body-lab/blob/main/docs/research-report.md
 ---
 
+**Stable release:** [Three-Body Lab v1.0.0](https://github.com/lindgreendavid/three-body-lab/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 study and its 42-cell registry remain unchanged and reproducible.
+
 ## The question
 
 Put three bodies in mutual gravitational orbit and there's no general formula that predicts where they'll be at any future time — this was proven by Poincaré in 1890, and it's not what this project is about. The actually interesting question is narrower and answerable: within a specific numerical method, where does the *chaos* actually show up? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region, the way textbook intuition suggests they should?
