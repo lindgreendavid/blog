@@ -5,6 +5,13 @@ All notable changes to this project are documented here. Format loosely follows
 
 ## [Unreleased]
 
+### Fixed
+
+- Correct the Three-Body Lab mass boundary and Poincaré/Sundman framing; replace pooled-residue
+  certainty in Folding's Edge with protein-cluster sensitivity; add serial-correlation-robust
+  Climate Twin uncertainty; and synchronize FRB, P3b and Observatory evidence boundaries with
+  primary literature and the current evidence index.
+
 ### Added
 
 - A responsive, code-native research-cycle animation in the home-page hero that uses the formerly

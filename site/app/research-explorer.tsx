@@ -113,7 +113,7 @@ const projects: Project[] = [
     finding:
       "All 13 participant contrasts were positive; the mean was +5.65 µV with a 95% CI from +4.83 to +6.48 µV.",
     boundary:
-      "A cross-paradigm robustness confirmation, not a direct replication, brain localization, or diagnostic result.",
+      "Cross-paradigm robustness evidence, not a direct replication, brain localization, consciousness marker, or diagnostic result.",
     article: "/posts/neuro-signal-lab-p3b-robustness",
     tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
   },

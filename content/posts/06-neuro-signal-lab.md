@@ -47,10 +47,12 @@ Changing the threshold within that declared range did not decide whether the eff
 
 This is strong evidence for a narrow result: the fixed posterior target enhancement survived a
 change of dataset, stimulus modality, and several paradigm details. We describe it as a
-**cross-paradigm robustness confirmation**, not a literal direct replication. ERP CORE used a
+**cross-paradigm robustness result**, not a literal direct replication. ERP CORE used a
 visual oddball task; the external dataset used an auditory task. The result does not prove that the
 two paradigms engage identical processes, identify one unique brain generator, read anyone's mind,
-or establish a diagnostic tool.
+or establish a diagnostic tool. Other task designs also show that P3b can track report and
+post-perceptual processing rather than awareness itself, so this result must not be reframed as
+a neural signature of consciousness.
 
 ## Try it yourself
 
@@ -65,6 +67,7 @@ pretend that a drawing is measured data.
 ## Learn more
 
 - Kappenman et al. (2021), *ERP CORE: An open resource for human event-related potential research*, NeuroImage 225, 117465 — the reference protocol that fixed the measurement.
+- Pitts et al. (2014), *Gamma band activity and the P3 reflect post-perceptual processes, not visual awareness*, Frontiers in Psychology 5:1078 — a boundary on interpreting P3b as awareness.
 - Delorme, *EEG data from an auditory oddball task*, OpenNeuro ds003061 version 1.1.0 — the independent public dataset.
 - Pernet et al. (2019), *EEG-BIDS, an extension to the brain imaging data structure for electroencephalography*, Scientific Data 6, 103 — the data-organization standard used by the dataset.
 - The [source code](https://github.com/lindgreendavid/neuro-signal-lab), [frozen protocol](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/protocol.md), and [machine-readable result](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/results/summary.json) disclose the full path from public data to every number above.

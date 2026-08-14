@@ -21,9 +21,9 @@ We joined 387 real human proteins' curated disorder annotations from DisProt (a 
 
 ## What we found
 
-The overall signal is strong and unambiguous: residues inside curated disorder regions have a **43-point lower median pLDDT** than residues outside them (88.8 vs. 45.1), and that difference is essentially certain (p ≈ 0 on two independent tests). A simple "pLDDT below 70 means disordered" classifier catches most real disorder (76.5% recall) but is only a moderately reliable predictor overall (34.1% precision).
+The pooled-residue signal is large: residues inside curated disorder regions have a **43-point lower median pLDDT** than residues outside them (88.8 vs. 45.1). Because residues within a protein are not independent, we also checked the result at the protein level: across 372 proteins containing both groups, the median within-protein gap is 36.47 points (protein-cluster bootstrap 95% CI 34.29–40.07). A simple "pLDDT below 70 predicts a DisProt disorder annotation" classifier catches 76.5% of annotated disorder but has 34.1% precision; protein-cluster resampling gives wider, more realistic uncertainty without changing that moderate-performance interpretation.
 
-Here's where it gets specific and useful, not just a summary statistic: precision **collapses to 6.3%** — from a 31% baseline — specifically on regions flagged as capable of conditionally folding, and recall drops to just 35.1% on disorder evidenced by hydrogen-deuterium exchange mass spectrometry (a technique that detects partial, dynamic structure). Named individual proteins in our report show this concretely: some proteins get every single disordered residue wrong in one direction or the other. This is exactly the failure mode the original paper's theory predicts — regions that *can* fold, under the right conditions, confuse a tool that only sees one static snapshot.
+Here's where it gets specific: precision is 6.3% in the protein-level conditional-folding proxy subgroup, and recall is 35.1% for HDX-MS-supported annotations. Those are exploratory associations, not causal explanations: the groups also differ in protein composition, region length, overlapping evidence, and curation. They are compatible with conditional or residual structure affecting pLDDT, but this project does not isolate that mechanism. Named proteins in the report make the misclassifications inspectable rather than turning the subgroup pattern into a stronger claim than the design supports.
 
 ## Try it yourself
 
@@ -33,5 +33,5 @@ The [interactive threshold explorer](https://foldings-edge-interactive.lindgreen
 
 - Alderson, Pritišanac, Kolarić, Moses & Forman-Kay (2023), *Systematic Identification of Conditionally Folded Intrinsically Disordered Regions by AlphaFold2*, PNAS 120(44) — the paper motivating this project.
 - Jumper et al. (2021), *Highly Accurate Protein Structure Prediction with AlphaFold*, Nature — the original AlphaFold2 paper.
-- [DisProt](https://disprot.org) — the curated, expert-annotated intrinsic disorder database used as ground truth here, CC BY 4.0.
+- [DisProt](https://disprot.org) — the curated, expert-annotated intrinsic disorder database used as the reference label here, CC BY 4.0.
 - The [source code](https://github.com/lindgreendavid/foldings-edge) is MIT-licensed, including the fetch script that joins DisProt and AlphaFold DB from scratch.
