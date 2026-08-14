@@ -279,9 +279,9 @@ const evidence: EvidenceRecord[] = [
     slug: "mathlab-wasm",
     name: "Mathlab WASM",
     field: "Numerical analysis / scientific computing",
-    evidenceType: "Deterministic known-result verification with frozen adversarial cases",
+    evidenceType: "Prespecified deterministic verification with bracket and safeguard traces",
     assessment:
-      "Strong for the seven declared method–scenario runs and their exact traces; deliberately uninformative about solver prevalence or real-workload performance.",
+      "Strong for twelve versioned method–scenario runs and the declared bracket invariants; deliberately uninformative about solver prevalence or real-workload performance.",
     sources: [
       {
         relation: "Primary",
@@ -300,14 +300,14 @@ const evidence: EvidenceRecord[] = [
       },
     ],
     dataset: {
-      label: "Frozen seven-case v0.1 protocol",
-      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol.md",
+      label: "Frozen five-case v0.2 safeguarded protocol",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v0.2.md",
     },
     report:
       "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
     artifact: {
-      label: "Machine-readable root-finding traces",
-      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.1-root-finding.json",
+      label: "Machine-readable v0.2 safeguarded traces",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.2-safeguarded-root-finding.json",
     },
   },
 ];

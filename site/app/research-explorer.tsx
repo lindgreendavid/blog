@@ -139,11 +139,11 @@ const projects: Project[] = [
     field: "Numerical analysis / scientific computing",
     track: "ai-data",
     question: "Which root-finding guarantees and failures remain visible under shared numerical rules?",
-    evidence: "Seven frozen Rust/WASM method–scenario runs with complete iteration traces",
+    evidence: "Twelve versioned Rust/WASM runs, including five prespecified safeguarded cases",
     finding:
-      "All expected outcomes pass: certified bisection, fast local Newton, a Newton two-cycle, and explicit bracket and secant failures.",
+      "All v0.2 outcomes pass; the skewed case exposes secant, inverse-quadratic, and bisection moves while retaining its bracket.",
     boundary:
-      "An intentionally selected educational suite, not a representative workload sample or universal solver ranking.",
+      "Selected educational suites, not a representative workload sample, universal solver ranking, or production-library equivalence test.",
     article: "/posts/mathlab-wasm-root-finding",
     tool: "https://lindgreendavid.github.io/mathlab-wasm/",
   },
