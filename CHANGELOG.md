@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Promoted Reaction Integrity Lab to product v1.0.0 with the prespecified product-identity,
+  scaffold, source-provenance, grant-date, and sampled Morgan/Tanimoto audit; added explicit
+  uncertainty and the neural-model artifact boundary.
 - Established Reaction Integrity Lab v0.2.0 across the article, interactive research explorer, and
   academic evidence index: all four frequency baselines now reproduce within 0.46 percentage
   points, while neural-model scores remain clearly labelled as published references.

@@ -9,9 +9,10 @@ tool: https://lindgreendavid.github.io/reaction-integrity-lab/
 report: https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md
 ---
 
-**Current research status:** source, provenance, published-log, released-data split, and all four
-frequency-baseline reproductions are complete. Neural-model reproduction remains pending. Baseline
-values below are local reproductions; model accuracies remain published reference values.
+**Current research status:** product v1.0.0 completes the source, provenance, published-log,
+released-data split, four-cell frequency-baseline, and prespecified product-similarity audits.
+Neural-model accuracies remain published references because the exact checkpoint/prediction bundles
+are not contained in the versioned public release.
 
 ## The question
 
@@ -35,7 +36,7 @@ frequency-informed baseline. This is a transparent known-result reproduction: th
 were known when the protocol was written, and the frozen ±1 percentage-point rule is a verification
 criterion, not a preregistration claim.
 
-## What we found so far
+## What we found
 
 The released reaction-string/delete-rare split contains 625,697 training rows and 65,445 test rows,
 for exactly 691,142 records—the final count in the official cleaning log. We found zero test rows
@@ -58,12 +59,24 @@ README still shows older 31/44, 33/47, 4/21, and 5/24 baseline/model pairs, whil
 peer-reviewed Table 3 reports the values above. The protocol records when and why the targets were
 corrected, before any local model inspection.
 
+The secondary audit then tested what exact-key separation misses. Canonical product identity occurs
+in training for 3,784 of 65,444 valid test products (5.78%). Among 63,852 test rows with a nonempty
+Bemis–Murcko product scaffold, 51,617 (80.84%) use a scaffold present in training. Every test row's
+source-file category also occurs in training, although that field is not a verified patent-family
+identifier.
+
+In the prespecified 1,000-row sample, 60.5% of test products have maximum Morgan/Tanimoto
+similarity ≥0.70 to a training product (Wilson 95% interval 57.44–63.48%); 30.0% reach ≥0.80 and
+11.7% reach ≥0.90. These results show that exact reaction-key separation is not chemical novelty.
+They do not prove unavailable-information leakage, model misconduct, or poor prospective wet-lab
+performance.
+
 ## Try it yourself
 
 The [interactive accuracy-inflation microscope](https://lindgreendavid.github.io/reaction-integrity-lab/)
 lets you cross the two dataset decisions, compare each reproduced baseline with its published model
-cell, and walk through the cleaning pipeline one boundary at a time. It keeps completed evidence
-visually separate from the model runs that remain open.
+cell, vary the frozen similarity threshold, and walk through the cleaning pipeline one boundary at
+a time. It keeps completed evidence separate from neural-model artifacts that remain unavailable.
 
 ## Learn more
 
@@ -73,3 +86,5 @@ visually separate from the model runs that remain open.
 - [Guo et al. (2025)](https://doi.org/10.1021/acscentsci.5c00055) — evidence that more realistic chemistry splits can be harder than ordinary reaction splits.
 - [Machine-readable split audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json) — row counts, checksums, exact collisions, and stated boundaries.
 - [Machine-readable baseline reproduction](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.2-baselines.json) — all four local cells, row counts, top combinations, and deviations from Table 3.
+- [Machine-readable v1 similarity audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v1-similarity-audit.json) — complete identities, scaffolds, provenance, dates, sampled similarities, and Wilson intervals.
+- [v1 release audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/v1-release-audit.md) — completed evidence, neural-artifact decision, and remaining research.
