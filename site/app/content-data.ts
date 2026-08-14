@@ -570,12 +570,12 @@ certificate.
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/jovian-resonance-lab",
     tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
-    report: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v0.1.md",
-    body: `**Current research status:** product v0.1.0 completes a preregistered thirty-year model-ablation
-study against NASA/JPL JUP365. The expected model ordering passed. A prespecified numerical
-sensitivity also failed its implicit closeness check, so the primary comparison and its numerical
-limit are reported together. Finer post-confirmatory runs are promising, not retroactively
-confirmatory.
+    report: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
+    body: `**Current research status:** product v1.0.0 preserves the original protocol-frozen thirty-year
+model ablation and adds a second protocol-frozen temporal replication on 3,653 non-overlapping
+JUP365 days from 2031–2040. The model ordering, numerical-convergence, and reference-adequacy gates
+all passed. Because the second interval extends beyond the 2026 release date, its JUP365 values are
+ephemeris predictions—not future observations.
 
 ## The question
 
@@ -643,9 +643,31 @@ study. Successive trace differences fell from 8.1342° to 2.1487° and then 0.54
 fourfold reduction expected when halving the step of a second-order method. Against JUP365, the
 finest 0.00125-day run reached **0.4641° RMSE**.
 
-That is scientifically interesting: numerical phase error likely explains much of the nominal
-11.27-degree discrepancy. It is not permission to replace the frozen primary endpoint. A future
-replication should freeze a converged step before scoring.
+That was scientifically interesting: numerical phase error likely explained much of the nominal
+11.27-degree discrepancy. It did not provide permission to replace the frozen primary endpoint.
+Instead, it motivated a second protocol with the step sizes and pass thresholds committed before
+new reference data were retrieved.
+
+## The v1 temporal replication
+
+The new protocol fixed 2031-01-01 through 2040-12-31 TDB, 3,653 daily epochs, a fresh JUP365 initial
+state at the start of the interval, and a common 0.0025-day step for all four models. G4J2 again had
+the lowest circular RMSE:
+
+- K2: **97.9578°**;
+- G3: **25.1741°**;
+- G4: **24.7109°**;
+- G4J2: **1.0434°**.
+
+All three frozen ordering comparisons passed. The protocol also required G4J2 runs at 0.005 and
+0.00125 day. The 0.0025-versus-0.00125-day traces differed by **0.5735° RMSE**, below the fixed
+0.75-degree ceiling. Their estimated convergence order was **1.984**, inside the fixed 1.5–2.5
+interval. The finest trace reached **0.4699° RMSE** against JUP365, passing the fixed one-degree
+reference-adequacy gate.
+
+This makes the numerical result confirmatory for the new interval rather than a favorable
+post-result refinement. It still does not prove convergence to exact Solar System dynamics or
+attach an uncertainty distribution to JUP365.
 
 ## Other checks
 
@@ -661,17 +683,19 @@ collection does not provide the same barycenter-conservation diagnostic.
 ## Try it yourself
 
 The [interactive Jovian Resonance Lab](https://lindgreendavid.github.io/jovian-resonance-lab/)
-animates a sixty-day JUP365 vector extract, lets you scrub through the moon positions, and compares
-each frozen model's Laplace-angle residual. The angular timing comes from JPL; radial spacing and
-body sizes are visibly rescaled to keep every moon on screen.
+animates a sixty-day JUP365 vector extract, lets you scrub through the moon positions, compares each
+model's validation residual, and lets you switch among the three frozen G4J2 step sizes. The angular
+timing comes from JPL; radial spacing and body sizes are visibly rescaled to keep every moon on
+screen.
 
 ## What this cannot establish
 
-Thirty years of agreement with a fitted ephemeris cannot determine how the Laplace relation formed,
-whether it survives for billions of years, or how tides alter the system. It says nothing direct
-about tidal quality factors, internal heating, subsurface oceans, or habitability. Paita, Celletti,
-and Pucacco provide the closest published model context; Lainey and colleagues constrain the idea
-of an immutable exact clock; Lari, Saillenfest, and Fenucci show why later tidal evolution involving
+Agreement with a fitted ephemeris cannot determine how the Laplace relation formed, whether it
+survives for billions of years, or how tides alter the system. The validation restarts from JUP365
+in 2031, so it is not an uninterrupted forty-year forecast. It says nothing direct about tidal
+quality factors, internal heating, subsurface oceans, or habitability. Paita, Celletti, and Pucacco
+provide the closest published model context; Lainey and colleagues constrain the idea of an
+immutable exact clock; Lari, Saillenfest, and Fenucci show why later tidal evolution involving
 Callisto remains sensitive to uncertain parameters.
 
 ## Learn more
@@ -681,8 +705,10 @@ Callisto remains sensitive to uncertain parameters.
 - [Paita, Celletti & Pucacco (2018)](https://doi.org/10.1051/0004-6361/201832856) — the primary published Cartesian and resonant-model context.
 - [Lainey et al. (2009)](https://doi.org/10.1038/nature08108) — astrometric evidence for secular evolution in the Galilean system.
 - [Lari, Saillenfest & Fenucci (2020)](https://doi.org/10.1051/0004-6361/202037445) — long-term tidal evolution and possible resonant behavior involving Callisto.
-- [Frozen protocol](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/protocol-v0.1.md) — models, endpoints, sensitivities, and failure rules fixed before confirmation.
-- [Machine-readable model report](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/reports/v0.1-model-adequacy.json) — all traces, metrics, diagnostics, and convergence comparisons.
-- [v0.1 release audit](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/v0.1-release-audit.md) — scientific identity, corrections, completed gates, and remaining limits.`,
+- [Historical v0.1 protocol](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/protocol-v0.1.md) — the unchanged original models, endpoints, and sensitivities.
+- [Frozen v1 protocol](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/protocol-v1.0.md) — the new interval, common step, thresholds, and failure rules committed before retrieval.
+- [Machine-readable v1 report](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/reports/v1.0-validation.json) — complete traces, metrics, diagnostics, and gate outcomes.
+- [v1.0.0 release](https://github.com/lindgreendavid/jovian-resonance-lab/releases/tag/v1.0.0) — stable product release and exact commit identity.
+- [v1 release audit](https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/v1-release-audit.md) — scientific identities, reproduction steps, deviations, and remaining limits.`,
   }
 ];

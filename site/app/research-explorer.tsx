@@ -124,11 +124,11 @@ const projects: Project[] = [
     field: "Planetary dynamics / celestial mechanics",
     track: "science",
     question: "Which minimum dynamical ingredients reproduce the Galilean-moon Laplace angle?",
-    evidence: "10,957 daily JUP365 epochs and four preregistered dynamical ablations",
+    evidence: "14,610 daily JUP365 epochs across two frozen, non-overlapping study intervals",
     finding:
-      "G4J2 beat all frozen alternatives; exploratory step refinement reached 0.464° RMSE against JUP365.",
+      "G4J2 replicated the frozen ordering; the fine validation trace reached 0.470° RMSE and passed every numerical gate.",
     boundary:
-      "The nominal trace was not numerically converged, JUP365 is a fitted ephemeris, and no formation, ocean, or long-term-stability claim follows.",
+      "The 2031–2040 values are ephemeris predictions and restart from JUP365; no formation, ocean, or long-term-stability claim follows.",
     article: "/posts/jovian-resonance-lab-laplace-angle",
     tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
   },

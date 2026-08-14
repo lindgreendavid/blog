@@ -215,9 +215,9 @@ const evidence: EvidenceRecord[] = [
     slug: "jovian-resonance",
     name: "Jovian Resonance Lab",
     field: "Planetary dynamics / celestial mechanics",
-    evidenceType: "Preregistered numerical model ablation against a fitted JPL ephemeris",
+    evidenceType: "Two protocol-frozen numerical model studies against a fitted JPL ephemeris",
     assessment:
-      "Strong for the frozen comparative ordering; exploratory for the finest-step absolute fit and uninformative about formation or billion-year stability.",
+      "Strong for replicated model ordering and the prespecified numerical gates; uninformative about formation, future observation, or billion-year stability.",
     sources: [
       {
         relation: "Primary",
@@ -241,14 +241,14 @@ const evidence: EvidenceRecord[] = [
       },
     ],
     dataset: {
-      label: "Normalized JUP365 reference registry",
-      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/data/jup365-reference-v0.1.json",
+      label: "Normalized v1 JUP365 validation registry",
+      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/data/jup365-reference-v1.0.json",
     },
     report:
-      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v0.1.md",
+      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
     artifact: {
-      label: "Machine-readable model-adequacy report",
-      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/reports/v0.1-model-adequacy.json",
+      label: "Machine-readable v1 validation report",
+      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/reports/v1.0-validation.json",
     },
   },
   {
