@@ -125,11 +125,11 @@ const projects: Project[] = [
     track: "science",
     question: "Does ORDerly's published condition-prediction gap survive an exact reproduction?",
     evidence:
-      "Four checksum-verified dataset variants; all frequency baselines reproduce within 0.46 percentage points",
+      "691,142 reactions, four reproduced baselines, and a prespecified 1,000-row similarity sample",
     finding:
-      "All four baselines reproduce, and the released split has zero exact declared-input collisions; neural-model reproduction is pending.",
+      "Baselines reproduce; 5.78% of valid test products and 80.84% of nonempty test scaffolds occur in training.",
     boundary:
-      "Exact identity separation is not chemical-similarity, patent-family, temporal, or wet-lab validation.",
+      "Product overlap is not proof of patent-family leakage, unavailable-information leakage, or wet-lab failure; model cells remain published references.",
     article: "/posts/reaction-integrity-lab-cleaning-leakage",
     tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
   },
