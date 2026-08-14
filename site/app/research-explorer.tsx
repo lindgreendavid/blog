@@ -125,9 +125,9 @@ const projects: Project[] = [
     track: "science",
     question: "Does ORDerly's published condition-prediction gap survive an exact reproduction?",
     evidence:
-      "691,142 checksum-verified released reactions plus frozen upstream configurations and logs",
+      "Four checksum-verified dataset variants; all frequency baselines reproduce within 0.46 percentage points",
     finding:
-      "The released split has zero exact train/test declared-input collisions and zero cross-split exact records; model-score reproduction is pending.",
+      "All four baselines reproduce, and the released split has zero exact declared-input collisions; neural-model reproduction is pending.",
     boundary:
       "Exact identity separation is not chemical-similarity, patent-family, temporal, or wet-lab validation.",
     article: "/posts/reaction-integrity-lab-cleaning-leakage",

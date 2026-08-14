@@ -244,9 +244,9 @@ const evidence: EvidenceRecord[] = [
     slug: "reaction-integrity",
     name: "Reaction Integrity Lab",
     field: "Computational chemistry / machine learning",
-    evidenceType: "Known-result reproduction with a checksum-verified released-data split audit",
+    evidenceType: "Known-result reproduction with a four-cell baseline and split-integrity audit",
     assessment:
-      "Strong for exact source identity and exact declared-key separation; model-score reproduction and chemical-similarity audits remain pending.",
+      "Strong for source identity, all four frequency baselines, and exact declared-key separation; neural-model and chemical-similarity audits remain pending.",
     sources: [
       {
         relation: "Primary",
@@ -271,8 +271,8 @@ const evidence: EvidenceRecord[] = [
     report:
       "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
     artifact: {
-      label: "Machine-readable split audit",
-      url: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json",
+      label: "Machine-readable four-cell baseline reproduction",
+      url: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.2-baselines.json",
     },
   },
 ];
