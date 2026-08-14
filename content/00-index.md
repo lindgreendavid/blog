@@ -1,14 +1,15 @@
 ---
 title: "David Lindgreen — Lab Notes"
-tagline: "Real data, inspectable systems, honest limits — across AI, physics, astrophysics, biology, climate, neuroscience, and data observability."
+tagline: "Real data, inspectable systems, honest limits — across AI, physics, astrophysics, biology, chemistry, climate, neuroscience, and data observability."
 ---
 
 ## What this is
 
 A growing collection of interactive research projects and real findings, written up in plain
-language. Every project here started with a bounded, falsifiable question, was preregistered before
-any result existed, and reports what was actually found — including the parts that didn't confirm
-cleanly.
+language. Every project begins with a bounded, falsifiable question and a protocol appropriate to
+its design. Blinded or preregistered studies are identified as such; known-result reproductions are
+labelled explicitly. Every report includes what was actually found — including the parts that
+didn't confirm cleanly.
 Nothing here claims to be peer-reviewed novel science. What it claims is narrower and checkable:
 real public data, a documented method, and an honest account of where that method holds up and
 where it doesn't.

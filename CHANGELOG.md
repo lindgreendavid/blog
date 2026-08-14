@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added Reaction Integrity Lab across the article index, interactive research explorer, and
+  academic evidence index, with published model scores clearly separated from the completed
+  checksum and released-split audit.
+- Corrected the portfolio-wide methods statement so known-result reproductions are not described
+  as blinded or preregistered studies.
 - Added an interactive academic Evidence Index linking each project to its primary, supporting,
   limiting, and methodological sources; public dataset; research report; and reproducibility
   artifact.

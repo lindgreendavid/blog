@@ -240,6 +240,41 @@ const evidence: EvidenceRecord[] = [
       url: "https://github.com/lindgreendavid/data-contract-observatory/tree/evidence",
     },
   },
+  {
+    slug: "reaction-integrity",
+    name: "Reaction Integrity Lab",
+    field: "Computational chemistry / machine learning",
+    evidenceType: "Known-result reproduction with a checksum-verified released-data split audit",
+    assessment:
+      "Strong for exact source identity and exact declared-key separation; model-score reproduction and chemical-similarity audits remain pending.",
+    sources: [
+      {
+        relation: "Primary",
+        label: "Wigh et al. (2024), ORDerly",
+        url: "https://doi.org/10.1021/acs.jcim.4c00292",
+      },
+      {
+        relation: "Supports",
+        label: "Schwaller et al. (2021), structural bias in reaction prediction",
+        url: "https://doi.org/10.1038/s42256-021-00338-1",
+      },
+      {
+        relation: "Limits",
+        label: "Guo et al. (2025), harder chemistry-aware evaluation splits",
+        url: "https://doi.org/10.1021/acscentsci.5c00055",
+      },
+    ],
+    dataset: {
+      label: "ORDerly benchmark v4",
+      url: "https://doi.org/10.6084/m9.figshare.23298467.v4",
+    },
+    report:
+      "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
+    artifact: {
+      label: "Machine-readable split audit",
+      url: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json",
+    },
+  },
 ];
 
 export default function EvidenceIndex() {

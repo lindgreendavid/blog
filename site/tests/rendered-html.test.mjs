@@ -73,6 +73,15 @@ const posts = [
     report:
       "https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md",
   },
+  {
+    route: "/posts/reaction-integrity-lab-cleaning-leakage",
+    title: "The same reaction benchmark scored 47% or 24%",
+    project: "Reaction Integrity Lab",
+    tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
+    repo: "https://github.com/lindgreendavid/reaction-integrity-lab",
+    report:
+      "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -136,6 +145,7 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/05-climate-twin-frankfurt.md", root), "utf8"),
     readFile(new URL("../content/posts/06-neuro-signal-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/07-data-contract-observatory.md", root), "utf8"),
+    readFile(new URL("../content/posts/08-reaction-integrity-lab.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
