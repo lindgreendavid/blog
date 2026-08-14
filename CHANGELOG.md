@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Added an interactive academic Evidence Index linking each project to its primary, supporting,
+  limiting, and methodological sources; public dataset; research report; and reproducibility
+  artifact.
+- Updated the FRB Atlas article for the analysis-unit sensitivity explorer and corrected the
+  Observatory explorer count to two same-day prospective runs.
+
 All notable changes to this project are documented here. Format loosely follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 

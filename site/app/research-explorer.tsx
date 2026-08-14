@@ -53,9 +53,10 @@ const projects: Project[] = [
     field: "Data engineering / observability",
     track: "ai-data",
     question: "When does a live public-data response stop satisfying its declared contract?",
-    evidence: "One prospective ECB run, 7,010 retrospective prefixes, and nine controlled faults",
+    evidence:
+      "Two same-day prospective ECB runs, 7,010 retrospective prefixes, and nine controlled faults",
     finding:
-      "All controlled faults were classified as expected; the current live response passed, while longitudinal evidence has only begun.",
+      "All controlled faults were classified as expected; both same-day live responses passed, while longitudinal evidence has only begun.",
     boundary:
       "Synthetic detection and a current-vintage replay cannot establish historical revision rates or production reliability.",
     article: "/posts/data-contract-observatory-revision-evidence",

@@ -5,6 +5,7 @@ import SiteNav from "./site-nav";
 import SiteFooter from "./site-footer";
 import ResearchExplorer from "./research-explorer";
 import HeroVisual from "./hero-visual";
+import EvidenceIndex from "./evidence-index";
 
 // Hand-written navigation copy, not part of the fact-checked content files --
 // one sentence per post so the home page reads as a list rather than a wall
@@ -13,7 +14,7 @@ const teasers: Record<string, string> = {
   "fairshift-lab-robustness":
     "Stress-testing a fairness measurement against label noise, measurement error, and small samples, instead of trusting a single clean number.",
   "three-body-lab-chaos-boundary":
-    "A validated orbital integrator measures exactly where chaos sets in for three gravitating bodies, and catches a 150-year-old stability theorem happening live.",
+    "A validated orbital integrator maps short-window divergence and shows why the tested mass range never reaches the analytical stability boundary.",
   "frb-atlas-dispersion-measure":
     "Re-running a landmark fast radio burst catalog paper's own statistical test on the same public data, and reporting the result that didn't replicate.",
   "foldings-edge-plddt-disorder":
@@ -69,6 +70,7 @@ export default function Home() {
         </div>
 
         <ResearchExplorer />
+        <EvidenceIndex />
 
         <section className="study-guide" id="study" aria-labelledby="study-title">
           <div className="section-heading">
