@@ -43,8 +43,7 @@ exactly 600 epochs. The nine-dimensional penultimate layer can represent the ide
 for ten classes. Ten fixed seeds were run under each of three training conditions:
 
 - the complete clean training set;
-- a deterministic long-tail sample of 1,559 rows, declining from 376 examples of digit 0 to 38 of
-  digit 9;
+- a deterministic long-tail sample of 1,559 rows, declining from 376 examples of digit 0 to 38 of digit 9;
 - exactly 20% symmetric label noise within each class, changing 761 training labels.
 
 An L2-regularized multinomial logistic regression supplied a linear predictive reference. It has no
@@ -93,8 +92,8 @@ What the result rejects is the shortcut: **closer to the simplex on one diagnost
 itself certify a representation, a model, or its generalization.**
 
 The linear reference reinforces the need for a bounded interpretation. Logistic regression reached
-94.77% on clean data, 91.88% on the long tail, and 93.60% under label noise. In this exact fixed-
-capacity comparison it resisted the corrupted labels better than the 600-epoch MLP. That is not a
+94.77% on clean data, 91.88% on the long tail, and 93.60% under label noise. In this exact
+fixed-capacity comparison it resisted the corrupted labels better than the 600-epoch MLP. That is not a
 universal result that linear classifiers are more robust; it belongs to these data, models, and
 training choices.
 
@@ -113,16 +112,11 @@ and the interface says so directly.
 
 ## Stop at the boundary
 
-- One compact tabular image dataset, writer split, MLP architecture, optimizer, and linear reference
-  were studied.
-- Ten seeds measure algorithmic sensitivity on one fixed dataset; they do not establish external
-  population uncertainty.
-- The balanced simplex remains the NC2 target under long-tail sampling by design. It does not model
-  an imbalance-specific optimum.
-- Symmetric label corruption is a controlled stressor, not natural annotator disagreement or a
-  realistic distribution shift.
-- The study does not address convolutional networks, transformers, foundation models, human
-  cognition, or deployed AI systems.
+- One compact tabular image dataset, writer split, MLP architecture, optimizer, and linear reference were studied.
+- Ten seeds measure algorithmic sensitivity on one fixed dataset; they do not establish external population uncertainty.
+- The balanced simplex remains the NC2 target under long-tail sampling by design. It does not model an imbalance-specific optimum.
+- Symmetric label corruption is a controlled stressor, not natural annotator disagreement or a realistic distribution shift.
+- The study does not address convolutional networks, transformers, foundation models, human cognition, or deployed AI systems.
 - It tests association and reproducibility. It cannot show that collapse causes generalization.
 
 ## Inspect and reproduce
