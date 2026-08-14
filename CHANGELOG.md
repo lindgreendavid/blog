@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added Mathlab WASM v0.1.0: a frozen seven-case Rust/WebAssembly verification of bisection,
+  Newton, and secant convergence and failure modes, with an article, explorer entry, evidence
+  record, and explicit non-representativeness boundary.
 - Promoted Reaction Integrity Lab to product v1.0.0 with the prespecified product-identity,
   scaffold, source-provenance, grant-date, and sampled Morgan/Tanimoto audit; added explicit
   uncertainty and the neural-model artifact boundary.

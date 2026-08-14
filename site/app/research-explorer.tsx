@@ -133,6 +133,20 @@ const projects: Project[] = [
     article: "/posts/reaction-integrity-lab-cleaning-leakage",
     tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
   },
+  {
+    slug: "mathlab-wasm",
+    name: "Mathlab WASM",
+    field: "Numerical analysis / scientific computing",
+    track: "ai-data",
+    question: "Which root-finding guarantees and failures remain visible under shared numerical rules?",
+    evidence: "Seven frozen Rust/WASM method–scenario runs with complete iteration traces",
+    finding:
+      "All expected outcomes pass: certified bisection, fast local Newton, a Newton two-cycle, and explicit bracket and secant failures.",
+    boundary:
+      "An intentionally selected educational suite, not a representative workload sample or universal solver ranking.",
+    article: "/posts/mathlab-wasm-root-finding",
+    tool: "https://lindgreendavid.github.io/mathlab-wasm/",
+  },
 ];
 
 const filters: { value: Track; label: string }[] = [
