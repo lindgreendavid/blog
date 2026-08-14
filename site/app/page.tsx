@@ -29,6 +29,8 @@ const teasers: Record<string, string> = {
     "An exact audit of a 691,142-reaction benchmark separates verified split integrity from four published model scores that still await reproduction.",
   "mathlab-wasm-root-finding":
     "Three root-finding methods expose what their stopping rules certify—and why a fast local method can still cycle or lose its slope.",
+  "jovian-resonance-lab-laplace-angle":
+    "Four frozen dynamical models test which ingredients preserve Jupiter's three-moon clock—and a failed step-size check changes how the winning model must be read.",
 };
 
 export default function Home() {

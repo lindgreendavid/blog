@@ -82,6 +82,23 @@ const posts = [
     report:
       "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
   },
+  {
+    route: "/posts/mathlab-wasm-root-finding",
+    title: "When the fast step looks unsafe",
+    project: "Mathlab WASM",
+    tool: "https://lindgreendavid.github.io/mathlab-wasm/",
+    repo: "https://github.com/lindgreendavid/mathlab-wasm",
+    report: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
+  },
+  {
+    route: "/posts/jovian-resonance-lab-laplace-angle",
+    title: "Jupiter’s moons keep time",
+    project: "Jovian Resonance Lab",
+    tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
+    repo: "https://github.com/lindgreendavid/jovian-resonance-lab",
+    report:
+      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v0.1.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -146,6 +163,8 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/06-neuro-signal-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/07-data-contract-observatory.md", root), "utf8"),
     readFile(new URL("../content/posts/08-reaction-integrity-lab.md", root), "utf8"),
+    readFile(new URL("../content/posts/09-mathlab-wasm.md", root), "utf8"),
+    readFile(new URL("../content/posts/10-jovian-resonance-lab.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
