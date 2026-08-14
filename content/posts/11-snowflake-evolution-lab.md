@@ -9,9 +9,9 @@ tool: https://lindgreendavid.github.io/snowflake-evolution-lab/
 report: https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md
 ---
 
-**Current research status:** stable product v1.0.0 preserves the frozen v0.1 morphology study and
-adds a source-compatible, protocol-frozen evaluation of engineered genome duplication and its
-longitudinal sufficiency. Both studies reanalyse source-author data; neither is an independent
+**Current research status:** stable product v1.0.1 preserves the frozen v0.1 morphology study and
+frozen v1.0 genome-duplication result. The patch clarifies the explanatory animation without
+changing either analysis. Both studies reanalyse source-author data; neither is an independent
 wet-lab replication or a claim to have rediscovered multicellularity.
 
 ## The question behind one of evolution's largest transitions
@@ -133,8 +133,11 @@ lets you replay each population from transfer 0 to 600, switch between the publi
 and cell-shape trajectories, and compare all metabolic treatments at day 600. The new genome
 explorer adds the engineered 2N/4N contrast, all 16 chromosome copy numbers, G1 peak and morphology
 through transfer 1,000, and the PA/PM sufficiency comparison. The animated cluster is deliberately
-labelled as an explanatory geometry model. It helps you reason about packing and entanglement, but
-it is not microscopy, a fitted biological simulator, or an unobserved ancestral reconstruction.
+labelled as an explanatory geometry model. Solid links are permanent chitinous parent–daughter
+junctions; dashed amber links are steric contacts rather than bonds; red gaps are modelled fractures.
+The packing and fracture views isolate those mechanisms, while the colony view combines them. These
+cues help you reason about the proposed mechanism, but they are not microscopy, fitted biological
+simulation, measured entanglement, or an unobserved ancestral reconstruction.
 
 ## Stop at the boundary
 
@@ -157,4 +160,4 @@ it is not microscopy, a fitted biological simulator, or an unobserved ancestral 
 - [Machine-readable result](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v0.1.json) — all five coefficients and exploratory timing outputs.
 - [Frozen v1.0 protocol](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/protocol-v1.0.md) — engineered intervention, longitudinal sufficiency gate, and evidence boundaries.
 - [Machine-readable v1.0 result](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v1.0.json) — replicate-level effects, uncertainty, chromosome burdens, and sufficiency test.
-- [v1.0.0 release](https://github.com/lindgreendavid/snowflake-evolution-lab/releases/tag/v1.0.0) — stable public research-product identity; historical v0.1 artifacts remain unchanged.
+- [v1.0.1 release](https://github.com/lindgreendavid/snowflake-evolution-lab/releases/tag/v1.0.1) — current product and clarified animation semantics; frozen v0.1 and v1.0 evidence remains unchanged.
