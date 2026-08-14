@@ -161,6 +161,20 @@ const projects: Project[] = [
     article: "/posts/mathlab-wasm-root-finding",
     tool: "https://lindgreendavid.github.io/mathlab-wasm/",
   },
+  {
+    slug: "snowflake-evolution",
+    name: "Snowflake Evolution Lab",
+    field: "Experimental evolution / multicellularity",
+    track: "science",
+    question: "Does cellular elongation track increasing cluster size in every anaerobic lineage?",
+    evidence: "64 paired published means across five independently evolved MuLTEE populations",
+    finding:
+      "All five associations are positive (Spearman ρ 0.923–0.967), but exploratory jump timing is not universal.",
+    boundary:
+      "A source-data reanalysis, not an independent experiment, causal threshold, or reconstruction of historical multicellularity.",
+    article: "/posts/snowflake-evolution-lab-individuality",
+    tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
+  },
 ];
 
 const filters: { value: Track; label: string }[] = [

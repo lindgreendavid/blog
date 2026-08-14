@@ -99,6 +99,15 @@ const posts = [
     report:
       "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
   },
+  {
+    route: "/posts/snowflake-evolution-lab-individuality",
+    title: "A yeast cluster became 20,000 times larger",
+    project: "Snowflake Evolution Lab",
+    tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
+    repo: "https://github.com/lindgreendavid/snowflake-evolution-lab",
+    report:
+      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v0.1.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -165,6 +174,7 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/08-reaction-integrity-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/09-mathlab-wasm.md", root), "utf8"),
     readFile(new URL("../content/posts/10-jovian-resonance-lab.md", root), "utf8"),
+    readFile(new URL("../content/posts/11-snowflake-evolution-lab.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {

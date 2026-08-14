@@ -355,6 +355,46 @@ const evidence: EvidenceRecord[] = [
       url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v1.0-conditioning.json",
     },
   },
+  {
+    slug: "snowflake-evolution",
+    name: "Snowflake Evolution Lab",
+    field: "Experimental evolution / multicellularity",
+    evidenceType: "Protocol-frozen reanalysis of five published longitudinal population summaries",
+    assessment:
+      "Strong for directional concordance in the five anaerobic MuLTEE lines; insufficient for a causal or universal transition threshold.",
+    sources: [
+      {
+        relation: "Primary",
+        label: "Bozdag et al. (2023), de novo macroscopic multicellularity",
+        url: "https://doi.org/10.1038/s41586-023-06052-1",
+      },
+      {
+        relation: "Supports",
+        label: "Pineau et al. (2024), stable coexistence in MuLTEE",
+        url: "https://doi.org/10.1038/s41559-024-02367-y",
+      },
+      {
+        relation: "Limits",
+        label: "Genome duplication is not sufficient for macroscopic size",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12256070/",
+      },
+      {
+        relation: "Supports",
+        label: "Metabolically driven flows in macroscopic clusters",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11213004/",
+      },
+    ],
+    dataset: {
+      label: "Bozdag et al. public figure-source workbook",
+      url: "https://github.com/ozanbozdag/De_novo_evolution_of_macroscopic_multicellularity",
+    },
+    report:
+      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v0.1.md",
+    artifact: {
+      label: "Machine-readable v0.1 result",
+      url: "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v0.1.json",
+    },
+  },
 ];
 
 export default function EvidenceIndex() {

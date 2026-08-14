@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-14 — Snowflake Evolution Lab v0.1.0
+
+- Added a protocol-frozen experimental-evolution article with five lineage-level trajectories,
+  prespecified sensitivities, the inconsistent exploratory jump ordering, and a strict causal boundary.
+- Added Snowflake Evolution Lab to the research explorer and academic evidence index.
+- Expanded the Lab Notes scope to include evolution and multicellularity.
+
 ## 2026-08-14 — Mathlab WASM v1.0.0
 
 - Expanded the Mathlab article, explorer, and evidence index with the frozen residual, forward-error,
