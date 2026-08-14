@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-08-14 — Snowflake Evolution Lab v1.0.1
+
+- Synchronized Lab Notes with the current public product release.
+- Documented the animation's permanent parent–daughter junctions, non-bonded steric contacts, and
+  modelled fractures while keeping the frozen v0.1 and v1.0 evidence unchanged.
+
 ## 2026-08-14 — Snowflake Evolution Lab v1.0.0
 
 - Expanded the article with the frozen engineered-tetraploidy intervention, exact replicate-level
