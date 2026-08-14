@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-- Published the Jovian Resonance Lab article, explorer entry, and academic evidence record with
-  the preregistered model ordering, failed nominal convergence check, exploratory refinement, and
-  explicit interpretation boundary.
+- Promoted the Jovian Resonance Lab article, explorer, and evidence record to v1.0.0 with the
+  protocol-frozen 2031–2040 replication, passed convergence gates, release links, and explicit
+  future-ephemeris boundary while preserving the historical v0.1 result.
 - Expanded Mathlab WASM to v0.2.0 with a prespecified safeguarded solver, bracket and step-kind
   traces, five new frozen cases, and a transparent post-result amendment for platform-libm
   last-bit reproducibility.

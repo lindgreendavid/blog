@@ -97,7 +97,7 @@ const posts = [
     tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
     repo: "https://github.com/lindgreendavid/jovian-resonance-lab",
     report:
-      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v0.1.md",
+      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
   },
 ];
 
