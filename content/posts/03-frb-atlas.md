@@ -31,7 +31,7 @@ Later CHIME/FRB evidence adds an important boundary: a 2023 source-level study o
 
 ## Try it yourself
 
-The [interactive comparison](https://frb-atlas-interactive.lindgreendavid.workers.dev/#dm) lets you see both distributions overlaid, with every statistic — KS test, Anderson-Darling, bootstrap confidence intervals — shown before any "significant or not" conclusion.
+The [interactive analysis-unit explorer](https://frb-atlas-interactive.lindgreendavid.workers.dev/#analysis-unit) lets you switch between all 59 repeater bursts and one first detection from each of 18 repeater sources, then compare α=0.05 with the paper's α=0.01 threshold. The catalog never changes; the interaction exposes exactly how independence assumptions and decision rules change the conclusion.
 
 ## Learn more
 

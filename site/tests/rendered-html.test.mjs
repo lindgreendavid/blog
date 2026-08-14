@@ -64,6 +64,15 @@ const posts = [
     repo: "https://github.com/lindgreendavid/neuro-signal-lab",
     report: "https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md",
   },
+  {
+    route: "/posts/data-contract-observatory-revision-evidence",
+    title: "A data pipeline can keep running while its meaning changes",
+    project: "Data Contract Observatory",
+    tool: "https://lindgreendavid.github.io/data-contract-observatory/",
+    repo: "https://github.com/lindgreendavid/data-contract-observatory",
+    report:
+      "https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -78,6 +87,11 @@ test("server-renders the home page listing every published post", async () => {
   assert.match(html, /How to read a scientific result/);
   assert.match(html, /Read uncertainty first/);
   assert.match(html, /Filter projects by research track/);
+  assert.match(html, /Academic evidence index/);
+  assert.match(html, /Trace every claim to evidence—and its limit\./);
+  assert.match(html, /Supporting or limiting evidence/);
+  assert.match(html, /Evidence assessment/);
+  assert.match(html, /CHIME\/FRB Catalog 1/);
   assert.match(html, /Full portfolio/);
   assert.match(html, /Researched roadmap/);
   assert.match(html, /Skip to main content/);
@@ -121,10 +135,19 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/04-foldings-edge.md", root), "utf8"),
     readFile(new URL("../content/posts/05-climate-twin-frankfurt.md", root), "utf8"),
     readFile(new URL("../content/posts/06-neuro-signal-lab.md", root), "utf8"),
+    readFile(new URL("../content/posts/07-data-contract-observatory.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
-    return raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "").trim();
+    return raw
+      .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "")
+      .trim()
+      .replace(/\\/g, "\\\\")
+      .replace(
+        new RegExp(String.fromCharCode(96), "g"),
+        "\\" + String.fromCharCode(96),
+      )
+      .replace(new RegExp("\\$\\{", "g"), "\\" + "$" + "{");
   }
 
   assert.ok(

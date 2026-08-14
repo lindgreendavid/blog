@@ -461,9 +461,190 @@ section {
 /* Interactive research explorer */
 
 .research-explorer,
+.evidence-index,
 .study-guide {
   padding: 26px var(--page-gutter) 64px;
   width: 100%;
+}
+
+/* Academic evidence index */
+
+.evidence-index__layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.68fr) minmax(0, 1.7fr);
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.evidence-index__selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--line);
+}
+
+.evidence-index__selector li {
+  display: flex;
+}
+
+.evidence-index__selector button {
+  width: 100%;
+  min-height: 70px;
+  padding: 14px 18px;
+  border: 0;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.evidence-index__selector button:hover,
+.evidence-index__selector button:focus-visible {
+  background: var(--accent-wash);
+}
+
+.evidence-index__selector button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.evidence-index__selector span,
+.evidence-index__selector strong {
+  display: block;
+}
+
+.evidence-index__selector span {
+  margin-bottom: 3px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.evidence-index__selector strong {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 14px;
+}
+
+.evidence-record {
+  padding: clamp(24px, 4vw, 46px);
+  background: var(--white);
+}
+
+.evidence-record__field {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.evidence-record h3 {
+  margin: 0 0 24px;
+  font-size: clamp(25px, 3vw, 34px);
+}
+
+.evidence-record h4 {
+  margin: 28px 0 10px;
+  font-size: 18px;
+}
+
+.evidence-record__summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+}
+
+.evidence-record__summary > div {
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
+.evidence-record dt,
+.evidence-record__artifacts span {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.evidence-record dd {
+  margin: 5px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.evidence-sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.evidence-sources li {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.evidence-sources span {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.evidence-sources a {
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.evidence-record__artifacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.evidence-record__artifacts a {
+  min-width: 0;
+  padding: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.evidence-record__artifacts a:hover,
+.evidence-record__artifacts a:focus-visible {
+  background: var(--accent-wash);
+}
+
+.evidence-record__artifacts span,
+.evidence-record__artifacts strong {
+  display: block;
+}
+
+.evidence-record__artifacts strong {
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 13px;
 }
 
 .section-heading {
@@ -947,6 +1128,10 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+  .evidence-index__layout {
+    grid-template-columns: 1fr;
+  }
+
   .project-selector {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -978,8 +1163,15 @@ footer a {
   }
 
   .evidence-panel dl,
+  .evidence-record__summary,
+  .evidence-record__artifacts,
   .study-steps {
     grid-template-columns: 1fr;
+  }
+
+  .evidence-index__selector {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-selector {
