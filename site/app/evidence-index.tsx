@@ -24,6 +24,46 @@ interface EvidenceRecord {
 
 const evidence: EvidenceRecord[] = [
   {
+    slug: "neural-geometry",
+    name: "Neural Geometry Lab",
+    field: "Machine learning / representation geometry",
+    evidenceType: "Protocol-frozen computational replication and stress test",
+    assessment:
+      "Two of four directional gates passed across 30 neural runs; strong for this fixed regime, not a universal collapse–generalization law.",
+    sources: [
+      {
+        relation: "Primary",
+        label: "Papyan, Han & Donoho (2020), neural collapse NC1–NC4",
+        url: "https://doi.org/10.1073/pnas.2015509117",
+      },
+      {
+        relation: "Supports",
+        label: "Dang et al. (2024), neural collapse under class imbalance",
+        url: "https://proceedings.mlr.press/v235/dang24a.html",
+      },
+      {
+        relation: "Method",
+        label: "Wu & Mondelli (2025), mean-field collapse and generalization",
+        url: "https://proceedings.mlr.press/v267/wu25u.html",
+      },
+      {
+        relation: "Limits",
+        label: "Han et al. (2025), generalization without necessary collapse",
+        url: "https://openreview.net/forum?id=lbtOctHDQ3",
+      },
+    ],
+    dataset: {
+      label: "UCI Optical Recognition of Handwritten Digits",
+      url: "https://doi.org/10.24432/C50P49",
+    },
+    report:
+      "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md",
+    artifact: {
+      label: "Machine-readable v1.0 result",
+      url: "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/results-v1.0.json",
+    },
+  },
+  {
     slug: "fairshift",
     name: "Fairshift Lab",
     field: "Responsible AI",

@@ -20,6 +20,20 @@ interface Project {
 
 const projects: Project[] = [
   {
+    slug: "neural-geometry",
+    name: "Neural Geometry Lab",
+    field: "Machine learning / representation geometry",
+    track: "ai-data",
+    question: "After zero training error, does neural-collapse geometry keep improving—and track unseen-writer accuracy?",
+    evidence: "30 frozen MLP runs, three stress conditions, and an official writer-disjoint digit split",
+    finding:
+      "Two of four gates passed; noisy training had slightly better median NC2 but much worse accuracy and NC1.",
+    boundary:
+      "One small MLP and dataset; seeds quantify algorithmic sensitivity, and no single collapse coordinate certifies generalization.",
+    article: "/posts/neural-geometry-lab-collapse",
+    tool: "https://lindgreendavid.github.io/neural-geometry-lab/",
+  },
+  {
     slug: "fairshift",
     name: "Fairshift Lab",
     field: "Responsible AI",
