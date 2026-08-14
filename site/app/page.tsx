@@ -25,6 +25,8 @@ const teasers: Record<string, string> = {
     "A preregistered P3b endpoint crosses from a reference protocol into an independent public EEG dataset, with every participant and sensitivity analysis inspectable.",
   "data-contract-observatory-revision-evidence":
     "A real ECB feed, a frozen consumer contract, and three clearly separated evidence layers for failures, replay, and future revisions.",
+  "reaction-integrity-lab-cleaning-leakage":
+    "An exact audit of a 691,142-reaction benchmark separates verified split integrity from four published model scores that still await reproduction.",
 };
 
 export default function Home() {
