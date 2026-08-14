@@ -31,6 +31,10 @@ const teasers: Record<string, string> = {
     "Three root-finding methods expose what their stopping rules certify—and why a fast local method can still cycle or lose its slope.",
   "jovian-resonance-lab-laplace-angle":
     "A second frozen decade turns an exploratory numerical clue into a passed convergence test while keeping JUP365 prediction separate from observation.",
+  "snowflake-evolution-lab-individuality":
+    "Five experimental-evolution lineages and a genome-duplication intervention separate a strong repeated association from a still-unmeasured causal threshold.",
+  "neural-geometry-lab-collapse":
+    "Thirty frozen neural-network runs test four neural-collapse diagnostics and show why one elegant geometry coordinate cannot certify generalization.",
 };
 
 export default function Home() {

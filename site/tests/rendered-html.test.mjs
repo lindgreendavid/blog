@@ -108,6 +108,15 @@ const posts = [
     report:
       "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md",
   },
+  {
+    route: "/posts/neural-geometry-lab-collapse",
+    title: "A neural network&#x27;s geometry kept changing",
+    project: "Neural Geometry Lab",
+    tool: "https://lindgreendavid.github.io/neural-geometry-lab/",
+    repo: "https://github.com/lindgreendavid/neural-geometry-lab",
+    report:
+      "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -175,6 +184,7 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/09-mathlab-wasm.md", root), "utf8"),
     readFile(new URL("../content/posts/10-jovian-resonance-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/11-snowflake-evolution-lab.md", root), "utf8"),
+    readFile(new URL("../content/posts/12-neural-geometry-lab.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
