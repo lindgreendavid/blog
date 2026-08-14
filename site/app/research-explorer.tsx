@@ -119,6 +119,20 @@ const projects: Project[] = [
     tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
   },
   {
+    slug: "jovian-resonance",
+    name: "Jovian Resonance Lab",
+    field: "Planetary dynamics / celestial mechanics",
+    track: "science",
+    question: "Which minimum dynamical ingredients reproduce the Galilean-moon Laplace angle?",
+    evidence: "10,957 daily JUP365 epochs and four preregistered dynamical ablations",
+    finding:
+      "G4J2 beat all frozen alternatives; exploratory step refinement reached 0.464° RMSE against JUP365.",
+    boundary:
+      "The nominal trace was not numerically converged, JUP365 is a fitted ephemeris, and no formation, ocean, or long-term-stability claim follows.",
+    article: "/posts/jovian-resonance-lab-laplace-angle",
+    tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
+  },
+  {
     slug: "reaction-integrity",
     name: "Reaction Integrity Lab",
     field: "Computational chemistry / ML",

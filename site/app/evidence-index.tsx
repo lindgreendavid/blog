@@ -212,6 +212,46 @@ const evidence: EvidenceRecord[] = [
     },
   },
   {
+    slug: "jovian-resonance",
+    name: "Jovian Resonance Lab",
+    field: "Planetary dynamics / celestial mechanics",
+    evidenceType: "Preregistered numerical model ablation against a fitted JPL ephemeris",
+    assessment:
+      "Strong for the frozen comparative ordering; exploratory for the finest-step absolute fit and uninformative about formation or billion-year stability.",
+    sources: [
+      {
+        relation: "Primary",
+        label: "Paita, Celletti & Pucacco (2018), Laplace resonance models",
+        url: "https://doi.org/10.1051/0004-6361/201832856",
+      },
+      {
+        relation: "Supports",
+        label: "JPL planetary-satellite ephemerides",
+        url: "https://ssd.jpl.nasa.gov/sats/ephem/",
+      },
+      {
+        relation: "Limits",
+        label: "Lainey et al. (2009), secular evolution from astrometry",
+        url: "https://doi.org/10.1038/nature08108",
+      },
+      {
+        relation: "Limits",
+        label: "Lari, Saillenfest & Fenucci (2020), long-term tidal evolution",
+        url: "https://doi.org/10.1051/0004-6361/202037445",
+      },
+    ],
+    dataset: {
+      label: "Normalized JUP365 reference registry",
+      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/data/jup365-reference-v0.1.json",
+    },
+    report:
+      "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v0.1.md",
+    artifact: {
+      label: "Machine-readable model-adequacy report",
+      url: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/reports/v0.1-model-adequacy.json",
+    },
+  },
+  {
     slug: "contracts",
     name: "Data Contract Observatory",
     field: "Data observability",
