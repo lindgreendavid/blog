@@ -1,6 +1,6 @@
 ---
 slug: mathlab-wasm-root-finding
-title: "When the fast step looks unsafe, the bracket takes over."
+title: "When a tiny residual hides the wrong answer."
 project: Mathlab WASM
 field: Numerical Analysis / Scientific Computing
 date: 2026-08-14
@@ -9,12 +9,42 @@ tool: https://lindgreendavid.github.io/mathlab-wasm/
 report: https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md
 ---
 
-**Current research status:** product v0.2.0 adds a prespecified Brent–Dekker-style safeguarded
-root finder to the unchanged seven-case v0.1 foundation. All five new qualitative expectations
-pass. These are selected deterministic demonstrations of established numerical behavior—not a
-representative solver benchmark, production-library reproduction, or claim of novel mathematics.
+**Current research status:** stable product v1.0.0 adds a prespecified residual, forward-error, and
+conditioning diagnostic to the unchanged v0.1 and v0.2 root-finding studies. All five v1.0 cases and
+all cross-case checks pass. These are selected deterministic demonstrations of established
+numerical behavior—not a prevalence estimate, rigorous root enclosure, production-library
+certification, or claim of novel mathematics.
 
 ## The question
+
+For a fixed candidate root, when does a small absolute residual `|f(x̂)|` track the actual forward
+error `|x̂-r|`—and when can equation scaling or root multiplicity make that residual misleading if
+it is read alone?
+
+The v1.0 protocol fixed five equation–candidate pairs before implementation. Its perturbation model
+is explicit: the absolute condition number `1/|f′(r)|` describes sensitivity to an additive change
+in the function value near a simple root. It is not scale free, and it is not reported at a
+multiple root where `f′(r)=0`.
+
+## What v1.0 found
+
+Three linear equations share the same root and candidate, so their computed forward error is the
+same—approximately `10⁻⁶`. Multiplying the equation by `10⁻⁸`, `1`, and `10⁸` nevertheless changes
+the raw residual from approximately `10⁻¹⁴` to `10⁻⁶` to `10²`. The condition number changes in the
+opposite direction, and the frozen first-order estimate recovers the same forward error in all
+three cases.
+
+Near the selected simple root of `x³-x-2`, the derivative-based estimate agrees with the known
+forward error within the prespecified relative tolerance. At the repeated root of `(x-1)²`, a
+candidate about `10⁻⁵` away produces a residual near `10⁻¹⁰`; because the derivative vanishes at the
+root, the simple-root condition and estimate are recorded as unavailable rather than forced into a
+misleading finite number.
+
+Open the [interactive Residual Microscope](https://lindgreendavid.github.io/mathlab-wasm/#microscope)
+and switch between the five frozen cases. Every displayed scientific value comes from the committed
+Rust report; JavaScript changes the view, not the result.
+
+## Earlier study: when the fast step looks unsafe
 
 A fast numerical step can be attractive and still be unsafe. Can a hybrid use secant or
 inverse-quadratic interpolation when the proposal is defensible, fall back to bisection when it is
@@ -97,7 +127,11 @@ certificate.
 
 ## Learn more
 
+- [Frozen v1.0 protocol](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v1.0.md) — definitions, perturbation model, cases, and acceptance criteria fixed before implementation.
+- [Machine-readable v1.0 report](https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v1.0-conditioning.json) — computed values and case/global checks.
+- [Mathlab WASM v1.0.0 release](https://github.com/lindgreendavid/mathlab-wasm/releases/tag/v1.0.0) — stable product release and evidence boundary.
 - [NIST DLMF §3.8, Nonlinear Equations](https://dlmf.nist.gov/3.8) — authoritative definitions and bounded convergence statements.
+- [Higham (2002), Accuracy and Stability of Numerical Algorithms](https://doi.org/10.1137/1.9780898718027) — forward/backward error, conditioning, and stability framework.
 - [Brent (1971)](https://doi.org/10.1093/comjnl/14.4.422) — the primary guaranteed-convergence construction combining interpolation and bracketing.
 - [Frozen v0.2 protocol](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v0.2.md) — scenarios, acceptance criteria, and dated amendment.
 - [Machine-readable v0.2 report](https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.2-safeguarded-root-finding.json) — traces, brackets, step kinds, and acceptance checks.

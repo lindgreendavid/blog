@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-14 — Mathlab WASM v1.0.0
+
+- Expanded the Mathlab article, explorer, and evidence index with the frozen residual, forward-error,
+  and conditioning diagnostic.
+- Added the v1.0 report, release, Higham source, perturbation-model boundary, and interactive
+  Residual Microscope link while preserving the earlier solver studies.
+
 ## Unreleased
 
 - Promoted the Jovian Resonance Lab article, explorer, and evidence record to v1.0.0 with the
