@@ -27,6 +27,8 @@ const teasers: Record<string, string> = {
     "A real ECB feed, a frozen consumer contract, and three clearly separated evidence layers for failures, replay, and future revisions.",
   "reaction-integrity-lab-cleaning-leakage":
     "An exact audit of a 691,142-reaction benchmark separates verified split integrity from four published model scores that still await reproduction.",
+  "mathlab-wasm-root-finding":
+    "Three root-finding methods expose what their stopping rules certify—and why a fast local method can still cycle or lose its slope.",
 };
 
 export default function Home() {

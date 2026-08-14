@@ -275,6 +275,41 @@ const evidence: EvidenceRecord[] = [
       url: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v1-similarity-audit.json",
     },
   },
+  {
+    slug: "mathlab-wasm",
+    name: "Mathlab WASM",
+    field: "Numerical analysis / scientific computing",
+    evidenceType: "Deterministic known-result verification with frozen adversarial cases",
+    assessment:
+      "Strong for the seven declared method–scenario runs and their exact traces; deliberately uninformative about solver prevalence or real-workload performance.",
+    sources: [
+      {
+        relation: "Primary",
+        label: "NIST DLMF §3.8, Nonlinear Equations",
+        url: "https://dlmf.nist.gov/3.8",
+      },
+      {
+        relation: "Supports",
+        label: "Brent (1971), safeguarded zero finding",
+        url: "https://doi.org/10.1093/comjnl/14.4.422",
+      },
+      {
+        relation: "Limits",
+        label: "IEEE 754-2019 floating-point arithmetic",
+        url: "https://doi.org/10.1109/IEEESTD.2019.8766229",
+      },
+    ],
+    dataset: {
+      label: "Frozen seven-case v0.1 protocol",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol.md",
+    },
+    report:
+      "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
+    artifact: {
+      label: "Machine-readable root-finding traces",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.1-root-finding.json",
+    },
+  },
 ];
 
 export default function EvidenceIndex() {
