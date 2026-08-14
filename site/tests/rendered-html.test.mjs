@@ -84,7 +84,7 @@ const posts = [
   },
   {
     route: "/posts/mathlab-wasm-root-finding",
-    title: "When the fast step looks unsafe",
+    title: "When a tiny residual hides the wrong answer",
     project: "Mathlab WASM",
     tool: "https://lindgreendavid.github.io/mathlab-wasm/",
     repo: "https://github.com/lindgreendavid/mathlab-wasm",

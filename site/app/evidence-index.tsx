@@ -319,9 +319,9 @@ const evidence: EvidenceRecord[] = [
     slug: "mathlab-wasm",
     name: "Mathlab WASM",
     field: "Numerical analysis / scientific computing",
-    evidenceType: "Prespecified deterministic verification with bracket and safeguard traces",
+    evidenceType: "Prespecified deterministic verification with solver traces and conditioning diagnostics",
     assessment:
-      "Strong for twelve versioned method–scenario runs and the declared bracket invariants; deliberately uninformative about solver prevalence or real-workload performance.",
+      "Strong for seventeen versioned cases, declared bracket invariants, and the fixed additive-perturbation diagnostic; deliberately uninformative about prevalence or real-workload performance.",
     sources: [
       {
         relation: "Primary",
@@ -334,20 +334,25 @@ const evidence: EvidenceRecord[] = [
         url: "https://doi.org/10.1093/comjnl/14.4.422",
       },
       {
+        relation: "Framework",
+        label: "Higham (2002), accuracy, stability, and conditioning",
+        url: "https://doi.org/10.1137/1.9780898718027",
+      },
+      {
         relation: "Limits",
         label: "IEEE 754-2019 floating-point arithmetic",
         url: "https://doi.org/10.1109/IEEESTD.2019.8766229",
       },
     ],
     dataset: {
-      label: "Frozen five-case v0.2 safeguarded protocol",
-      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v0.2.md",
+      label: "Frozen five-case v1.0 conditioning protocol",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v1.0.md",
     },
     report:
       "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
     artifact: {
-      label: "Machine-readable v0.2 safeguarded traces",
-      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.2-safeguarded-root-finding.json",
+      label: "Machine-readable v1.0 conditioning report",
+      url: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v1.0-conditioning.json",
     },
   },
 ];

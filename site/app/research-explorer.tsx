@@ -152,12 +152,12 @@ const projects: Project[] = [
     name: "Mathlab WASM",
     field: "Numerical analysis / scientific computing",
     track: "ai-data",
-    question: "Which root-finding guarantees and failures remain visible under shared numerical rules?",
-    evidence: "Twelve versioned Rust/WASM runs, including five prespecified safeguarded cases",
+    question: "When does a small residual track root error—and when does conditioning break that intuition?",
+    evidence: "Seventeen versioned Rust/WASM cases, including five prespecified v1.0 diagnostics",
     finding:
-      "All v0.2 outcomes pass; the skewed case exposes secant, inverse-quadratic, and bisection moves while retaining its bracket.",
+      "Equal forward error coexists with residuals spanning 16 orders of magnitude; the repeated-root simple-root diagnostic is correctly unavailable.",
     boundary:
-      "Selected educational suites, not a representative workload sample, universal solver ranking, or production-library equivalence test.",
+      "Selected educational cases under an explicit additive perturbation model, not prevalence, a rigorous enclosure, or a universal stopping rule.",
     article: "/posts/mathlab-wasm-root-finding",
     tool: "https://lindgreendavid.github.io/mathlab-wasm/",
   },
