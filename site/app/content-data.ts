@@ -371,14 +371,16 @@ prospective runs, retrospective prefixes, and synthetic cases in separate counte
   },
   {
     slug: "reaction-integrity-lab-cleaning-leakage",
-    title: "The same reaction benchmark scored 47% or 24%. The dataset definition changed.",
+    title: "The same reaction benchmark scored 68% or 36%. The dataset definition changed.",
     project: "Reaction Integrity Lab",
     field: "Computational Chemistry / Machine Learning",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/reaction-integrity-lab",
     tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
     report: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
-    body: `**Current research status:** source, provenance, published-log, and released-data split audits are complete. Independent model-score reproduction remains pending, so every accuracy below is a published reference value—not a result we claim to have reproduced.
+    body: `**Current research status:** source, provenance, published-log, released-data split, and all four
+frequency-baseline reproductions are complete. Neural-model reproduction remains pending. Baseline
+values below are local reproductions; model accuracies remain published reference values.
 
 ## The question
 
@@ -395,10 +397,11 @@ versus reaction-string role assignment, and deleting rare conditions versus mapp
 “other” class. The paper reports top-3 exact-match accuracy for both a frequency baseline and a
 neural model.
 
-Before training any model, we downloaded the official version-4 condition split and verified both
-files against their published MD5 checksums. We then audited the released rows, declared input keys,
-and full condition records. This is a transparent known-result reproduction: the target values were
-known when the protocol was written, and the frozen ±1 percentage-point rule is a verification
+Before training any model, we downloaded the official version-4 condition split and complete
+version-3 four-variant supplement, verifying every artifact against its published MD5 checksum. We
+then audited the released rows, declared input keys, full condition records, and the authors'
+frequency-informed baseline. This is a transparent known-result reproduction: the target values
+were known when the protocol was written, and the frozen ±1 percentage-point rule is a verification
 criterion, not a preregistration claim.
 
 ## What we found so far
@@ -414,17 +417,22 @@ dataset-specific regularities. The 65,445 test rows contain 65,350 unique exact 
 test inputs recur with different records. Empty fixed-width component slots are structural padding,
 not generic chemical-data errors.
 
-The published top-3 reference values are 31% versus 44% for trusted labels with rare values mapped
-to “other”; 33% versus 47% for trusted labels with rare values deleted; 4% versus 21% for reaction
-strings with rare values mapped; and 5% versus 24% for reaction strings with rare values deleted.
-Those contrasts are the hypotheses to reproduce. They are not yet independent findings of this lab.
+The local top-3 complete-condition baselines are 51.57%, 52.22%, 19.55%, and 20.24%. Every cell is
+within 0.46 percentage points of the final paper's rounded 52%, 52%, 20%, and 20%, satisfying the
+prespecified tolerance. The corresponding published neural-model values are 67%, 68%, 35%, and
+36%; those model cells are not yet independently reproduced.
+
+This direct paper audit also corrected an important source discrepancy. The upstream repository
+README still shows older 31/44, 33/47, 4/21, and 5/24 baseline/model pairs, while the final
+peer-reviewed Table 3 reports the values above. The protocol records when and why the targets were
+corrected, before any local model inspection.
 
 ## Try it yourself
 
 The [interactive accuracy-inflation microscope](https://lindgreendavid.github.io/reaction-integrity-lab/)
-lets you cross the two dataset decisions, inspect all four published cells, and walk through the
-cleaning pipeline one boundary at a time. It also keeps completed evidence visually separate from
-the model runs that remain open.
+lets you cross the two dataset decisions, compare each reproduced baseline with its published model
+cell, and walk through the cleaning pipeline one boundary at a time. It keeps completed evidence
+visually separate from the model runs that remain open.
 
 ## Learn more
 
@@ -432,6 +440,7 @@ the model runs that remain open.
 - [ORDerly benchmark v4](https://doi.org/10.6084/m9.figshare.23298467.v4) — the versioned CC BY 4.0 files audited here.
 - [Schwaller et al. (2021)](https://doi.org/10.1038/s42256-021-00338-1) — evidence that reaction benchmarks can contain structural bias.
 - [Guo et al. (2025)](https://doi.org/10.1021/acscentsci.5c00055) — evidence that more realistic chemistry splits can be harder than ordinary reaction splits.
-- [Machine-readable split audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json) — row counts, checksums, exact collisions, and stated boundaries.`,
+- [Machine-readable split audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json) — row counts, checksums, exact collisions, and stated boundaries.
+- [Machine-readable baseline reproduction](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.2-baselines.json) — all four local cells, row counts, top combinations, and deviations from Table 3.`,
   }
 ];

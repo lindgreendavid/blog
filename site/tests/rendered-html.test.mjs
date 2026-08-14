@@ -75,7 +75,7 @@ const posts = [
   },
   {
     route: "/posts/reaction-integrity-lab-cleaning-leakage",
-    title: "The same reaction benchmark scored 47% or 24%",
+    title: "The same reaction benchmark scored 68% or 36%",
     project: "Reaction Integrity Lab",
     tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
     repo: "https://github.com/lindgreendavid/reaction-integrity-lab",

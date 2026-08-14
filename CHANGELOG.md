@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-- Added Reaction Integrity Lab across the article index, interactive research explorer, and
-  academic evidence index, with published model scores clearly separated from the completed
-  checksum and released-split audit.
+- Established Reaction Integrity Lab v0.2.0 across the article, interactive research explorer, and
+  academic evidence index: all four frequency baselines now reproduce within 0.46 percentage
+  points, while neural-model scores remain clearly labelled as published references.
 - Corrected the portfolio-wide methods statement so known-result reproductions are not described
   as blinded or preregistered studies.
 - Added an interactive academic Evidence Index linking each project to its primary, supporting,
