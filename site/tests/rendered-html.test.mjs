@@ -106,7 +106,7 @@ const posts = [
     tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
     repo: "https://github.com/lindgreendavid/snowflake-evolution-lab",
     report:
-      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v0.1.md",
+      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md",
   },
 ];
 

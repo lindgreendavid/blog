@@ -6,13 +6,13 @@ field: Experimental Evolution / Multicellularity
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/snowflake-evolution-lab
 tool: https://lindgreendavid.github.io/snowflake-evolution-lab/
-report: https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v0.1.md
+report: https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md
 ---
 
-**Current research status:** product v0.1.0 is a protocol-frozen reanalysis of published MuLTEE
-figure-source data. It reproduces a directional relationship already motivated by the primary
-paper; it is not an independent wet-lab replication or a claim to have rediscovered
-multicellularity.
+**Current research status:** stable product v1.0.0 preserves the frozen v0.1 morphology study and
+adds a source-compatible, protocol-frozen evaluation of engineered genome duplication and its
+longitudinal sufficiency. Both studies reanalyse source-author data; neither is an independent
+wet-lab replication or a claim to have rediscovered multicellularity.
 
 ## The question behind one of evolution's largest transitions
 
@@ -83,44 +83,67 @@ accumulated mutations, correlated time trends, and changes in the selection prot
 temporal interpretation. The strong association is compatible with the source paper's mechanical
 experiments, but the summary trajectories alone cannot prove that elongation caused the size rise.
 
-## Three newer pieces of the story
+## The v1.0 test: genome duplication helps, but is not enough
+
+Tong and colleagues supplied two complementary forms of evidence. First, they engineered diploid
+and tetraploid versions of PA and PM snowflake-yeast backgrounds. The v1.0 analysis aggregates the
+39,329 segmented cells and 17,227 24-hour clusters within each of four biological replicate strains
+per group before inference. Tetraploidy increased mean 24-hour cluster radius from 20.157 to 27.299
+µm in PA and from 25.890 to 42.897 µm in PM. Each exact one-sided replicate-level permutation test
+has probability `1/70 = 0.0143`; both remain below 0.05 after Holm correction (`0.0286`). Cell
+volume and aspect ratio increased in the same direction as secondary outcomes.
+
+Second, the public longitudinal tables follow PA1–PA5 and PM1–PM5 through transfer 1,000. Every
+evolved population-time G1 peak is at least 3.489N, yet the treatments diverge sharply in size. At
+transfer 1,000, mean PA radius is 400.074 µm and mean PM radius is 45.160 µm—a ratio of 8.859. All
+five PA lines exceed 300 µm, while the largest PM line is 53.226 µm. Genome duplication therefore
+provides an immediate size-related advantage but is not sufficient for the later macroscopic
+phenotype in these treatments.
+
+The intervention and the longitudinal comparison answer different questions. The first supports
+an immediate effect in engineered strains. The second rejects a simple sufficiency explanation;
+it does not identify which later change completed the transition. The protocol was frozen after a
+source-compatibility audit and before the v1 analysis was implemented, so it is a prospective
+implementation contract rather than a blinded preregistration.
+
+## Two further pieces of the story
 
 Later MuLTEE work makes the transition more interesting rather than more linear.
 
-First, genome duplication arose early. Diploid ancestors evolved into tetraploids in both
-mixotrophic and anaerobic populations, but only the anaerobic populations later became
-macroscopic. Genome duplication can therefore provide larger and longer cells without being, by
-itself, a sufficient explanation for macroscopic size.
-
-Second, a small-cluster lineage and a large-cluster lineage evolved from one ancestor and remained
+First, a small-cluster lineage and a large-cluster lineage evolved from one ancestor and remained
 together for roughly 4,300 generations. Their coexistence was maintained by a trade-off between
 rapid growth and survival during settling, mediated by dissolved oxygen. A new level of biological
 individuality created room for ecological diversification.
 
-Third, macroscopic clusters appear able to move nutrients without a circulatory system. Their own
+Second, macroscopic clusters appear able to move nutrients without a circulatory system. Their own
 metabolism creates density differences that drive fluid through the cluster. Above a size
 threshold, those flows can relieve limits expected from diffusion alone. Larger size can therefore
 create a physical process that makes still larger size possible.
 
 These findings motivate a future coupled-threshold hypothesis: **genomic size amplification and an
 entangling cellular geometry may need to coincide before robust macroscopic bodies emerge.** This
-is a testable proposal, not a v0.1 result. A future protocol must link genomic and morphological
-timing before inspecting the combined outcome.
+is a testable proposal, not a measured v1.0 threshold. The selected public tables do not contain a
+joined, quantitative time-resolved entanglement endpoint. A future protocol must acquire such an
+endpoint before inspecting the combined outcome.
 
 ## Try it yourself
 
 The [interactive Snowflake Evolution Lab](https://lindgreendavid.github.io/snowflake-evolution-lab/)
 lets you replay each population from transfer 0 to 600, switch between the published cluster-size
-and cell-shape trajectories, and compare all metabolic treatments at day 600. The animated cluster
-is deliberately labelled as an explanatory geometry model. It helps you reason about packing and
-entanglement, but it is not microscopy, a fitted biological simulator, or an unobserved ancestral
-reconstruction.
+and cell-shape trajectories, and compare all metabolic treatments at day 600. The new genome
+explorer adds the engineered 2N/4N contrast, all 16 chromosome copy numbers, G1 peak and morphology
+through transfer 1,000, and the PA/PM sufficiency comparison. The animated cluster is deliberately
+labelled as an explanatory geometry model. It helps you reason about packing and entanglement, but
+it is not microscopy, a fitted biological simulator, or an unobserved ancestral reconstruction.
 
 ## Stop at the boundary
 
 - These are five selected laboratory populations, not a random sample of evolutionary histories.
 - The reanalysis uses the original authors' published means and is not an independent replication.
 - Association through time does not isolate elongation from selection, mutations, or other changes.
+- Four engineered strains per group support a narrow intervention estimate, not a population-wide
+  prevalence claim.
+- The available joined tables do not measure a time-resolved entanglement endpoint.
 - Snowflake yeast are undifferentiated clonal clusters, not miniature animals or plants.
 - Nothing here shows that historical multicellular lineages followed the same route.
 
@@ -132,4 +155,6 @@ reconstruction.
 - [Metabolically driven flows](https://pmc.ncbi.nlm.nih.gov/articles/PMC11213004/) — emergent nutrient transport in macroscopic clusters.
 - [Frozen v0.1 protocol](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/protocol-v0.1.md) — endpoints, exclusions, sensitivities, and boundaries.
 - [Machine-readable result](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v0.1.json) — all five coefficients and exploratory timing outputs.
-- [v0.1.0 release](https://github.com/lindgreendavid/snowflake-evolution-lab/releases/tag/v0.1.0) — exact public research-product identity.
+- [Frozen v1.0 protocol](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/protocol-v1.0.md) — engineered intervention, longitudinal sufficiency gate, and evidence boundaries.
+- [Machine-readable v1.0 result](https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v1.0.json) — replicate-level effects, uncertainty, chromosome burdens, and sufficiency test.
+- [v1.0.0 release](https://github.com/lindgreendavid/snowflake-evolution-lab/releases/tag/v1.0.0) — stable public research-product identity; historical v0.1 artifacts remain unchanged.

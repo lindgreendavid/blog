@@ -359,9 +359,9 @@ const evidence: EvidenceRecord[] = [
     slug: "snowflake-evolution",
     name: "Snowflake Evolution Lab",
     field: "Experimental evolution / multicellularity",
-    evidenceType: "Protocol-frozen reanalysis of five published longitudinal population summaries",
+    evidenceType: "Protocol-frozen intervention and longitudinal sufficiency reanalysis",
     assessment:
-      "Strong for directional concordance in the five anaerobic MuLTEE lines; insufficient for a causal or universal transition threshold.",
+      "Replicate-level evidence that engineered tetraploidy increases radius in two backgrounds, plus longitudinal evidence that it is not sufficient for macroscopic size.",
     sources: [
       {
         relation: "Primary",
@@ -374,8 +374,8 @@ const evidence: EvidenceRecord[] = [
         url: "https://doi.org/10.1038/s41559-024-02367-y",
       },
       {
-        relation: "Limits",
-        label: "Genome duplication is not sufficient for macroscopic size",
+        relation: "Primary",
+        label: "Tong et al. (2025), genome duplication in MuLTEE",
         url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12256070/",
       },
       {
@@ -385,14 +385,14 @@ const evidence: EvidenceRecord[] = [
       },
     ],
     dataset: {
-      label: "Bozdag et al. public figure-source workbook",
-      url: "https://github.com/ozanbozdag/De_novo_evolution_of_macroscopic_multicellularity",
+      label: "Tong et al. public genome-duplication source tables",
+      url: "https://github.com/ktong25/WGD_in_MuLTEE",
     },
     report:
-      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v0.1.md",
+      "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md",
     artifact: {
-      label: "Machine-readable v0.1 result",
-      url: "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v0.1.json",
+      label: "Machine-readable v1.0 result",
+      url: "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/reports/results-v1.0.json",
     },
   },
 ];

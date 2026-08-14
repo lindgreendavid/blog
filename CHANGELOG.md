@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-14 — Snowflake Evolution Lab v1.0.0
+
+- Expanded the article with the frozen engineered-tetraploidy intervention, exact replicate-level
+  inference, and longitudinal PA/PM sufficiency test through transfer 1,000.
+- Updated the research explorer and evidence index to the stable v1.0 result, source repository,
+  report, artifact, and explicit absence of a joined time-resolved entanglement endpoint.
+- Preserved the historical v0.1 morphology result and its frozen artifacts.
+
 ## 2026-08-14 — Snowflake Evolution Lab v0.1.0
 
 - Added a protocol-frozen experimental-evolution article with five lineage-level trajectories,
