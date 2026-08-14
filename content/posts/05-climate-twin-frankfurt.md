@@ -21,7 +21,7 @@ Germany's national weather service, DWD, operates a real program pairing urban c
 
 ## What we found
 
-The gap is real but modest: **+0.455°C** on average (95% confidence interval 0.432 to 0.478 — the interval excludes zero, so we can say with confidence Westend is measurably warmer, not just "probably"). But the honest second half of the finding matters just as much: over this 40-year record, there is **no statistically significant trend** in that gap (p = 0.118). We don't get to say the urban heat island is visibly worsening at this station pair over this period — the data doesn't support that, so we don't claim it.
+The estimated gap is modest: **+0.455°C** on average (30-day block-bootstrap 95% interval 0.432 to 0.478). That supports a warmer average at Westend relative to this specific airport reference, conditional on the two station histories and the chosen block method—not a city-wide causal urban-heat-island estimate. The preregistered classical OLS trend is not statistically distinguishable from zero (p = 0.118). Because its annual residuals are serially correlated, a post-release three-lag Newey–West sensitivity is preferable for uncertainty: 95% interval −0.0079 to +0.0016°C/year, p = 0.186. The conclusion remains "no linear trend detected," not "no trend exists."
 
 We also built something concrete out of the two stations' real coordinates: an interactive map computing the true straight-line distance (15.42 km) and bearing between them directly from their published locations — no map imagery library, just real trigonometry on real numbers.
 

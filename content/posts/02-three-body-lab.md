@@ -13,7 +13,7 @@ report: https://github.com/lindgreendavid/three-body-lab/blob/main/docs/research
 
 ## The question
 
-Put three bodies in mutual gravitational orbit and there's no general formula that predicts where they'll be at any future time — this was proven by Poincaré in 1890, and it's not what this project is about. The actually interesting question is narrower and answerable: within a specific numerical method, where does the *chaos* actually show up? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region, the way textbook intuition suggests they should?
+The general three-body problem is non-integrable in the classical sense studied by Bruns and Poincaré, although Sundman later constructed a globally convergent series for nonzero angular momentum that is not computationally practical. This project asks a narrower question: within a specific numerical method, where does finite-window divergence appear? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region?
 
 ## What we actually did
 
@@ -21,9 +21,9 @@ We built a validated integrator (checked against all three known special solutio
 
 ## What we found
 
-The headline result surprised us, and we reported it exactly as measured rather than smoothing it into a cleaner story: **every single one of the 42 tested cells came back "chaotic"** under our threshold — including the Lagrange and Euler configurations, which are supposed to be "special." That's not a bug. It's a real fact from celestial mechanics: **Routh's 1875 stability criterion** says the equal-mass Lagrange triangle is *analytically unstable* — stability requires one mass to dominate the other two by roughly 25-to-1, nowhere near the equal masses we tested. Our numbers didn't just agree with a 150-year-old theorem — they *measured* it happening.
+The headline result surprised us, and we reported it exactly as measured: **every one of the 42 tested cells crossed our preregistered finite-window "chaotic" threshold** — including the Lagrange and Euler configurations. Classical theory explains why equal masses are not a stable Lagrange triangle: the Gascheau–Routh criterion is 27(m₁m₂+m₂m₃+m₃m₁) < (m₁+m₂+m₃)². In our exact sweep (m₁,m₂,m₃)=(1,r,1), that requires r > 25 + 18√2 ≈ 50.456, not the often-quoted 24.96:1 restricted-problem ratio. Our tested range stopped at r=3, entirely within the linearly unstable regime. The numerical result is consistent with that theorem; a short-window estimator with unconstrained perturbations is not an independent proof of it.
 
-The one solution that *is* proven stable in the literature — the figure-eight orbit — showed the smallest divergence of all six configurations tested, exactly as theory predicts, even though it too crossed our (deliberately strict) "chaotic" cutoff within our short observation window.
+The equal-mass figure-eight orbit, which Roberts proved **linearly** stable, showed the smallest divergence of all six configurations. It still crossed our deliberately strict cutoff, demonstrating that this finite-window classification is not the same object as rigorous linear or long-term stability.
 
 ## Try it yourself
 
@@ -33,5 +33,6 @@ The [live simulator](https://three-body-lab-interactive.lindgreendavid.workers.d
 
 - Chenciner & Montgomery (2000), *A Remarkable Periodic Solution of the Three-Body Problem in the Case of Equal Masses*, Annals of Mathematics — the existence proof for the figure-eight orbit.
 - Roberts (2007), *Linear Stability Analysis of the Figure-Eight Orbit in the Three-Body Problem*, Ergodic Theory and Dynamical Systems — the rigorous proof it's stable.
-- Routh (1875), *On Laplace's Three Particles, with a Supplement on the Stability of Steady Motion*, Proc. London Mathematical Society — the 150-year-old result this project's data corroborates.
+- Gascheau (1843) and Routh (1875) established the equilateral solution's mass criterion; Routh's paper is *On Laplace's Three Particles, with a Supplement on the Stability of Steady Motion*.
+- Sundman (1912) constructed the convergent-series solution that limits simplistic claims that the problem has "no formula."
 - The [source code](https://github.com/lindgreendavid/three-body-lab) is MIT-licensed; the registry regenerates byte-for-byte deterministically if you want to check our work yourself.

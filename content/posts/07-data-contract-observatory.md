@@ -40,8 +40,9 @@ review signals. The current live response inspected 385 recent observations thro
 
 Those numbers do **not** establish long-run reliability. The fault cases are synthetic. The replay
 uses one present-day historical vintage, so it cannot reveal revisions that occurred between past
-publications. At release there is exactly one real prospective evidence run. One run cannot support
-a detection-rate, delay, or false-alarm claim about production history.
+publications. At release there was one real prospective evidence run; the evidence branch now
+contains **two same-day runs** with an unchanged source hash and no detected revision. Two runs
+still cannot support a detection-rate, delay, or false-alarm claim about production history.
 
 ## Try it yourself
 

@@ -103,7 +103,7 @@ The [Robustness Lab](https://fairshift-lab.lindgreendavid.chatgpt.site/#robustne
 
 ## The question
 
-Put three bodies in mutual gravitational orbit and there's no general formula that predicts where they'll be at any future time — this was proven by Poincaré in 1890, and it's not what this project is about. The actually interesting question is narrower and answerable: within a specific numerical method, where does the *chaos* actually show up? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region, the way textbook intuition suggests they should?
+The general three-body problem is non-integrable in the classical sense studied by Bruns and Poincaré, although Sundman later constructed a globally convergent series for nonzero angular momentum that is not computationally practical. This project asks a narrower question: within a specific numerical method, where does finite-window divergence appear? And do the famous named solutions — the figure-eight orbit, the Lagrange equilateral triangle, the Euler collinear line — sit at that boundary, or well inside a stable region?
 
 ## What we actually did
 
@@ -111,9 +111,9 @@ We built a validated integrator (checked against all three known special solutio
 
 ## What we found
 
-The headline result surprised us, and we reported it exactly as measured rather than smoothing it into a cleaner story: **every single one of the 42 tested cells came back "chaotic"** under our threshold — including the Lagrange and Euler configurations, which are supposed to be "special." That's not a bug. It's a real fact from celestial mechanics: **Routh's 1875 stability criterion** says the equal-mass Lagrange triangle is *analytically unstable* — stability requires one mass to dominate the other two by roughly 25-to-1, nowhere near the equal masses we tested. Our numbers didn't just agree with a 150-year-old theorem — they *measured* it happening.
+The headline result surprised us, and we reported it exactly as measured: **every one of the 42 tested cells crossed our preregistered finite-window "chaotic" threshold** — including the Lagrange and Euler configurations. Classical theory explains why equal masses are not a stable Lagrange triangle: the Gascheau–Routh criterion is 27(m₁m₂+m₂m₃+m₃m₁) < (m₁+m₂+m₃)². In our exact sweep (m₁,m₂,m₃)=(1,r,1), that requires r > 25 + 18√2 ≈ 50.456, not the often-quoted 24.96:1 restricted-problem ratio. Our tested range stopped at r=3, entirely within the linearly unstable regime. The numerical result is consistent with that theorem; a short-window estimator with unconstrained perturbations is not an independent proof of it.
 
-The one solution that *is* proven stable in the literature — the figure-eight orbit — showed the smallest divergence of all six configurations tested, exactly as theory predicts, even though it too crossed our (deliberately strict) "chaotic" cutoff within our short observation window.
+The equal-mass figure-eight orbit, which Roberts proved **linearly** stable, showed the smallest divergence of all six configurations. It still crossed our deliberately strict cutoff, demonstrating that this finite-window classification is not the same object as rigorous linear or long-term stability.
 
 ## Try it yourself
 
@@ -123,7 +123,8 @@ The [live simulator](https://three-body-lab-interactive.lindgreendavid.workers.d
 
 - Chenciner & Montgomery (2000), *A Remarkable Periodic Solution of the Three-Body Problem in the Case of Equal Masses*, Annals of Mathematics — the existence proof for the figure-eight orbit.
 - Roberts (2007), *Linear Stability Analysis of the Figure-Eight Orbit in the Three-Body Problem*, Ergodic Theory and Dynamical Systems — the rigorous proof it's stable.
-- Routh (1875), *On Laplace's Three Particles, with a Supplement on the Stability of Steady Motion*, Proc. London Mathematical Society — the 150-year-old result this project's data corroborates.
+- Gascheau (1843) and Routh (1875) established the equilateral solution's mass criterion; Routh's paper is *On Laplace's Three Particles, with a Supplement on the Stability of Steady Motion*.
+- Sundman (1912) constructed the convergent-series solution that limits simplistic claims that the problem has "no formula."
 - The [source code](https://github.com/lindgreendavid/three-body-lab) is MIT-licensed; the registry regenerates byte-for-byte deterministically if you want to check our work yourself.`,
   },
   {
@@ -147,11 +148,13 @@ We downloaded the real CHIME/FRB Catalog 1 data (verified against the paper's ow
 
 ## What we found
 
-The width and bandwidth test replicated cleanly — strong evidence our pipeline actually works and can detect a real, published effect. The dispersion measure test **did not replicate**: our preregistered burst-level test found a highly significant difference (p ≈ 2×10⁻¹⁰), directly contradicting the paper's own "no significant difference."
+The width and bandwidth directions were recovered, which is a useful positive control but not proof that every dispersion-measure choice matches the paper. Our preregistered burst-level DM test differed from the paper's source-level conclusion (p ≈ 2×10⁻¹⁰).
 
 Rather than stopping there, we investigated *why*, as a disclosed, clearly-labeled follow-up (not part of the original preregistration). The answer: our 59-burst repeater sample was dominated by just two exceptionally prolific, nearby, low-dispersion repeating sources — they alone supplied 90% of the repeater bursts. When we reproduced the original paper's own method of using only each source's *first-detected* burst (reducing pseudo-replication from prolific repeaters), the discrepancy mostly, though not completely, resolved.
 
 This is what honest science communication is supposed to look like: not "the paper was wrong" and not "we replicated everything perfectly," but a specific, traceable, disclosed reason why two careful analyses of the same real data can disagree.
+
+Later CHIME/FRB evidence adds an important boundary: a 2023 source-level study of 25 newly discovered repeaters also found lower mean DM and extragalactic DM for repeaters, while stressing sensitivity and exposure effects. That supports a sample-dependent contrast, not the burst-level p-value by itself and not a settled claim that repeaters and apparent non-repeaters are distinct physical populations.
 
 ## Try it yourself
 
@@ -160,6 +163,7 @@ The [interactive comparison](https://frb-atlas-interactive.lindgreendavid.worker
 ## Learn more
 
 - CHIME/FRB Collaboration, Amiri et al. (2021), *The First CHIME/FRB Fast Radio Burst Catalog*, The Astrophysical Journal Supplement Series, 257, 59 — the paper this project tests.
+- CHIME/FRB Collaboration (2023), *CHIME/FRB Discovery of 25 Repeating Fast Radio Burst Sources*, The Astrophysical Journal 947, 83 — later source-level evidence and its selection-effect boundary.
 - The real catalog data is hosted by [VizieR](https://vizier.cds.unistra.fr), the standard astronomical catalog archive — the same source this project used.
 - The [source code](https://github.com/lindgreendavid/frb-atlas) is MIT-licensed and includes the fetch script that re-downloads and re-verifies the real data from scratch.`,
   },
@@ -184,9 +188,9 @@ We joined 387 real human proteins' curated disorder annotations from DisProt (a 
 
 ## What we found
 
-The overall signal is strong and unambiguous: residues inside curated disorder regions have a **43-point lower median pLDDT** than residues outside them (88.8 vs. 45.1), and that difference is essentially certain (p ≈ 0 on two independent tests). A simple "pLDDT below 70 means disordered" classifier catches most real disorder (76.5% recall) but is only a moderately reliable predictor overall (34.1% precision).
+The pooled-residue signal is large: residues inside curated disorder regions have a **43-point lower median pLDDT** than residues outside them (88.8 vs. 45.1). Because residues within a protein are not independent, we also checked the result at the protein level: across 372 proteins containing both groups, the median within-protein gap is 36.47 points (protein-cluster bootstrap 95% CI 34.29–40.07). A simple "pLDDT below 70 predicts a DisProt disorder annotation" classifier catches 76.5% of annotated disorder but has 34.1% precision; protein-cluster resampling gives wider, more realistic uncertainty without changing that moderate-performance interpretation.
 
-Here's where it gets specific and useful, not just a summary statistic: precision **collapses to 6.3%** — from a 31% baseline — specifically on regions flagged as capable of conditionally folding, and recall drops to just 35.1% on disorder evidenced by hydrogen-deuterium exchange mass spectrometry (a technique that detects partial, dynamic structure). Named individual proteins in our report show this concretely: some proteins get every single disordered residue wrong in one direction or the other. This is exactly the failure mode the original paper's theory predicts — regions that *can* fold, under the right conditions, confuse a tool that only sees one static snapshot.
+Here's where it gets specific: precision is 6.3% in the protein-level conditional-folding proxy subgroup, and recall is 35.1% for HDX-MS-supported annotations. Those are exploratory associations, not causal explanations: the groups also differ in protein composition, region length, overlapping evidence, and curation. They are compatible with conditional or residual structure affecting pLDDT, but this project does not isolate that mechanism. Named proteins in the report make the misclassifications inspectable rather than turning the subgroup pattern into a stronger claim than the design supports.
 
 ## Try it yourself
 
@@ -196,7 +200,7 @@ The [interactive threshold explorer](https://foldings-edge-interactive.lindgreen
 
 - Alderson, Pritišanac, Kolarić, Moses & Forman-Kay (2023), *Systematic Identification of Conditionally Folded Intrinsically Disordered Regions by AlphaFold2*, PNAS 120(44) — the paper motivating this project.
 - Jumper et al. (2021), *Highly Accurate Protein Structure Prediction with AlphaFold*, Nature — the original AlphaFold2 paper.
-- [DisProt](https://disprot.org) — the curated, expert-annotated intrinsic disorder database used as ground truth here, CC BY 4.0.
+- [DisProt](https://disprot.org) — the curated, expert-annotated intrinsic disorder database used as the reference label here, CC BY 4.0.
 - The [source code](https://github.com/lindgreendavid/foldings-edge) is MIT-licensed, including the fetch script that joins DisProt and AlphaFold DB from scratch.`,
   },
   {
@@ -220,7 +224,7 @@ Germany's national weather service, DWD, operates a real program pairing urban c
 
 ## What we found
 
-The gap is real but modest: **+0.455°C** on average (95% confidence interval 0.432 to 0.478 — the interval excludes zero, so we can say with confidence Westend is measurably warmer, not just "probably"). But the honest second half of the finding matters just as much: over this 40-year record, there is **no statistically significant trend** in that gap (p = 0.118). We don't get to say the urban heat island is visibly worsening at this station pair over this period — the data doesn't support that, so we don't claim it.
+The estimated gap is modest: **+0.455°C** on average (30-day block-bootstrap 95% interval 0.432 to 0.478). That supports a warmer average at Westend relative to this specific airport reference, conditional on the two station histories and the chosen block method—not a city-wide causal urban-heat-island estimate. The preregistered classical OLS trend is not statistically distinguishable from zero (p = 0.118). Because its annual residuals are serially correlated, a post-release three-lag Newey–West sensitivity is preferable for uncertainty: 95% interval −0.0079 to +0.0016°C/year, p = 0.186. The conclusion remains "no linear trend detected," not "no trend exists."
 
 We also built something concrete out of the two stations' real coordinates: an interactive map computing the true straight-line distance (15.42 km) and bearing between them directly from their published locations — no map imagery library, just real trigonometry on real numbers.
 
@@ -281,10 +285,12 @@ Changing the threshold within that declared range did not decide whether the eff
 
 This is strong evidence for a narrow result: the fixed posterior target enhancement survived a
 change of dataset, stimulus modality, and several paradigm details. We describe it as a
-**cross-paradigm robustness confirmation**, not a literal direct replication. ERP CORE used a
+**cross-paradigm robustness result**, not a literal direct replication. ERP CORE used a
 visual oddball task; the external dataset used an auditory task. The result does not prove that the
 two paradigms engage identical processes, identify one unique brain generator, read anyone's mind,
-or establish a diagnostic tool.
+or establish a diagnostic tool. Other task designs also show that P3b can track report and
+post-perceptual processing rather than awareness itself, so this result must not be reframed as
+a neural signature of consciousness.
 
 ## Try it yourself
 
@@ -299,6 +305,7 @@ pretend that a drawing is measured data.
 ## Learn more
 
 - Kappenman et al. (2021), *ERP CORE: An open resource for human event-related potential research*, NeuroImage 225, 117465 — the reference protocol that fixed the measurement.
+- Pitts et al. (2014), *Gamma band activity and the P3 reflect post-perceptual processes, not visual awareness*, Frontiers in Psychology 5:1078 — a boundary on interpreting P3b as awareness.
 - Delorme, *EEG data from an auditory oddball task*, OpenNeuro ds003061 version 1.1.0 — the independent public dataset.
 - Pernet et al. (2019), *EEG-BIDS, an extension to the brain imaging data structure for electroencephalography*, Scientific Data 6, 103 — the data-organization standard used by the dataset.
 - The [source code](https://github.com/lindgreendavid/neuro-signal-lab), [frozen protocol](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/protocol.md), and [machine-readable result](https://github.com/lindgreendavid/neuro-signal-lab/blob/main/results/summary.json) disclose the full path from public data to every number above.`,
@@ -343,8 +350,9 @@ review signals. The current live response inspected 385 recent observations thro
 
 Those numbers do **not** establish long-run reliability. The fault cases are synthetic. The replay
 uses one present-day historical vintage, so it cannot reveal revisions that occurred between past
-publications. At release there is exactly one real prospective evidence run. One run cannot support
-a detection-rate, delay, or false-alarm claim about production history.
+publications. At release there was one real prospective evidence run; the evidence branch now
+contains **two same-day runs** with an unchanged source hash and no detected revision. Two runs
+still cannot support a detection-rate, delay, or false-alarm claim about production history.
 
 ## Try it yourself
 
