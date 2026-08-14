@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Expanded Mathlab WASM to v0.2.0 with a prespecified safeguarded solver, bracket and step-kind
+  traces, five new frozen cases, and a transparent post-result amendment for platform-libm
+  last-bit reproducibility.
 - Added Mathlab WASM v0.1.0: a frozen seven-case Rust/WebAssembly verification of bisection,
   Newton, and secant convergence and failure modes, with an article, explorer entry, evidence
   record, and explicit non-representativeness boundary.

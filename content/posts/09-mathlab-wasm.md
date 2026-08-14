@@ -1,6 +1,6 @@
 ---
 slug: mathlab-wasm-root-finding
-title: "Newton found the root in four steps—and an exact two-cycle from another start."
+title: "When the fast step looks unsafe, the bracket takes over."
 project: Mathlab WASM
 field: Numerical Analysis / Scientific Computing
 date: 2026-08-14
@@ -9,72 +9,97 @@ tool: https://lindgreendavid.github.io/mathlab-wasm/
 report: https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md
 ---
 
-**Current research status:** product v0.1.0 freezes a seven-case educational verification of
-bisection, Newton, and secant root finding. All expected qualitative outcomes pass. The suite was
-selected to expose established behavior; it is not a representative solver benchmark and makes no
-claim of novel mathematics.
+**Current research status:** product v0.2.0 adds a prespecified Brent–Dekker-style safeguarded
+root finder to the unchanged seven-case v0.1 foundation. All five new qualitative expectations
+pass. These are selected deterministic demonstrations of established numerical behavior—not a
+representative solver benchmark, production-library reproduction, or claim of novel mathematics.
 
 ## The question
 
-When a numerical method returns a root, what has actually been established? Mathlab WASM compares
-three familiar one-dimensional methods under the same binary64 arithmetic, `10⁻¹⁰` position and
-residual tolerances, and 80-iteration budget. The primary result is not speed. It is the reported
-status: converged, invalid bracket, derivative failure, collapsed secant, non-finite iterate,
-detected cycle, or exhausted budget.
+A fast numerical step can be attractive and still be unsafe. Can a hybrid use secant or
+inverse-quadratic interpolation when the proposal is defensible, fall back to bisection when it is
+not, and keep the containing bracket visible throughout?
 
-## What we actually did
+Mathlab WASM now compares four one-dimensional methods under binary64 arithmetic, `10⁻¹⁰`
+position and residual tolerances, and an 80-iteration budget. The primary result remains the solver
+status. For the safeguarded method, each trace also records the accepted move and both bracket
+endpoints.
 
-Before generating the committed report, we froze seven method–scenario runs. They include two
-simple roots, the repeated root of `(x−1)²`, the Newton two-cycle produced by `x³−2x+2` from
-`x₀=0`, and a secant update whose two starting function values are equal. We also froze the
-stopping rules and denominator safeguards.
+## What was fixed before the result
 
-The numerical core is written once in Rust. Native tests, the machine-readable report, and the
-browser's WebAssembly interface all use that same implementation. JavaScript renders the trace but
-does not recompute the solver result.
+The v0.2 protocol was published in commit
+`e4c6f222c22f163b909503d05ead800394757f26` before the safeguarded solver was implemented or its
+report generated. It fixed five cases: the cubic and cosine equations, the deliberately skewed
+`x¹⁰−1` equation, an exact endpoint root, and an even-multiplicity root without an endpoint sign
+change.
+
+The acceptance rules required the expected status, root error below `10⁻⁹` where applicable,
+reference-root containment and non-increasing bracket width, both interpolation and bisection in the
+skewed case, and exact endpoint termination with two initial evaluations and no iterative update.
+
+## What the hybrid does
+
+The implementation starts with a continuous sign-changing bracket. It proposes a secant step when
+two distinct function values are available and inverse-quadratic interpolation when three are
+available. A Brent-style guard rejects proposals that leave the protected part of the bracket or
+fail to improve sufficiently relative to recent steps. Rejected proposals become bisection steps.
+
+This is an independently written teaching implementation. “Brent–Dekker-style” identifies the
+algorithm family; it does not mean that the code is bitwise equivalent to Netlib, SciPy, or another
+production solver.
 
 ## What we found
 
-Bisection located the real root of `x³−x−2` at 1.5213797067990527 in 33 iterations and 35 function
-evaluations. Its absolute residual was 3.28 × 10⁻¹¹, and its iteration count remained inside the
-prespecified interval-halving bound. Newton reached 1.5213797068045676 from `x₀=1.5` in four
-iterations and ten counted function/derivative evaluations.
+All five frozen expectations passed:
 
-The same Newton implementation did not always converge. For `x³−2x+2` from `x₀=0`, the trace was
-exactly `0 → 1 → 0`; the method reported a cycle after two iterations instead of exhausting the
-budget or claiming a root. For the repeated root `(x−1)²`, Newton converged in 34 iterations—an
-inspectable reminder that its familiar quadratic rate is local to a simple root under suitable
-conditions.
+- The cubic root was estimated as 1.5213797068045676 in seven iterations and nine function
+  evaluations, using accepted secant and inverse-quadratic steps.
+- The cosine root was estimated as 0.7390851332151559 in five iterations and seven evaluations,
+  again using both interpolation types.
+- The skewed `x¹⁰−1` case reached 1 exactly in eleven iterations and thirteen evaluations. Its
+  trace contains secant, inverse-quadratic, and bisection moves—the prespecified safeguard
+  demonstration.
+- The exact endpoint root of `x³` at zero was accepted with two initial evaluations and no
+  iterative update.
+- The interval `[0,2]` for `(x−1)²` was rejected because it lacks the required sign change. That is
+  not a claim that the interval contains no root.
 
-Secant iteration solved `cos(x)−x=0` at 0.7390851332151607 in seven iterations without an analytic
-derivative. But when started at 0 and 2 for `(x−1)²`, both function values were 1. The slope
-denominator therefore collapsed, and the implementation reported that failure rather than dividing
-by zero.
+Every recorded nonterminal bracket in the three iterative cases contained the fixed reference root
+and had non-increasing width within the frozen floating-point comparison allowance. Evaluation
+counts describe only these cases and do not rank the methods generally.
 
-Bisection rejected `[0,2]` for `(x−1)²` because both endpoint values have the same sign. That does
-not mean the interval contains no root: the even-multiplicity root at 1 touches zero without changing
-sign. The result is a failed bracket certificate, not a root-existence verdict.
+## A reproducibility result worth reporting
+
+The first Ubuntu CI run and the macOS-generated report differed in the last bit of one cosine
+residual. The statuses, counts, step kinds, bracket checks, reference errors, and tolerance decisions
+all agreed. IEEE-754 binary64 specifies floating-point operations but does not force separate system
+elementary-function libraries to return bit-identical transcendental results.
+
+Because the original protocol demanded byte-identical report regeneration, this became a documented
+post-result amendment—not a silent test relaxation. v0.2 CI now compares JSON structure and all
+discrete decisions exactly, while floating-point leaves must agree within
+`16 × ε × (1 + scale)`. The unchanged v0.1 report retains its byte comparison. Cross-platform byte
+identity is withdrawn as an unsupported claim.
 
 ## Try it yourself
 
-The [interactive root-finding microscope](https://lindgreendavid.github.io/mathlab-wasm/) lets you
-change function, method, starting values, tolerance, and iteration budget. It plots residual or
-position, shows every exact iterate, and keeps method failure visible as a legitimate result.
+Open the [interactive root-finding microscope](https://lindgreendavid.github.io/mathlab-wasm/),
+select **Safeguarded hybrid**, then choose `x¹⁰−1`. The table labels every accepted move as secant,
+inverse quadratic, or bisection and shows the retained bracket beside the residual and iterate.
 
 ## How to read the result
 
-Bisection's slower progress buys an interval certificate only when continuity and a sign-changing
-bracket hold. Newton's speed near a selected simple root does not create a global convergence
-guarantee. Secant avoids an analytic derivative but still requires distinct enough function values.
-A small residual is also not universally equivalent to small root error, especially near an
-ill-conditioned zero.
+The hybrid does not make interpolation globally safe by assertion. Its protection comes from the
+sign-changing bracket and the explicit decision to reject unsuitable proposals. That guarantee
+still depends on continuity, finite evaluations, a valid starting bracket, and the documented
+floating-point safeguards. A small residual alone remains insufficient as a universal root-error
+certificate.
 
 ## Learn more
 
-- [NIST DLMF §3.8, Nonlinear Equations](https://dlmf.nist.gov/3.8) — authoritative formulas and bounded convergence statements.
-- [Brent (1971)](https://doi.org/10.1093/comjnl/14.4.422) — a classic safeguarded combination of interpolation and bisection; cited for context, not implemented in v0.1.
-- [IEEE 754-2019](https://doi.org/10.1109/IEEESTD.2019.8766229) — the floating-point standard underlying the arithmetic boundary.
-- [Frozen protocol](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol.md) — scenarios, endpoints, tolerances, and acceptance criteria.
-- [Machine-readable v0.1 report](https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.1-root-finding.json) — every status, iterate, residual, and evaluation count.
-- [Release audit](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/v0.1-release-audit.md) — completed checks and remaining limits.
-
+- [NIST DLMF §3.8, Nonlinear Equations](https://dlmf.nist.gov/3.8) — authoritative definitions and bounded convergence statements.
+- [Brent (1971)](https://doi.org/10.1093/comjnl/14.4.422) — the primary guaranteed-convergence construction combining interpolation and bracketing.
+- [Frozen v0.2 protocol](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/protocol-v0.2.md) — scenarios, acceptance criteria, and dated amendment.
+- [Machine-readable v0.2 report](https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.2-safeguarded-root-finding.json) — traces, brackets, step kinds, and acceptance checks.
+- [v0.2 release audit](https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/v0.2-release-audit.md) — completed gates and remaining limits.
+- [Unchanged v0.1 report](https://github.com/lindgreendavid/mathlab-wasm/blob/main/reports/v0.1-root-finding.json) — the original bisection, Newton, and secant foundation.
