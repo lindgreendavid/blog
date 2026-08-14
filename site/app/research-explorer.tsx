@@ -166,12 +166,12 @@ const projects: Project[] = [
     name: "Snowflake Evolution Lab",
     field: "Experimental evolution / multicellularity",
     track: "science",
-    question: "Does cellular elongation track increasing cluster size in every anaerobic lineage?",
-    evidence: "64 paired published means across five independently evolved MuLTEE populations",
+    question: "Does engineered tetraploidy increase phenotype—and is it sufficient for macroscopic size?",
+    evidence: "Eight engineered groups plus ten evolved MuLTEE lines followed through transfer 1,000",
     finding:
-      "All five associations are positive (Spearman ρ 0.923–0.967), but exploratory jump timing is not universal.",
+      "Tetraploidy increases cluster radius in both backgrounds, but PA is 8.859× PM at transfer 1,000 despite widespread tetraploidy.",
     boundary:
-      "A source-data reanalysis, not an independent experiment, causal threshold, or reconstruction of historical multicellularity.",
+      "Source-author data with four engineered strains per group; no independent replication or joined time-resolved entanglement endpoint.",
     article: "/posts/snowflake-evolution-lab-individuality",
     tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
   },
