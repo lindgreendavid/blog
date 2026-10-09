@@ -42,7 +42,8 @@ function tsTemplateLiteral(value) {
   return "`" + value.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${") + "`";
 }
 
-const indexRaw = readFileSync(resolve(contentDir, "00-index.md"), "utf8");
+// Normalize CRLF so the generated file is byte-identical on Windows and Linux checkouts.
+const indexRaw = readFileSync(resolve(contentDir, "00-index.md"), "utf8").replace(/\r\n/g, "\n");
 const { data: indexMeta, body: indexBody } = parseFrontmatter(indexRaw, "content/00-index.md");
 
 const postFiles = readdirSync(resolve(contentDir, "posts"))
@@ -52,7 +53,7 @@ const postFiles = readdirSync(resolve(contentDir, "posts"))
 const requiredFields = ["slug", "title", "project", "field", "date", "repo", "tool", "report"];
 
 const posts = postFiles.map((file) => {
-  const raw = readFileSync(resolve(contentDir, "posts", file), "utf8");
+  const raw = readFileSync(resolve(contentDir, "posts", file), "utf8").replace(/\r\n/g, "\n");
   const { data, body } = parseFrontmatter(raw, `content/posts/${file}`);
   for (const field of requiredFields) {
     if (!data[field]) {
