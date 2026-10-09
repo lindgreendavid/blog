@@ -189,7 +189,8 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
 
   function bodyOf(raw) {
     return raw
-      .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "")
+      .replace(/\r\n/g, "\n")
+      .replace(/^---\n[\s\S]*?\n---\n/, "")
       .trim()
       .replace(/\\/g, "\\\\")
       .replace(
