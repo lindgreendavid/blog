@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-09 — FRB Atlas correction
+
+- Corrected the FRB Atlas post: it said two prolific repeaters supplied 90% of the repeater bursts; the real share
+  is 27 of 59 (46%). The explanation is replaced by the measured one (bursts from one source share its dispersion
+  measure, so 59 bursts carry about 7 independent observations) and links the new paper.
+- Added the `sharp`/`source-map-js` overrides and tracked the unfixed `braces` advisory so the web security audit passes.
+
 ## 2026-08-14 — Snowflake Evolution Lab v1.0.1
 
 - Synchronized Lab Notes with the current public product release.

@@ -22,7 +22,8 @@ export const indexMeta = {
   "tagline": "Real data, inspectable systems, honest limits — across AI, physics, astrophysics, evolution, biology, chemistry, climate, neuroscience, and data observability."
 } as const;
 
-export const indexBody = `## What this is
+export const indexBody = `
+## What this is
 
 A growing collection of interactive research projects and real findings, written up in plain
 language. Every project begins with a bounded, falsifiable question and a protocol appropriate to
@@ -63,7 +64,8 @@ export const posts: Post[] = [
     repo: "https://github.com/lindgreendavid/fairshift-lab",
     tool: "https://fairshift-lab.lindgreendavid.chatgpt.site",
     report: "https://github.com/lindgreendavid/fairshift-lab/blob/main/docs/robustness-report.md",
-    body: `## The question
+    body: `
+## The question
 
 A machine learning model is trained, tested, and its group-fairness numbers look fine. Then it's deployed. Does that fairness measurement survive contact with the real world — label noise, a mismeasured protected attribute, a subgroup nobody thought to check, a smaller-than-expected sample? Or does "fair on the test set" quietly stop meaning anything the moment reality gets messy?
 
@@ -100,7 +102,8 @@ The [Robustness Lab](https://fairshift-lab.lindgreendavid.chatgpt.site/#robustne
     repo: "https://github.com/lindgreendavid/three-body-lab",
     tool: "https://three-body-lab-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/three-body-lab/blob/main/docs/research-report.md",
-    body: `**Stable release:** [Three-Body Lab v1.0.0](https://github.com/lindgreendavid/three-body-lab/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 study and its 42-cell registry remain unchanged and reproducible.
+    body: `
+**Stable release:** [Three-Body Lab v1.0.0](https://github.com/lindgreendavid/three-body-lab/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 study and its 42-cell registry remain unchanged and reproducible.
 
 ## The question
 
@@ -137,7 +140,8 @@ The [live simulator](https://three-body-lab-interactive.lindgreendavid.workers.d
     repo: "https://github.com/lindgreendavid/frb-atlas",
     tool: "https://frb-atlas-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/frb-atlas/blob/main/docs/research-report.md",
-    body: `**Stable release:** [FRB Atlas v1.0.0](https://github.com/lindgreendavid/frb-atlas/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 catalog analysis remains unchanged and reproducible.
+    body: `
+**Stable release:** [FRB Atlas v1.0.0](https://github.com/lindgreendavid/frb-atlas/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 catalog analysis remains unchanged and reproducible.
 
 ## The question
 
@@ -151,7 +155,7 @@ We downloaded the real CHIME/FRB Catalog 1 data (verified against the paper's ow
 
 The width and bandwidth directions were recovered, which is a useful positive control but not proof that every dispersion-measure choice matches the paper. Our preregistered burst-level DM test differed from the paper's source-level conclusion (p ≈ 2×10⁻¹⁰).
 
-Rather than stopping there, we investigated *why*, as a disclosed, clearly-labeled follow-up (not part of the original preregistration). The answer: our 59-burst repeater sample was dominated by just two exceptionally prolific, nearby, low-dispersion repeating sources — they alone supplied 90% of the repeater bursts. When we reproduced the original paper's own method of using only each source's *first-detected* burst (reducing pseudo-replication from prolific repeaters), the discrepancy mostly, though not completely, resolved.
+Rather than stopping there, we investigated *why*, as a disclosed, clearly-labeled follow-up (not part of the original preregistration). The answer is the unit of analysis: bursts from the same repeating source share essentially one dispersion measure, so our 59 repeater bursts behave like about 7 independent observations. Counted per source (18 sources), the difference is marginal (p = 0.041), and not significant at the paper's own stricter threshold. The width and bandwidth differences survive every source-level test. (An earlier version of this post wrongly said two prolific sources supplied 90% of the repeater bursts; the real share is 46%, and the explanation above replaces it. The full write-up is now a paper: [Counting Sources, Not Bursts](https://github.com/lindgreendavid/frb-atlas/blob/main/paper/paper.pdf).)
 
 This is what honest science communication is supposed to look like: not "the paper was wrong" and not "we replicated everything perfectly," but a specific, traceable, disclosed reason why two careful analyses of the same real data can disagree.
 
@@ -177,7 +181,8 @@ The [interactive analysis-unit explorer](https://frb-atlas-interactive.lindgreen
     repo: "https://github.com/lindgreendavid/foldings-edge",
     tool: "https://foldings-edge-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/foldings-edge/blob/main/docs/research-report.md",
-    body: `**Stable release:** [Folding’s Edge v1.0.0](https://github.com/lindgreendavid/foldings-edge/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 analysis and committed evidence snapshot remain unchanged and reproducible.
+    body: `
+**Stable release:** [Folding’s Edge v1.0.0](https://github.com/lindgreendavid/foldings-edge/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 analysis and committed evidence snapshot remain unchanged and reproducible.
 
 ## The question
 
@@ -213,7 +218,8 @@ The [interactive threshold explorer](https://foldings-edge-interactive.lindgreen
     repo: "https://github.com/lindgreendavid/climate-twin-frankfurt",
     tool: "https://climate-twin-frankfurt-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/docs/research-report.md",
-    body: `**Stable release:** [Climate Twin Frankfurt v1.0.0](https://github.com/lindgreendavid/climate-twin-frankfurt/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 paired-station study remains unchanged and reproducible.
+    body: `
+**Stable release:** [Climate Twin Frankfurt v1.0.0](https://github.com/lindgreendavid/climate-twin-frankfurt/releases/tag/v1.0.0). The product is stable; the preregistered v0.1 paired-station study remains unchanged and reproducible.
 
 ## The question
 
@@ -248,7 +254,8 @@ The [interactive site](https://climate-twin-frankfurt-interactive.lindgreendavid
     repo: "https://github.com/lindgreendavid/neuro-signal-lab",
     tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
     report: "https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md",
-    body: `**Stable release:** [Neuro Signal Lab v1.0.0](https://github.com/lindgreendavid/neuro-signal-lab/releases/tag/v1.0.0). The product is stable; its frozen endpoint, exclusions, confirmatory result, and sensitivity analyses remain unchanged and reproducible.
+    body: `
+**Stable release:** [Neuro Signal Lab v1.0.0](https://github.com/lindgreendavid/neuro-signal-lab/releases/tag/v1.0.0). The product is stable; its frozen endpoint, exclusions, confirmatory result, and sensitivity analyses remain unchanged and reproducible.
 
 ## The question
 
@@ -320,7 +327,8 @@ pretend that a drawing is measured data.
     repo: "https://github.com/lindgreendavid/data-contract-observatory",
     tool: "https://lindgreendavid.github.io/data-contract-observatory/",
     report: "https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md",
-    body: `**Stable software release:** [Data Contract Observatory v1.0.0](https://github.com/lindgreendavid/data-contract-observatory/releases/tag/v1.0.0). The software is stable; prospective longitudinal evidence has only just begun.
+    body: `
+**Stable software release:** [Data Contract Observatory v1.0.0](https://github.com/lindgreendavid/data-contract-observatory/releases/tag/v1.0.0). The software is stable; prospective longitudinal evidence has only just begun.
 
 ## The question
 
@@ -378,7 +386,8 @@ prospective runs, retrospective prefixes, and synthetic cases in separate counte
     repo: "https://github.com/lindgreendavid/reaction-integrity-lab",
     tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
     report: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
-    body: `**Current research status:** product v1.0.0 completes the source, provenance, published-log,
+    body: `
+**Current research status:** product v1.0.0 completes the source, provenance, published-log,
 released-data split, four-cell frequency-baseline, and prespecified product-similarity audits.
 Neural-model accuracies remain published references because the exact checkpoint/prediction bundles
 are not contained in the versioned public release.
@@ -467,7 +476,8 @@ a time. It keeps completed evidence separate from neural-model artifacts that re
     repo: "https://github.com/lindgreendavid/mathlab-wasm",
     tool: "https://lindgreendavid.github.io/mathlab-wasm/",
     report: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
-    body: `**Current research status:** stable product v1.0.0 adds a prespecified residual, forward-error, and
+    body: `
+**Current research status:** stable product v1.0.0 adds a prespecified residual, forward-error, and
 conditioning diagnostic to the unchanged v0.1 and v0.2 root-finding studies. All five v1.0 cases and
 all cross-case checks pass. These are selected deterministic demonstrations of established
 numerical behavior—not a prevalence estimate, rigorous root enclosure, production-library
@@ -605,7 +615,8 @@ certificate.
     repo: "https://github.com/lindgreendavid/jovian-resonance-lab",
     tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
     report: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
-    body: `**Current research status:** product v1.0.0 preserves the original protocol-frozen thirty-year
+    body: `
+**Current research status:** product v1.0.0 preserves the original protocol-frozen thirty-year
 model ablation and adds a second protocol-frozen temporal replication on 3,653 non-overlapping
 JUP365 days from 2031–2040. The model ordering, numerical-convergence, and reference-adequacy gates
 all passed. Because the second interval extends beyond the 2026 release date, its JUP365 values are
@@ -754,7 +765,8 @@ Callisto remains sensitive to uncertain parameters.
     repo: "https://github.com/lindgreendavid/snowflake-evolution-lab",
     tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
     report: "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md",
-    body: `**Current research status:** stable product v1.0.1 preserves the frozen v0.1 morphology study and
+    body: `
+**Current research status:** stable product v1.0.1 preserves the frozen v0.1 morphology study and
 frozen v1.0 genome-duplication result. The patch clarifies the explanatory animation without
 changing either analysis. Both studies reanalyse source-author data; neither is an independent
 wet-lab replication or a claim to have rediscovered multicellularity.
@@ -916,7 +928,8 @@ simulation, measured entanglement, or an unobserved ancestral reconstruction.
     repo: "https://github.com/lindgreendavid/neural-geometry-lab",
     tool: "https://lindgreendavid.github.io/neural-geometry-lab/",
     report: "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md",
-    body: `**Current research status:** stable product v1.0.0; protocol-frozen computational replication and
+    body: `
+**Current research status:** stable product v1.0.0; protocol-frozen computational replication and
 stress test on one official writer-disjoint dataset. The study supports two of four prespecified
 directional gates. It does not claim that neural collapse causes, guarantees, or is necessary for
 generalization.
