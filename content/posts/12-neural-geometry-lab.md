@@ -74,8 +74,8 @@ epoch occurred between epochs 117 and 216. After that point:
 - long-tail NC2 was worse than clean NC2 in **10/10** paired seeds, passing the imbalance gate.
 
 Clean MLP held-out accuracy had a median of **96.27%**, ranging from 95.88% to 96.94%. The long-tail
-median was **92.29%**, and the 20%-noise median was **81.64%**. Across all 30 MLP runs, the descriptive
-Spearman association between final NC1 and test accuracy was **−0.518**; for NC2 it was **−0.026**.
+median was **92.29%**, and the 20%-noise median was **81.64%**. Across all 30 MLP runs, pooled over three training conditions, the descriptive
+Spearman association between final NC1 and test accuracy was **−0.518**; for NC2 it was **−0.026**. A later check shows the pooled NC1 figure is a between-condition effect: inside each condition NC1 and accuracy are essentially uncorrelated (pooled-within −0.03), and only NC4 tracks accuracy within conditions (−0.49). The full write-up is now a paper: [Pooled Correlations Hide the Structure](https://github.com/lindgreendavid/neural-geometry-lab/blob/main/paper/paper.pdf).
 No population p-values are attached to these correlations because model seeds are not independent
 people, tasks, or datasets.
 

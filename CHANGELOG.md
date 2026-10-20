@@ -65,54 +65,11 @@ All notable changes to this project are documented here. Format loosely follows
 
 ## [Unreleased]
 
-### Fixed
-
-- Correct the Three-Body Lab mass boundary and Poincaré/Sundman framing; replace pooled-residue
-  certainty in Folding's Edge with protein-cluster sensitivity; add serial-correlation-robust
-  Climate Twin uncertainty; and synchronize FRB, P3b and Observatory evidence boundaries with
-  primary literature and the current evidence index.
-
-### Added
-
-- A responsive, code-native research-cycle animation in the home-page hero that uses the formerly
-  empty desktop column, scales into the mobile reading flow, and becomes static when reduced motion
-  is requested.
-
-- An interactive research explorer that filters the five projects by portfolio track and exposes
-  each study's question, evidence, finding, and principal boundary before linking to the article
-  and live laboratory.
-- A four-step study guide — bounded question, evidence, uncertainty, boundary — that turns the
-  portfolio's shared research discipline into a reusable way to read scientific claims.
-- Focused home-page navigation for Explore, Study guide, and Articles, replacing the crowded
-  per-project navigation row while keeping every article directly discoverable on the home page.
-- `site/`: an accessible, editorial vinext (Next.js App Router) site deployed to Cloudflare
-  Workers as `blog-interactive`, matching the toolchain used across this portfolio
-  (`fairshift-lab`, `three-body-lab`, `frb-atlas`, `foldings-edge`, `climate-twin-frankfurt`).
-- A home page (`site/app/page.tsx`) rendering `content/00-index.md`'s "What this is" and "Why
-  this exists" sections verbatim, a generated list of all five posts (title, field, one-line
-  navigation teaser, link), and the "Explore further" links, also verbatim.
-- Five post routes, one per project, at `/posts/<slug>` using each post's frontmatter `slug`:
-  `fairshift-lab-robustness`, `three-body-lab-chaos-boundary`, `frb-atlas-dispersion-measure`,
-  `foldings-edge-plddt-disorder`, `climate-twin-frankfurt-heat-island`. Each post page renders
-  `content/posts/*.md`'s body verbatim and links prominently to that project's `tool`, `repo`,
-  and `report` URLs exactly as given in its frontmatter.
-- `site/scripts/sync-content.mjs`: regenerates `site/app/content-data.ts` from `content/*.md`,
-  copying bytes only (no rewriting), so the Cloudflare Worker can bundle the content at build
-  time instead of reading the filesystem at request time.
-- `site/app/lib/markdown.tsx`: a small, purpose-built markdown-to-JSX renderer supporting the
-  exact subset of markdown the five posts use (`##` headings, `- ` lists, `**bold**`,
-  `*italic*`, `[text](url)` links) — no third-party markdown/MDX dependency.
-- A distinct editorial color palette (warm ivory paper, near-black ink, deep burgundy accent) and
-  a serif reading typeface, WCAG AA contrast-verified — not shared with any sibling project's
-  palette.
-- Full repository hygiene: `ACCESSIBILITY.md` and CI workflows (`ci.yml`, `codeql.yml`).
-  `CITATION.cff` was intentionally not added — see the note in this project's build report; this
-  is a blog indexing five already-citable research projects, not itself a research artifact.
-
-### Changed
-
-- A shared centered page shell now aligns the hero, editorial sections, evidence explorer, study
-  guide, and article grid consistently on wide screens without changing their mobile reflow.
+- Redesign with the shared Lab Notes design system: light and warm dark themes, self-hosted Geist, no third-party requests, theme toggle.
+- Home page rebuilt: headline, three featured notes from `app/catalog.ts`, the research explorer, and a catalogue that keeps research releases, exploratory experiments and proposed work apart, each with a status.
+- Added the "Backtests lie" note (ready for review, not yet published) and corrected explorer findings after the post-release audits (FRB Atlas, Climate Twin, Folding's Edge, Neural Geometry, Fairshift, Reaction Integrity, Snowflake, Data Contract Observatory).
+- Removed an unverifiable citation (Schwaller et al. 2021, DOI did not resolve) from the Reaction Integrity note and the evidence index.
+- Tests: contrast is now checked in both themes; the catalogue and featured set are tested.
 
 ## [Initial content]
 

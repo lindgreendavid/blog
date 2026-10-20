@@ -23,6 +23,8 @@ Germany's national weather service, DWD, operates a real program pairing urban c
 
 The estimated gap is modest: **+0.455°C** on average (30-day block-bootstrap 95% interval 0.432 to 0.478). That supports a warmer average at Westend relative to this specific airport reference, conditional on the two station histories and the chosen block method—not a city-wide causal urban-heat-island estimate. The preregistered classical OLS trend is not statistically distinguishable from zero (p = 0.118). Because its annual residuals are serially correlated, a post-release three-lag Newey–West sensitivity is preferable for uncertainty: 95% interval −0.0079 to +0.0016°C/year, p = 0.186. The conclusion remains "no linear trend detected," not "no trend exists."
 
+A later check against the documented station relocations found large steps in the gap (about -0.43 °C after the 2008 urban relocation and +0.19 °C after the 2014 reference relocation), so the single average blends different station histories and the null trend is not informative about real change; an earlier version of this post and the report said there was no such jump, which was wrong. The daily-minimum gap is also much larger (+1.12 °C). The full write-up is now a paper: [Station Moves Matter](https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/paper/paper.pdf).
+
 We also built something concrete out of the two stations' real coordinates: an interactive map computing the true straight-line distance (15.42 km) and bearing between them directly from their published locations — no map imagery library, just real trigonometry on real numbers.
 
 ## Try it yourself

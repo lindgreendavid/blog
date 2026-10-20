@@ -1,47 +1,21 @@
 import Link from "next/link";
-import { indexMeta, indexBody, posts } from "./content-data";
+import { indexBody, posts } from "./content-data";
+import { catalog, FEATURED_SLUGS, featuredCopy, kindCopy, type Kind } from "./catalog";
 import { parseSections, renderMarkdown } from "./lib/markdown";
 import SiteNav from "./site-nav";
 import SiteFooter from "./site-footer";
 import ResearchExplorer from "./research-explorer";
-import HeroVisual from "./hero-visual";
 import EvidenceIndex from "./evidence-index";
 
-// Hand-written navigation copy, not part of the fact-checked content files --
-// one sentence per post so the home page reads as a list rather than a wall
-// of headings. See content/posts/*.md for the actual, verbatim reporting.
-const teasers: Record<string, string> = {
-  "fairshift-lab-robustness":
-    "Stress-testing a fairness measurement against label noise, measurement error, and small samples, instead of trusting a single clean number.",
-  "three-body-lab-chaos-boundary":
-    "A validated orbital integrator maps short-window divergence and shows why the tested mass range never reaches the analytical stability boundary.",
-  "frb-atlas-dispersion-measure":
-    "Re-running a landmark fast radio burst catalog paper's own statistical test on the same public data, and reporting the result that didn't replicate.",
-  "foldings-edge-plddt-disorder":
-    "228,662 residues of real AlphaFold and DisProt data test whether confidence scores predict protein disorder, and exactly where that prediction breaks down.",
-  "climate-twin-frankfurt-heat-island":
-    "Forty years of real DWD weather-station data, paired and bootstrapped, to put an actual confidence interval on Frankfurt's urban heat island.",
-  "neuro-signal-lab-p3b-robustness":
-    "A preregistered P3b endpoint crosses from a reference protocol into an independent public EEG dataset, with every participant and sensitivity analysis inspectable.",
-  "data-contract-observatory-revision-evidence":
-    "A real ECB feed, a frozen consumer contract, and three clearly separated evidence layers for failures, replay, and future revisions.",
-  "reaction-integrity-lab-cleaning-leakage":
-    "An exact audit of a 691,142-reaction benchmark separates verified split integrity from four published model scores that still await reproduction.",
-  "mathlab-wasm-root-finding":
-    "Three root-finding methods expose what their stopping rules certify—and why a fast local method can still cycle or lose its slope.",
-  "jovian-resonance-lab-laplace-angle":
-    "A second frozen decade turns an exploratory numerical clue into a passed convergence test while keeping JUP365 prediction separate from observation.",
-  "snowflake-evolution-lab-individuality":
-    "Five experimental-evolution lineages and a genome-duplication intervention separate a strong repeated association from a still-unmeasured causal threshold.",
-  "neural-geometry-lab-collapse":
-    "Thirty frozen neural-network runs test four neural-collapse diagnostics and show why one elegant geometry coordinate cannot certify generalization.",
-};
+const kinds: Kind[] = ["release", "experiment", "proposed"];
 
 export default function Home() {
   const sections = Object.fromEntries(
     parseSections(indexBody).map((section) => [section.heading, section.body]),
   );
-  const sortedPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+  const featured = FEATURED_SLUGS.map((slug) => posts.find((post) => post.slug === slug)).filter(
+    (post): post is NonNullable<typeof post> => Boolean(post),
+  );
 
   return (
     <>
@@ -51,87 +25,137 @@ export default function Home() {
       <SiteNav />
       <main id="main-content">
         <section className="hero" aria-labelledby="site-title">
-          <div className="hero__copy">
-            <p className="eyebrow">Lab Notes</p>
-            <h1 id="site-title">{indexMeta.title}</h1>
-            <p className="hero__lead">{indexMeta.tagline}</p>
-            <div className="hero__actions">
-              <a className="button button--primary" href="#explore">
-                Explore the research
-              </a>
-              <a className="button button--ghost" href="#articles">
-                Read the articles
-              </a>
-            </div>
+          <h1 id="site-title">Real data, honest limits.</h1>
+          <p className="hero__lead">
+            Public analyses with code, data and stated limits. Each note says what was tested, what was
+            found and what it cannot show.
+          </p>
+          <div className="hero__actions">
+            <a className="button button--primary" href="#featured">
+              Read the featured notes
+            </a>
+            <a className="button button--ghost" href="#notes">
+              Browse all notes
+            </a>
           </div>
-          <HeroVisual />
         </section>
 
-        <div className="intro-grid">
-          <section className="prose" aria-labelledby="what-this-is">
-            <h2 id="what-this-is">What this is</h2>
-            {renderMarkdown(sections["What this is"] ?? "")}
-          </section>
-
-          <section className="prose" aria-labelledby="why-this-exists">
-            <h2 id="why-this-exists">Why this exists</h2>
-            {renderMarkdown(sections["Why this exists"] ?? "")}
-          </section>
-        </div>
+        <section className="featured" id="featured" aria-labelledby="featured-title">
+          <div className="section-heading">
+            <h2 id="featured-title">Featured work</h2>
+          </div>
+          <div className="featured-grid">
+            {featured.map((post, index) => {
+              const copy = featuredCopy[post.slug];
+              return (
+                <article key={post.slug} className={`featured-card${index === 0 ? " featured-card--lead" : ""}`}>
+                  <div>
+                    <span className="chip">{copy.status}</span>
+                  </div>
+                  <div>
+                    <p className="meta">{post.field}</p>
+                    <h3>{copy.question}</h3>
+                    <p style={{ marginTop: "0.75rem" }}>{copy.summary}</p>
+                  </div>
+                  <div className="featured-card__links">
+                    <Link href={`/posts/${post.slug}`}>Read the note</Link>
+                    <a href={post.repo}>Code</a>
+                    <a href={post.tool}>Interactive lab</a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
 
         <ResearchExplorer />
+
+        <section className="catalog" id="notes" aria-labelledby="notes-title">
+          <div className="section-heading">
+            <h2 id="notes-title">All notes, by kind</h2>
+            <p>
+              A release is not an experiment and a proposal is not a product. The three kinds stay apart
+              so nothing unfinished reads as finished.
+            </p>
+          </div>
+          {kinds.map((kind) => (
+            <div className="catalog-group" key={kind}>
+              <h3>{kindCopy[kind].title}</h3>
+              <p>{kindCopy[kind].blurb}</p>
+              <ul className="catalog-list">
+                {catalog
+                  .filter((entry) => entry.kind === kind)
+                  .map((entry) => {
+                    const href = entry.slug ? `/posts/${entry.slug}` : entry.repo;
+                    const row = (
+                      <>
+                        <strong>{entry.title}</strong>
+                        <span>{entry.field} · {entry.status}</span>
+                        <span>{entry.detail}</span>
+                      </>
+                    );
+                    return (
+                      <li key={entry.title}>
+                        {href ? (
+                          entry.slug ? (
+                            <Link className="catalog-row" href={href}>{row}</Link>
+                          ) : (
+                            <a className="catalog-row" href={href}>{row}</a>
+                          )
+                        ) : (
+                          <div className="catalog-row">{row}</div>
+                        )}
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
+          ))}
+        </section>
+
         <EvidenceIndex />
 
         <section className="study-guide" id="study" aria-labelledby="study-title">
           <div className="section-heading">
-            <p className="eyebrow">A reusable method</p>
             <h2 id="study-title">How to read a scientific result</h2>
-            <p>
-              Each lab uses the same four-part discipline. Use it here, then carry it into
-              any paper, chart, model, or headline you encounter.
-            </p>
+            <p>Each lab uses the same four-part discipline. Use it here, then carry it into any paper, chart, model or headline.</p>
           </div>
           <ol className="study-steps">
             <li>
-              <span aria-hidden="true">01</span>
               <h3>Ask a bounded question</h3>
               <p>Replace a broad topic with a claim that data could genuinely contradict.</p>
             </li>
             <li>
-              <span aria-hidden="true">02</span>
               <h3>Inspect the evidence</h3>
               <p>Check where the data came from, what was excluded, and what was measured.</p>
             </li>
             <li>
-              <span aria-hidden="true">03</span>
               <h3>Read uncertainty first</h3>
               <p>Look at intervals, sample structure, robustness checks, and null results.</p>
             </li>
             <li>
-              <span aria-hidden="true">04</span>
               <h3>Stop at the boundary</h3>
               <p>A result supports only the population, method, and conditions actually tested.</p>
             </li>
           </ol>
         </section>
 
-        <section className="articles" id="articles" aria-labelledby="articles-heading">
-          <h2 id="articles-heading">The articles</h2>
-          <ul className="post-list">
-            {sortedPosts.map((post) => (
-              <li key={post.slug} className="post-card">
-                <Link className="post-card__link" href={`/posts/${post.slug}`}>
-                  <span className="post-card__field">{post.field}</span>
-                  <h3 className="post-card__title">{post.title}</h3>
-                  <p className="post-card__teaser">{teasers[post.slug]}</p>
-                  <span className="post-card__project">{post.project} →</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <section className="how-made" aria-labelledby="how-title">
+          <h2 id="how-title">How these notes are made.</h2>
+          <ol>
+            <li><strong>A real question</strong><span>One a dataset could contradict.</span></li>
+            <li><strong>Public data</strong><span>With source, licence and fetch date.</span></li>
+            <li><strong>A method anyone can rerun</strong><span>Protocol committed before results.</span></li>
+            <li><strong>A result with its interval</strong><span>Failures reported with successes.</span></li>
+            <li><strong>Limits as prominent as results</strong><span>And what was not checked.</span></li>
+          </ol>
+          <p>
+            Written with substantial assistance from an AI system (Claude, Anthropic); every number is
+            checked against the code that produced it, and the author is responsible for the content.
+          </p>
         </section>
 
-        <section className="prose" aria-labelledby="explore-further">
+        <section className="prose" aria-labelledby="explore-further" style={{ paddingTop: "clamp(48px, 7vw, 88px)" }}>
           <h2 id="explore-further">Explore further</h2>
           {renderMarkdown(sections["Explore further"] ?? "")}
         </section>

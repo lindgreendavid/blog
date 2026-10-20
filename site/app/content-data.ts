@@ -191,7 +191,7 @@ We joined 387 real human proteins' curated disorder annotations from DisProt (a 
 
 The pooled-residue signal is large: residues inside curated disorder regions have a **43-point lower median pLDDT** than residues outside them (88.8 vs. 45.1). Because residues within a protein are not independent, we also checked the result at the protein level: across 372 proteins containing both groups, the median within-protein gap is 36.47 points (protein-cluster bootstrap 95% CI 34.29–40.07). A simple "pLDDT below 70 predicts a DisProt disorder annotation" classifier catches 76.5% of annotated disorder but has 34.1% precision; protein-cluster resampling gives wider, more realistic uncertainty without changing that moderate-performance interpretation.
 
-Here's where it gets specific: precision is 6.3% in the protein-level conditional-folding proxy subgroup, and recall is 35.1% for HDX-MS-supported annotations. Those are exploratory associations, not causal explanations: the groups also differ in protein composition, region length, overlapping evidence, and curation. They are compatible with conditional or residual structure affecting pLDDT, but this project does not isolate that mechanism. Named proteins in the report make the misclassifications inspectable rather than turning the subgroup pattern into a stronger claim than the design supports.
+Here's where it gets specific, and where an earlier version of this post over-read the data. Recall is lower in the protein-level conditional-folding proxy subgroup (0.681 vs 0.780; protein-clustered 95% interval of the difference 0.0005 to 0.212, so the gap is barely distinguishable from zero), and 35.1% for HDX-MS-supported annotations, but those residues come from only 4 proteins. (The earlier post quoted a 6.3% precision for the conditional-folding group; that figure mostly reflects the group's small size against a shared pool of non-disorder residues, not worse classification. The full audit is now in a paper: [When Precision Misleads](https://github.com/lindgreendavid/foldings-edge/blob/main/paper/paper.pdf).) Those are exploratory associations, not causal explanations: the groups also differ in protein composition, region length, overlapping evidence, and curation. They are compatible with conditional or residual structure affecting pLDDT, but this project does not isolate that mechanism. Named proteins in the report make the misclassifications inspectable rather than turning the subgroup pattern into a stronger claim than the design supports.
 
 ## Try it yourself
 
@@ -226,6 +226,8 @@ Germany's national weather service, DWD, operates a real program pairing urban c
 ## What we found
 
 The estimated gap is modest: **+0.455°C** on average (30-day block-bootstrap 95% interval 0.432 to 0.478). That supports a warmer average at Westend relative to this specific airport reference, conditional on the two station histories and the chosen block method—not a city-wide causal urban-heat-island estimate. The preregistered classical OLS trend is not statistically distinguishable from zero (p = 0.118). Because its annual residuals are serially correlated, a post-release three-lag Newey–West sensitivity is preferable for uncertainty: 95% interval −0.0079 to +0.0016°C/year, p = 0.186. The conclusion remains "no linear trend detected," not "no trend exists."
+
+A later check against the documented station relocations found large steps in the gap (about -0.43 °C after the 2008 urban relocation and +0.19 °C after the 2014 reference relocation), so the single average blends different station histories and the null trend is not informative about real change; an earlier version of this post and the report said there was no such jump, which was wrong. The daily-minimum gap is also much larger (+1.12 °C). The full write-up is now a paper: [Station Moves Matter](https://github.com/lindgreendavid/climate-twin-frankfurt/blob/main/paper/paper.pdf).
 
 We also built something concrete out of the two stations' real coordinates: an interactive map computing the true straight-line distance (15.42 km) and bearing between them directly from their published locations — no map imagery library, just real trigonometry on real numbers.
 
@@ -451,7 +453,6 @@ a time. It keeps completed evidence separate from neural-model artifacts that re
 
 - [Wigh et al. (2024), ORDerly](https://doi.org/10.1021/acs.jcim.4c00292) — the primary paper and benchmark claim.
 - [ORDerly benchmark v4](https://doi.org/10.6084/m9.figshare.23298467.v4) — the versioned CC BY 4.0 files audited here.
-- [Schwaller et al. (2021)](https://doi.org/10.1038/s42256-021-00338-1) — evidence that reaction benchmarks can contain structural bias.
 - [Guo et al. (2025)](https://doi.org/10.1021/acscentsci.5c00055) — evidence that more realistic chemistry splits can be harder than ordinary reaction splits.
 - [Machine-readable split audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json) — row counts, checksums, exact collisions, and stated boundaries.
 - [Machine-readable baseline reproduction](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.2-baselines.json) — all four local cells, row counts, top combinations, and deviations from Table 3.
@@ -981,8 +982,8 @@ epoch occurred between epochs 117 and 216. After that point:
 - long-tail NC2 was worse than clean NC2 in **10/10** paired seeds, passing the imbalance gate.
 
 Clean MLP held-out accuracy had a median of **96.27%**, ranging from 95.88% to 96.94%. The long-tail
-median was **92.29%**, and the 20%-noise median was **81.64%**. Across all 30 MLP runs, the descriptive
-Spearman association between final NC1 and test accuracy was **−0.518**; for NC2 it was **−0.026**.
+median was **92.29%**, and the 20%-noise median was **81.64%**. Across all 30 MLP runs, pooled over three training conditions, the descriptive
+Spearman association between final NC1 and test accuracy was **−0.518**; for NC2 it was **−0.026**. A later check shows the pooled NC1 figure is a between-condition effect: inside each condition NC1 and accuracy are essentially uncorrelated (pooled-within −0.03), and only NC4 tracks accuracy within conditions (−0.49). The full write-up is now a paper: [Pooled Correlations Hide the Structure](https://github.com/lindgreendavid/neural-geometry-lab/blob/main/paper/paper.pdf).
 No population p-values are attached to these correlations because model seeds are not independent
 people, tasks, or datasets.
 
@@ -1037,5 +1038,54 @@ and the interface says so directly.
 - [Machine-readable result](https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/results-v1.0.json) — all seed-level outcomes and decisions.
 - [v1 release audit](https://github.com/lindgreendavid/neural-geometry-lab/blob/main/docs/v1-release-audit.md) — source checks, reproduction actions, numerical note, and remaining limits.
 - [v1.0.0 release](https://github.com/lindgreendavid/neural-geometry-lab/releases/tag/v1.0.0) — immutable public research-product identity.`,
+  },
+  {
+    slug: "backtests-lie-selection-bias",
+    title: "Test enough trading rules on pure noise and the best one looks brilliant. How brilliant, and what happens next?",
+    project: "Backtests lie",
+    field: "Quantitative finance / Statistics",
+    date: "2026-10-20",
+    repo: "https://github.com/lindgreendavid/backtests-lie",
+    tool: "https://lindgreendavid.github.io/backtests-lie/",
+    report: "https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md",
+    body: `**Status:** ready for review. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
+
+## The question
+
+If many trading rules are tested on the same price history, how good does the best one look in-sample, and what happens to it out-of-sample?
+
+## Why it matters
+
+Quantitative research, risk and model-validation teams spend much of their effort on exactly this problem: backtest overfitting and multiple testing. Picking the best of many candidates on one data set inflates the apparent result, and the inflation grows with the number of candidates.
+
+## Data
+
+Simulated daily returns with zero expected return (normal, fat-tailed Student-t, and GARCH volatility clustering), seeded and reproducible. One real series: the European Central Bank's daily EUR/USD reference rate, 1999 to 2026, saved in the repository with its checksum. Source: European Central Bank.
+
+## Method
+
+A family of 4,916 rules (moving-average crossovers and momentum rules, each with its reversal) is scored on a first sample. For each number of rules N, the best-scoring rule among N randomly chosen rules is selected and then traded on a later sample it has never seen. The protocol, five hypotheses and their decision rules were committed before any result existed.
+
+## Result
+
+On five years of simulated normal returns, the best of 4,916 rules shows an average Sharpe ratio of about 1.17 in-sample and about 0.03 on new data. With two years used to choose, the in-sample figure is about 1.8. Because the rules overlap, roughly 125 independent trials would produce the same maximum. Applied to the real EUR/USD series in a yearly walk-forward, the selected rules averaged about 1.10 in-sample and -0.02 out-of-sample, inside the central range of 200 sign-flip nulls (-0.37 to 0.32).
+
+Four of the five predictions held. The prediction of no out-of-sample edge failed as written: one of 54 cells lay beyond two standard errors, against about 2.5 expected by chance, and the frozen rule had no multiplicity correction. Both facts are reported.
+
+## Limits
+
+The simulated markets have no edge by construction, so luck is built in. There is one rule family and one real series. Costs are ignored. Sharpe ratios are noisy, with a standard error near 0.45 on five years of daily data. The browser version uses its own random numbers, so single runs differ from the frozen registry while the distributions agree. This is not advice.
+
+## What was not checked
+
+Other return models, rule families and markets, transaction-cost sensitivity, combinatorial cross-validation of the probability of backtest overfitting, and Sharpe corrections for non-normality.
+
+## How it was built
+
+Designed and directed by David Lindgreen. The code, tests and text were written with substantial assistance from an AI system (Claude, Anthropic). Every number on the page is generated from the frozen registry.
+
+## Reproduce
+
+Clone the repository, install it, and run the tests and the registry script as described in its README. The site is static and makes no third-party requests.`,
   }
 ];

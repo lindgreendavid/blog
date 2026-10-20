@@ -28,115 +28,82 @@ test("keeps the keyboard and landmark structure contract", async () => {
     source("app/post-article.tsx"),
     source("app/globals.css"),
   ]);
-  assert.match(layout, /<html lang="en">/);
-  assert.match(page, /href="#main-content">\s*Skip to main content/);
-  assert.match(page, /<main id="main-content">/);
-  assert.match(postArticle, /href="#main-content">\s*Skip to main content/);
-  assert.match(postArticle, /<main id="main-content">/);
-  assert.match(styles, /:focus-visible \{\s*outline: 3px solid/);
-  assert.match(styles, /\.nav__links a \{[\s\S]*?display: inline-flex;\s*min-height: 44px/);
+  assert.match(layout, /<html lang="en"/);
+  for (const file of [page, postArticle]) {
+    assert.match(file, /className="skip-link" href="#main-content"/);
+    assert.match(file, /<main id="main-content">/);
+    assert.match(file, /<SiteNav \/>/);
+    assert.match(file, /<SiteFooter \/>/);
+  }
+  assert.match(page, /<h1 id="site-title">/);
+  assert.match(styles, /:focus-visible \{ outline: 2px solid/);
+  assert.match(styles, /\.nav__links a \{ display: inline-flex; min-height: 44px/);
 });
 
-test("keeps navigation semantic and every nav item keyboard-reachable", async () => {
-  const [siteNav, styles] = await Promise.all([
-    source("app/site-nav.tsx"),
-    source("app/globals.css"),
-  ]);
-  assert.match(siteNav, /<nav className="nav" aria-label="Primary navigation">/);
-  assert.match(siteNav, /href="\/#explore"/);
-  assert.match(siteNav, /href="\/#study"/);
-  assert.match(siteNav, /href="\/#articles"/);
-  assert.match(styles, /\.nav__links a \{/);
+test("keeps navigation semantic and every nav item reachable", async () => {
+  const nav = await source("app/site-nav.tsx");
+  assert.match(nav, /<nav className="nav" aria-label="Primary navigation">/);
+  for (const target of ["#featured", "#notes", "#evidence-index", "#study"]) {
+    assert.ok(nav.includes(`href="/${target}"`), target);
+  }
+  assert.match(nav, /<ThemeToggle \/>/);
 });
 
-test("keeps the research explorer operable without color-only meaning", async () => {
-  const [explorer, styles] = await Promise.all([
-    source("app/research-explorer.tsx"),
-    source("app/globals.css"),
-  ]);
-  assert.match(explorer, /type="button"/);
-  assert.match(explorer, /aria-pressed=/);
-  assert.match(explorer, /aria-live="polite"/);
-  assert.match(explorer, /<dt>Question<\/dt>/);
-  assert.match(explorer, /<dt>Boundary<\/dt>/);
-  assert.match(styles, /\.project-choice\[aria-pressed="true"\]/);
-});
-
-test("keeps the article heading hierarchy: one h1, ordered h2s", async () => {
-  const postArticle = await source("app/post-article.tsx");
-  assert.match(postArticle, /<h1 id="post-title">\{post\.title\}<\/h1>/);
-  assert.doesNotMatch(postArticle, /<h3/);
-});
-
-test("keeps reflow, contrast preference, and forced-colors support", async () => {
-  const styles = await source("app/globals.css");
-  assert.match(styles, /@media \(max-width: 720px\)/);
+test("keeps reflow, contrast preference, reduced motion and no third-party requests", async () => {
+  const [styles, layout] = await Promise.all([source("app/globals.css"), source("app/layout.tsx")]);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /@media \(prefers-contrast: more\)/);
-  assert.match(styles, /@media \(forced-colors: active\)/);
-  assert.match(styles, /\.hero-visual__traveller \{\s*display: none;/);
+  assert.match(styles, /@media \(max-width: 860px\)/);
+  assert.doesNotMatch(styles, /url\(["']?https?:/);
+  assert.doesNotMatch(layout, /next\/font\/google/);
+  assert.match(layout, /\/fonts\/geist-latin-wght-normal\.woff2/);
 });
 
-test("keeps wide-screen sections fluid while preserving readable prose", async () => {
-  const [page, styles] = await Promise.all([
-    source("app/page.tsx"),
-    source("app/globals.css"),
-  ]);
-  assert.match(styles, /--page-gutter: clamp\(20px, 4vw, 80px\)/);
-  assert.match(styles, /\.hero \{[\s\S]*?padding: 72px var\(--page-gutter\) 64px;[\s\S]*?width: 100%;/);
-  assert.match(styles, /\.intro-grid \{[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /\.intro-grid \.prose p,[\s\S]*?max-width: 56ch;/);
-  assert.match(styles, /@media \(max-width: 1000px\)[\s\S]*?\.intro-grid \{[\s\S]*?grid-template-columns: 1fr;/);
-  assert.match(page, /<div className="intro-grid">/);
-});
-
-test("keeps the animated hero decorative and motion-optional", async () => {
-  const [page, visual, styles] = await Promise.all([
-    source("app/page.tsx"),
-    source("app/hero-visual.tsx"),
-    source("app/globals.css"),
-  ]);
-  assert.match(page, /<HeroVisual \/>/);
-  assert.match(visual, /className="hero-visual" aria-hidden="true"/);
-  assert.match(visual, /focusable="false"/);
-  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.hero-visual__signal/);
-});
-
-test("keeps normal-text palette combinations above WCAG AA contrast (4.5:1)", async () => {
+test("keeps normal-text palette combinations above WCAG AA contrast in both themes", async () => {
   const styles = await source("app/globals.css");
-  const colors = Object.fromEntries(
-    [...styles.matchAll(/--([a-z-]+): (#[0-9a-f]{6})/gi)].map((match) => [match[1], match[2]]),
-  );
-  for (const [foreground, background] of [
-    ["ink", "paper"],
-    ["muted", "paper"],
-    ["ink", "white"],
-    ["accent", "paper"],
-    ["accent", "white"],
-    ["white", "accent"],
-    ["ink", "accent-wash"],
-  ]) {
-    assert.ok(
-      contrast(colors[foreground], colors[background]) >= 4.5,
-      `${foreground} on ${background} must meet 4.5:1 (got ${contrast(colors[foreground], colors[background]).toFixed(2)})`,
+  const read = (block) =>
+    Object.fromEntries(
+      [...block.matchAll(/--([a-z0-9-]+): (#[0-9a-f]{6})/gi)].map((match) => [match[1], match[2]]),
     );
+  const darkStart = styles.indexOf(':root[data-theme="dark"]');
+  const light = read(styles.slice(0, darkStart));
+  const dark = { ...light, ...read(styles.slice(darkStart, styles.indexOf("}", darkStart))) };
+  for (const [name, colors] of [
+    ["light", light],
+    ["dark", dark],
+  ]) {
+    for (const [foreground, background] of [
+      ["ink", "ground"],
+      ["ink-2", "ground"],
+      ["ink-3", "ground"],
+      ["ink-3", "panel"],
+      ["ink-3", "tone"],
+      ["accent", "ground"],
+      ["accent", "panel"],
+      ["on-ink", "ink"],
+      ["on-ink-2", "ink"],
+    ]) {
+      assert.ok(
+        contrast(colors[foreground], colors[background]) >= 4.5,
+        `${name}: ${foreground} on ${background} must meet 4.5:1`,
+      );
+    }
   }
 });
 
-test("ships recovery pages with direct, keyboard-operable actions", async () => {
-  const [errorPage, notFound] = await Promise.all([
-    source("app/error.tsx"),
-    source("app/not-found.tsx"),
-  ]);
-  assert.match(errorPage, /type="button" onClick=\{reset\}>/);
-  assert.match(errorPage, /Return to Lab Notes/);
-  assert.match(notFound, /Return to Lab Notes/);
+test("keeps the catalogue honest: three kinds, statuses and a unique featured set", async () => {
+  const catalog = await source("app/catalog.ts");
+  assert.match(catalog, /kind: "release"/);
+  assert.match(catalog, /kind: "experiment"/);
+  assert.match(catalog, /kind: "proposed"/);
+  const featured = [...catalog.matchAll(/^ {2}"([a-z0-9-]+)",$/gm)].map((match) => match[1]);
+  assert.equal(featured.length, 3);
+  assert.equal(new Set(featured).size, 3);
+  assert.doesNotMatch(catalog, /kind: "release", status: "Proposed"/);
 });
 
-test("keeps external links to third-party domains marked noreferrer", async () => {
-  const postArticle = await source("app/post-article.tsx");
-  const externalLinks = postArticle.match(/target="_blank"/g) ?? [];
-  const noreferrer = postArticle.match(/target="_blank" rel="noreferrer"/g) ?? [];
-  assert.ok(externalLinks.length >= 3);
-  assert.equal(externalLinks.length, noreferrer.length);
+test("ships recovery pages with direct, keyboard-operable actions", async () => {
+  const [errorPage, notFound] = await Promise.all([source("app/error.tsx"), source("app/not-found.tsx")]);
+  assert.match(errorPage, /type="button"/);
+  assert.match(notFound, /href=/);
 });

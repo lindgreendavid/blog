@@ -27,7 +27,7 @@ const projects: Project[] = [
     question: "After zero training error, does neural-collapse geometry keep improving—and track unseen-writer accuracy?",
     evidence: "30 frozen MLP runs, three stress conditions, and an official writer-disjoint digit split",
     finding:
-      "Two of four gates passed; noisy training had slightly better median NC2 but much worse accuracy and NC1.",
+      "Two of four gates passed. The pooled NC1/accuracy correlation is a between-condition effect; within conditions only NC4 tracks accuracy.",
     boundary:
       "One small MLP and dataset; seeds quantify algorithmic sensitivity, and no single collapse coordinate certifies generalization.",
     article: "/posts/neural-geometry-lab-collapse",
@@ -41,7 +41,7 @@ const projects: Project[] = [
     question: "Do fairness measurements survive distribution shift, noise, and misspecification?",
     evidence: "Inspectable synthetic generators plus governed 1994 Census evidence",
     finding:
-      "Accuracy, calibration, and group-fairness metrics can degrade in different directions under the same stress.",
+      "Accuracy, calibration, and group-fairness metrics can degrade in different directions under the same stress. Reported fairness-gap reductions on the Adult data are not distinguishable from test-set noise.",
     boundary:
       "The robustness study is synthetic; the external study is one historical dataset, not a deployment guarantee.",
     article: "/posts/fairshift-lab-robustness",
@@ -55,7 +55,7 @@ const projects: Project[] = [
     question: "How much warmer is Westend than its DWD reference station?",
     evidence: "14,579 paired daily observations from two real DWD stations",
     finding:
-      "The mean gap is +0.455°C; its confidence interval excludes zero, while the 40-year linear trend does not.",
+      "The mean gap is +0.455°C and its interval excludes zero, but documented station relocations create steps in the series, so the gap is not a pure urban effect.",
     boundary:
       "This is one station pair, daily mean temperature, and the reference site is physically an airport.",
     article: "/posts/climate-twin-frankfurt-heat-island",
@@ -72,7 +72,7 @@ const projects: Project[] = [
     finding:
       "All controlled faults were classified as expected; both same-day live responses passed, while longitudinal evidence has only begun.",
     boundary:
-      "Synthetic detection and a current-vintage replay cannot establish historical revision rates or production reliability.",
+      "Synthetic detection (a regression test) and a current-vintage replay cannot establish historical revision rates or production reliability.",
     article: "/posts/data-contract-observatory-revision-evidence",
     tool: "https://lindgreendavid.github.io/data-contract-observatory/",
   },
@@ -84,7 +84,7 @@ const projects: Project[] = [
     question: "Does a key CHIME/FRB Catalog 1 comparison replicate?",
     evidence: "497 analyzed bursts from the public 536-burst catalog",
     finding:
-      "Width and bandwidth replicated; the burst-level dispersion-measure result did not, largely because two repeaters dominate the sample.",
+      "Width and bandwidth replicated; the burst-level dispersion-measure result did not. The 59 repeater bursts carry only about seven independent observations.",
     boundary:
       "One survey, one observing band, 18 repeater sources, and a disclosed post-hoc source-level check.",
     article: "/posts/frb-atlas-dispersion-measure",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     question: "When does AlphaFold2 confidence predict curated protein disorder?",
     evidence: "228,662 residues across 387 real human proteins",
     finding:
-      "pLDDT is a strong overall signal, but a threshold classifier is noisy and fails systematically on specific evidence types.",
+      "pLDDT is a strong overall signal, but subgroup precision differences are largely an artifact of a shared negative pool; recall gaps rest on few proteins.",
     boundary:
       "A fixed human DisProt sample and a protein-level proxy for conditional folding; no AlphaFold3 claim.",
     article: "/posts/foldings-edge-plddt-disorder",
@@ -155,7 +155,7 @@ const projects: Project[] = [
     evidence:
       "691,142 reactions, four reproduced baselines, and a prespecified 1,000-row similarity sample",
     finding:
-      "Baselines reproduce; 5.78% of valid test products and 80.84% of nonempty test scaffolds occur in training.",
+      "Baselines reproduce; 5.78% of test products and 80.84% of test scaffolds occur in training, about what a random hold-out of the training set also shows.",
     boundary:
       "Product overlap is not proof of patent-family leakage, unavailable-information leakage, or wet-lab failure; model cells remain published references.",
     article: "/posts/reaction-integrity-lab-cleaning-leakage",
@@ -183,7 +183,7 @@ const projects: Project[] = [
     question: "Does engineered tetraploidy increase phenotype—and is it sufficient for macroscopic size?",
     evidence: "Eight engineered groups plus ten evolved MuLTEE lines followed through transfer 1,000",
     finding:
-      "Tetraploidy increases cluster radius in both backgrounds, but PA is 8.859× PM at transfer 1,000 despite widespread tetraploidy.",
+      "Tetraploidy increases cluster radius in both backgrounds, but PA is 8.859× PM at transfer 1,000 despite widespread tetraploidy; exact intervals are 1.5 to 1.9 times wider than the bootstrap.",
     boundary:
       "Source-author data with four engineered strains per group; no independent replication or joined time-resolved entanglement endpoint.",
     article: "/posts/snowflake-evolution-lab-individuality",

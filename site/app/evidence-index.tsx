@@ -334,11 +334,6 @@ const evidence: EvidenceRecord[] = [
         url: "https://doi.org/10.1021/acs.jcim.4c00292",
       },
       {
-        relation: "Supports",
-        label: "Schwaller et al. (2021), structural bias in reaction prediction",
-        url: "https://doi.org/10.1038/s42256-021-00338-1",
-      },
-      {
         relation: "Limits",
         label: "Guo et al. (2025), harder chemistry-aware evaluation splits",
         url: "https://doi.org/10.1021/acscentsci.5c00055",

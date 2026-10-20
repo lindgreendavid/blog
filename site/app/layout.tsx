@@ -1,37 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { indexMeta } from "./content-data";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-});
+// Sets the theme before first paint: the saved choice, else the system preference.
+const themeScript = `(function(){var d=false;try{var s=localStorage.getItem("theme");d=s?s==="dark":matchMedia("(prefers-color-scheme: dark)").matches}catch(e){d=matchMedia("(prefers-color-scheme: dark)").matches}document.documentElement.dataset.theme=d?"dark":"light"})();`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blog-interactive.lindgreendavid.workers.dev"),
+  metadataBase: new URL("https://notes.lindgreendavid.com"),
   title: indexMeta.title,
   description: indexMeta.tagline,
   applicationName: "Lab Notes",
   keywords: [
     "responsible AI",
+    "data observability",
+    "quantitative finance",
     "physics",
-    "astrophysics",
     "biology",
     "climate data",
     "reproducible research",
     "preregistered research",
-    "interactive research",
     "web accessibility",
   ],
   openGraph: {
@@ -56,12 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

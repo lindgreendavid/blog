@@ -82,7 +82,6 @@ a time. It keeps completed evidence separate from neural-model artifacts that re
 
 - [Wigh et al. (2024), ORDerly](https://doi.org/10.1021/acs.jcim.4c00292) — the primary paper and benchmark claim.
 - [ORDerly benchmark v4](https://doi.org/10.6084/m9.figshare.23298467.v4) — the versioned CC BY 4.0 files audited here.
-- [Schwaller et al. (2021)](https://doi.org/10.1038/s42256-021-00338-1) — evidence that reaction benchmarks can contain structural bias.
 - [Guo et al. (2025)](https://doi.org/10.1021/acscentsci.5c00055) — evidence that more realistic chemistry splits can be harder than ordinary reaction splits.
 - [Machine-readable split audit](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.1-split-audit.json) — row counts, checksums, exact collisions, and stated boundaries.
 - [Machine-readable baseline reproduction](https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/reports/v0.2-baselines.json) — all four local cells, row counts, top combinations, and deviations from Table 3.

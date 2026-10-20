@@ -117,6 +117,14 @@ const posts = [
     report:
       "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md",
   },
+  {
+    route: "/posts/backtests-lie-selection-bias",
+    title: "Test enough trading rules on pure noise",
+    project: "Backtests lie",
+    tool: "https://lindgreendavid.github.io/backtests-lie/",
+    repo: "https://github.com/lindgreendavid/backtests-lie",
+    report: "https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md",
+  },
 ];
 
 test("server-renders the home page listing every published post", async () => {
@@ -124,8 +132,6 @@ test("server-renders the home page listing every published post", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /<title>David Lindgreen — Lab Notes/);
-  assert.match(html, /What this is/);
-  assert.match(html, /Why this exists/);
   assert.match(html, /Explore further/);
   assert.match(html, /Research questions\. Inspectable answers\./);
   assert.match(html, /How to read a scientific result/);
@@ -139,7 +145,10 @@ test("server-renders the home page listing every published post", async () => {
   assert.match(html, /Full portfolio/);
   assert.match(html, /Researched roadmap/);
   assert.match(html, /Skip to main content/);
-  assert.match(html, /class="hero-visual" aria-hidden="true"/);
+  assert.match(html, /Featured work/);
+  assert.match(html, /Research releases/);
+  assert.match(html, /Exploratory experiments/);
+  assert.match(html, /Proposed/);
   for (const post of posts) {
     assert.match(html, new RegExp(`href="/posts/${post.route.split("/posts/")[1]}"`));
     assert.match(html, new RegExp(post.project.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
@@ -185,6 +194,7 @@ test("keeps content-data.ts in sync with content/*.md (no drift, no rewriting)",
     readFile(new URL("../content/posts/10-jovian-resonance-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/11-snowflake-evolution-lab.md", root), "utf8"),
     readFile(new URL("../content/posts/12-neural-geometry-lab.md", root), "utf8"),
+    readFile(new URL("../content/posts/13-backtests-lie.md", root), "utf8"),
   ]);
 
   function bodyOf(raw) {
