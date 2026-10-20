@@ -7,6 +7,7 @@ const post = posts.find((candidate) => candidate.slug === "neuro-signal-lab-p3b-
 export const metadata: Metadata = {
   title: `${post.title} — Lab Notes`,
   description: post.title,
+  alternates: { canonical: `/posts/neuro-signal-lab-p3b-robustness` },
 };
 
 export default function Page() {

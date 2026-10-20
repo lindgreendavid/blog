@@ -7,6 +7,7 @@ const post = posts.find((candidate) => candidate.slug === "mathlab-wasm-root-fin
 export const metadata: Metadata = {
   title: `${post.title} — Lab Notes`,
   description: post.title,
+  alternates: { canonical: `/posts/mathlab-wasm-root-finding` },
 };
 
 export default function Page() {

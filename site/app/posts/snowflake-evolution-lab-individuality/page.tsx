@@ -9,6 +9,7 @@ const post = posts.find(
 export const metadata: Metadata = {
   title: `${post.title} — Lab Notes`,
   description: post.title,
+  alternates: { canonical: `/posts/snowflake-evolution-lab-individuality` },
 };
 
 export default function Page() {

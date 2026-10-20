@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: indexMeta.title,
   description: indexMeta.tagline,
   applicationName: "Lab Notes",
+  alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
   keywords: [
     "responsible AI",
     "data observability",

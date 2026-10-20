@@ -9,6 +9,7 @@ const post = posts.find(
 export const metadata: Metadata = {
   title: `${post.title} — Lab Notes`,
   description: post.title,
+  alternates: { canonical: `/posts/jovian-resonance-lab-laplace-angle` },
 };
 
 export default function Page() {

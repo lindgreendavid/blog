@@ -7,6 +7,7 @@ const post = posts.find((candidate) => candidate.slug === "fairshift-lab-robustn
 export const metadata: Metadata = {
   title: `${post.title} — Lab Notes`,
   description: post.title,
+  alternates: { canonical: `/posts/fairshift-lab-robustness` },
 };
 
 export default function Page() {

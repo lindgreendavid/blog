@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Lab Notes</title>
+    <link>https://notes.lindgreendavid.com/</link>
+    <description>Public analyses with code, data and stated limits, by David Lindgreen.</description>
+    <language>en</language>
+    <item>
+      <title>Test enough trading rules on pure noise and the best one looks brilliant. How brilliant, and what happens next?</title>
+      <link>https://notes.lindgreendavid.com/posts/backtests-lie-selection-bias</link>
+      <guid>https://notes.lindgreendavid.com/posts/backtests-lie-selection-bias</guid>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Backtests lie: Quantitative finance / Statistics</description>
+    </item>
+    <item>
+      <title>Jupiter’s moons keep time. Which physics keeps them together?</title>
+      <link>https://notes.lindgreendavid.com/posts/jovian-resonance-lab-laplace-angle</link>
+      <guid>https://notes.lindgreendavid.com/posts/jovian-resonance-lab-laplace-angle</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Jovian Resonance Lab: Planetary Dynamics / Celestial Mechanics</description>
+    </item>
+    <item>
+      <title>When a tiny residual hides the wrong answer.</title>
+      <link>https://notes.lindgreendavid.com/posts/mathlab-wasm-root-finding</link>
+      <guid>https://notes.lindgreendavid.com/posts/mathlab-wasm-root-finding</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Mathlab WASM: Numerical Analysis / Scientific Computing</description>
+    </item>
+    <item>
+      <title>A neural network's geometry kept changing after perfect training accuracy. Did that make it generalize?</title>
+      <link>https://notes.lindgreendavid.com/posts/neural-geometry-lab-collapse</link>
+      <guid>https://notes.lindgreendavid.com/posts/neural-geometry-lab-collapse</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Neural Geometry Lab: Machine Learning / Representation Geometry</description>
+    </item>
+    <item>
+      <title>The same reaction benchmark scored 68% or 36%. The dataset definition changed.</title>
+      <link>https://notes.lindgreendavid.com/posts/reaction-integrity-lab-cleaning-leakage</link>
+      <guid>https://notes.lindgreendavid.com/posts/reaction-integrity-lab-cleaning-leakage</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Reaction Integrity Lab: Computational Chemistry / Machine Learning</description>
+    </item>
+    <item>
+      <title>A yeast cluster became 20,000 times larger. When did it become an individual?</title>
+      <link>https://notes.lindgreendavid.com/posts/snowflake-evolution-lab-individuality</link>
+      <guid>https://notes.lindgreendavid.com/posts/snowflake-evolution-lab-individuality</guid>
+      <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Snowflake Evolution Lab: Experimental Evolution / Multicellularity</description>
+    </item>
+    <item>
+      <title>Is Frankfurt actually warmer than the countryside around it? We measured it.</title>
+      <link>https://notes.lindgreendavid.com/posts/climate-twin-frankfurt-heat-island</link>
+      <guid>https://notes.lindgreendavid.com/posts/climate-twin-frankfurt-heat-island</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Climate Twin Frankfurt: Climate / Data Engineering</description>
+    </item>
+    <item>
+      <title>A data pipeline can keep running while its meaning changes. This observatory records the difference.</title>
+      <link>https://notes.lindgreendavid.com/posts/data-contract-observatory-revision-evidence</link>
+      <guid>https://notes.lindgreendavid.com/posts/data-contract-observatory-revision-evidence</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Data Contract Observatory: Data Engineering / Observability</description>
+    </item>
+    <item>
+      <title>A model that looks fair can quietly stop being fair. Here's how to catch it.</title>
+      <link>https://notes.lindgreendavid.com/posts/fairshift-lab-robustness</link>
+      <guid>https://notes.lindgreendavid.com/posts/fairshift-lab-robustness</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Fairshift Lab: Responsible AI</description>
+    </item>
+    <item>
+      <title>AlphaFold tells you how confident it is. Sometimes it's confidently wrong — and that's predictable.</title>
+      <link>https://notes.lindgreendavid.com/posts/foldings-edge-plddt-disorder</link>
+      <guid>https://notes.lindgreendavid.com/posts/foldings-edge-plddt-disorder</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Folding's Edge: Biology</description>
+    </item>
+    <item>
+      <title>We tried to replicate a real astrophysics paper. It didn't fully replicate — and that's the finding.</title>
+      <link>https://notes.lindgreendavid.com/posts/frb-atlas-dispersion-measure</link>
+      <guid>https://notes.lindgreendavid.com/posts/frb-atlas-dispersion-measure</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>FRB Atlas: Astrophysics</description>
+    </item>
+    <item>
+      <title>A classic brain response survived a new dataset. Here is exactly what that means.</title>
+      <link>https://notes.lindgreendavid.com/posts/neuro-signal-lab-p3b-robustness</link>
+      <guid>https://notes.lindgreendavid.com/posts/neuro-signal-lab-p3b-robustness</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Neuro Signal Lab: Neuroscience</description>
+    </item>
+    <item>
+      <title>The three-body problem can't be solved. That's not the interesting part.</title>
+      <link>https://notes.lindgreendavid.com/posts/three-body-lab-chaos-boundary</link>
+      <guid>https://notes.lindgreendavid.com/posts/three-body-lab-chaos-boundary</guid>
+      <pubDate>Thu, 13 Aug 2026 12:00:00 GMT</pubDate>
+      <description>Three-Body Lab: Physics</description>
+    </item>
+  </channel>
+</rss>
