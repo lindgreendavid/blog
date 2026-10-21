@@ -7,8 +7,7 @@ import SiteFooter from "./site-footer";
 
 export function PostArticle({ post }: { post: Post }) {
   const entry = catalog.find((item) => item.slug === post.slug);
-  const unpublished = entry?.status.includes("unpublished") ?? false;
-  return (
+    return (
     <>
       <a className="skip-link" href="#main-content">
         Skip to main content
@@ -29,7 +28,7 @@ export function PostArticle({ post }: { post: Post }) {
           {entry && (
             <p className="post-status">
               <strong>{entry.status}</strong>
-              <span>{unpublished ? "The lab linked below is prepared but not yet live." : entry.detail}</span>
+              <span>{entry.detail}</span>
             </p>
           )}
           <nav className="post-resources" aria-label="Project resources">

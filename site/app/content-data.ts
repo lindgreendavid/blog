@@ -61,7 +61,7 @@ export const posts: Post[] = [
     field: "Responsible AI",
     date: "2026-08-13",
     repo: "https://github.com/lindgreendavid/fairshift-lab",
-    tool: "https://fairshift-lab.lindgreendavid.chatgpt.site",
+    tool: "https://fairshift-lab-interactive.lindgreendavid.workers.dev",
     report: "https://github.com/lindgreendavid/fairshift-lab/blob/main/docs/robustness-report.md",
     body: `## The question
 
@@ -83,7 +83,7 @@ None of this says "AI fairness is fake" or "don't measure it." It says the oppos
 
 ## Try it yourself
 
-The [Robustness Lab](https://fairshift-lab.lindgreendavid.chatgpt.site/#robustness) lets you pick a stressor, drag its magnitude, and watch both models' accuracy, calibration, and fairness gaps move in real time — with the uncertainty and limitations of what you're looking at shown *before* any number, not after. If you want to go deeper: the [full robustness report](https://github.com/lindgreendavid/fairshift-lab/blob/main/docs/robustness-report.md) documents every hypothesis's actual disposition, including the ones that didn't confirm cleanly.
+The [Robustness Lab](https://fairshift-lab-interactive.lindgreendavid.workers.dev/#robustness) lets you pick a stressor, drag its magnitude, and watch both models' accuracy, calibration, and fairness gaps move in real time — with the uncertainty and limitations of what you're looking at shown *before* any number, not after. If you want to go deeper: the [full robustness report](https://github.com/lindgreendavid/fairshift-lab/blob/main/docs/robustness-report.md) documents every hypothesis's actual disposition, including the ones that didn't confirm cleanly.
 
 ## Learn more
 
@@ -1048,7 +1048,7 @@ and the interface says so directly.
     repo: "https://github.com/lindgreendavid/backtests-lie",
     tool: "https://lindgreendavid.github.io/backtests-lie/",
     report: "https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md",
-    body: `**Status:** ready for review. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
+    body: `**Status:** first public release (v0.1.0), not independently reviewed. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
 
 ## The question
 

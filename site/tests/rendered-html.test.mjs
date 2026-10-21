@@ -20,7 +20,7 @@ const posts = [
     route: "/posts/fairshift-lab-robustness",
     title: "A model that looks fair can quietly stop being fair",
     project: "Fairshift Lab",
-    tool: "https://fairshift-lab.lindgreendavid.chatgpt.site",
+    tool: "https://fairshift-lab-interactive.lindgreendavid.workers.dev",
     repo: "https://github.com/lindgreendavid/fairshift-lab",
     report: "https://github.com/lindgreendavid/fairshift-lab/blob/main/docs/robustness-report.md",
   },

@@ -9,7 +9,7 @@ tool: https://lindgreendavid.github.io/backtests-lie/
 report: https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md
 ---
 
-**Status:** ready for review. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
+**Status:** first public release (v0.1.0), not independently reviewed. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
 
 ## The question
 

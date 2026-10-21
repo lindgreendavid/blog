@@ -45,7 +45,7 @@ const projects: Project[] = [
     boundary:
       "The robustness study is synthetic; the external study is one historical dataset, not a deployment guarantee.",
     article: "/posts/fairshift-lab-robustness",
-    tool: "https://fairshift-lab.lindgreendavid.chatgpt.site",
+    tool: "https://fairshift-lab-interactive.lindgreendavid.workers.dev",
   },
   {
     slug: "climate",

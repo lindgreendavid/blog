@@ -37,14 +37,14 @@ export const featuredCopy: Record<string, { question: string; summary: string; s
     question: "How good does the best of thousands of backtests look on pure noise?",
     summary:
       "The best of 4,916 rules shows a Sharpe ratio near 1.2 in-sample and about zero on new data. Limits stated first.",
-    status: "Ready for review · not yet published",
+    status: "Released v0.1.0 · first release, not independently reviewed",
   },
 };
 
 export const catalog: CatalogEntry[] = [
   { title: "Data Contract Observatory", field: "Data engineering", kind: "release", status: "Released v1.0.0, maintained", detail: "Real ECB feed, nine injected faults, 7,010-day replay.", slug: "data-contract-observatory-revision-evidence" },
   { title: "Fairshift Lab", field: "Responsible AI", kind: "release", status: "Released v1.3.0, maintained", detail: "Synthetic shifts, Adult-data external study, robustness lab.", slug: "fairshift-lab-robustness" },
-  { title: "Backtests lie", field: "Quantitative finance", kind: "release", status: "Ready for review, unpublished", detail: "Selection bias across 4,916 rules; real EUR/USD walk-forward.", slug: "backtests-lie-selection-bias" },
+  { title: "Backtests lie", field: "Quantitative finance", kind: "release", status: "Released v0.1.0, first release", detail: "Selection bias across 4,916 rules; real EUR/USD walk-forward.", slug: "backtests-lie-selection-bias" },
   { title: "Climate Twin Frankfurt", field: "Climate data", kind: "release", status: "Released v1.0.0, frozen", detail: "Urban-heat-island gap with station-relocation steps.", slug: "climate-twin-frankfurt-heat-island" },
   { title: "FRB Atlas", field: "Astrophysics", kind: "release", status: "Released v1.0.0, frozen", detail: "Catalog reanalysis with cluster-aware inference.", slug: "frb-atlas-dispersion-measure" },
   { title: "Folding's Edge", field: "Structural biology", kind: "release", status: "Released v1.0.0, frozen", detail: "AlphaFold confidence against protein disorder.", slug: "foldings-edge-plddt-disorder" },
