@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Post } from "./content-data";
 import { catalog } from "./catalog";
 import { renderMarkdown } from "./lib/markdown";
+import JsonLd from "./json-ld";
+import { articleLd } from "./lib/seo";
 import SiteNav from "./site-nav";
 import SiteFooter from "./site-footer";
 
@@ -9,6 +11,7 @@ export function PostArticle({ post }: { post: Post }) {
   const entry = catalog.find((item) => item.slug === post.slug);
     return (
     <>
+      <JsonLd data={articleLd(post)} />
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>

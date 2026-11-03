@@ -1,0 +1,25 @@
+# Lab Notes
+
+> Lab Notes is a collection of public research analyses by David Lindgreen (Frankfurt, Germany), each with code, data and its limits stated. Each note says what was tested, what was found and what it cannot show. Blinded or preregistered studies are labelled as such; reproductions of known results are labelled too. The notes are educational and are not investment advice. They were built with AI assistance (Claude); David Lindgreen designed and directed them and is responsible for checking them.
+
+## Notes
+
+- [Backtests lie](https://notes.lindgreendavid.com/posts/backtests-lie-selection-bias) (Quantitative finance / Statistics, 2026-10-20): Test enough trading rules on pure noise and the best one looks brilliant. How brilliant, and what happens next?
+- [Snowflake Evolution Lab](https://notes.lindgreendavid.com/posts/snowflake-evolution-lab-individuality) (Experimental Evolution / Multicellularity, 2026-08-14): A yeast cluster became 20,000 times larger. When did it become an individual?
+- [Reaction Integrity Lab](https://notes.lindgreendavid.com/posts/reaction-integrity-lab-cleaning-leakage) (Computational Chemistry / Machine Learning, 2026-08-14): The same reaction benchmark scored 68% or 36%. The dataset definition changed.
+- [Neural Geometry Lab](https://notes.lindgreendavid.com/posts/neural-geometry-lab-collapse) (Machine Learning / Representation Geometry, 2026-08-14): A neural network's geometry kept changing after perfect training accuracy. Did that make it generalize?
+- [Mathlab WASM](https://notes.lindgreendavid.com/posts/mathlab-wasm-root-finding) (Numerical Analysis / Scientific Computing, 2026-08-14): When a tiny residual hides the wrong answer.
+- [Jovian Resonance Lab](https://notes.lindgreendavid.com/posts/jovian-resonance-lab-laplace-angle) (Planetary Dynamics / Celestial Mechanics, 2026-08-14): Jupiterâ€™s moons keep time. Which physics keeps them together?
+- [Three-Body Lab](https://notes.lindgreendavid.com/posts/three-body-lab-chaos-boundary) (Physics, 2026-08-13): The three-body problem can't be solved. That's not the interesting part.
+- [Neuro Signal Lab](https://notes.lindgreendavid.com/posts/neuro-signal-lab-p3b-robustness) (Neuroscience, 2026-08-13): A classic brain response survived a new dataset. Here is exactly what that means.
+- [FRB Atlas](https://notes.lindgreendavid.com/posts/frb-atlas-dispersion-measure) (Astrophysics, 2026-08-13): We tried to replicate a real astrophysics paper. It didn't fully replicate â€” and that's the finding.
+- [Folding's Edge](https://notes.lindgreendavid.com/posts/foldings-edge-plddt-disorder) (Biology, 2026-08-13): AlphaFold tells you how confident it is. Sometimes it's confidently wrong â€” and that's predictable.
+- [Fairshift Lab](https://notes.lindgreendavid.com/posts/fairshift-lab-robustness) (Responsible AI, 2026-08-13): A model that looks fair can quietly stop being fair. Here's how to catch it.
+- [Data Contract Observatory](https://notes.lindgreendavid.com/posts/data-contract-observatory-revision-evidence) (Data Engineering / Observability, 2026-08-13): A data pipeline can keep running while its meaning changes. This observatory records the difference.
+- [Climate Twin Frankfurt](https://notes.lindgreendavid.com/posts/climate-twin-frankfurt-heat-island) (Climate / Data Engineering, 2026-08-13): Is Frankfurt actually warmer than the countryside around it? We measured it.
+
+## Other
+
+- [Portfolio and finance projects](https://lindgreendavid.com/): five finance tools on public SEC and ECB data with method notes.
+- [GitHub](https://github.com/lindgreendavid)
+- [Feed](https://notes.lindgreendavid.com/feed.xml)
