@@ -5,7 +5,7 @@ project: Jovian Resonance Lab
 field: Planetary Dynamics / Celestial Mechanics
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/jovian-resonance-lab
-tool: https://lindgreendavid.github.io/jovian-resonance-lab/
+tool: https://lindgreendavid.com/jovian-resonance-lab/
 report: https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md
 ---
 
@@ -120,7 +120,7 @@ collection does not provide the same barycenter-conservation diagnostic.
 
 ## Try it yourself
 
-The [interactive Jovian Resonance Lab](https://lindgreendavid.github.io/jovian-resonance-lab/)
+The [interactive Jovian Resonance Lab](https://lindgreendavid.com/jovian-resonance-lab/)
 animates a sixty-day JUP365 vector extract, lets you scrub through the moon positions, compares each
 model's validation residual, and lets you switch among the three frozen G4J2 step sizes. The angular
 timing comes from JPL; radial spacing and body sizes are visibly rescaled to keep every moon on

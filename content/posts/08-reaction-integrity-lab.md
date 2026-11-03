@@ -5,7 +5,7 @@ project: Reaction Integrity Lab
 field: Computational Chemistry / Machine Learning
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/reaction-integrity-lab
-tool: https://lindgreendavid.github.io/reaction-integrity-lab/
+tool: https://lindgreendavid.com/reaction-integrity-lab/
 report: https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md
 ---
 
@@ -73,7 +73,7 @@ performance.
 
 ## Try it yourself
 
-The [interactive accuracy-inflation microscope](https://lindgreendavid.github.io/reaction-integrity-lab/)
+The [interactive accuracy-inflation microscope](https://lindgreendavid.com/reaction-integrity-lab/)
 lets you cross the two dataset decisions, compare each reproduced baseline with its published model
 cell, vary the frozen similarity threshold, and walk through the cleaning pipeline one boundary at
 a time. It keeps completed evidence separate from neural-model artifacts that remain unavailable.

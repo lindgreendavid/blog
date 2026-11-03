@@ -5,7 +5,7 @@ project: Snowflake Evolution Lab
 field: Experimental Evolution / Multicellularity
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/snowflake-evolution-lab
-tool: https://lindgreendavid.github.io/snowflake-evolution-lab/
+tool: https://lindgreendavid.com/snowflake-evolution-lab/
 report: https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md
 ---
 
@@ -128,7 +128,7 @@ endpoint before inspecting the combined outcome.
 
 ## Try it yourself
 
-The [interactive Snowflake Evolution Lab](https://lindgreendavid.github.io/snowflake-evolution-lab/)
+The [interactive Snowflake Evolution Lab](https://lindgreendavid.com/snowflake-evolution-lab/)
 lets you replay each population from transfer 0 to 600, switch between the published cluster-size
 and cell-shape trajectories, and compare all metabolic treatments at day 600. The new genome
 explorer adds the engineered 2N/4N contrast, all 16 chromosome copy numbers, G1 peak and morphology

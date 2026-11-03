@@ -248,7 +248,7 @@ The [interactive site](https://climate-twin-frankfurt-interactive.lindgreendavid
     field: "Neuroscience",
     date: "2026-08-13",
     repo: "https://github.com/lindgreendavid/neuro-signal-lab",
-    tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
+    tool: "https://lindgreendavid.com/neuro-signal-lab/",
     report: "https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md",
     body: `**Stable release:** [Neuro Signal Lab v1.0.0](https://github.com/lindgreendavid/neuro-signal-lab/releases/tag/v1.0.0). The product is stable; its frozen endpoint, exclusions, confirmatory result, and sensitivity analyses remain unchanged and reproducible.
 
@@ -297,7 +297,7 @@ a neural signature of consciousness.
 
 ## Try it yourself
 
-The [interactive Neuro Signal Lab](https://lindgreendavid.github.io/neuro-signal-lab/) shows every
+The [interactive Neuro Signal Lab](https://lindgreendavid.com/neuro-signal-lab/) shows every
 participant contrast rather than only the group mean. Sort the participants, switch among the
 100, 150, and 200 µV analyses, and watch the mean and confidence interval update. The fixed 150 µV
 endpoint remains explicitly labelled so an exploratory click cannot silently rewrite the
@@ -320,7 +320,7 @@ pretend that a drawing is measured data.
     field: "Data Engineering / Observability",
     date: "2026-08-13",
     repo: "https://github.com/lindgreendavid/data-contract-observatory",
-    tool: "https://lindgreendavid.github.io/data-contract-observatory/",
+    tool: "https://lindgreendavid.com/data-contract-observatory/",
     report: "https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md",
     body: `**Stable software release:** [Data Contract Observatory v1.0.0](https://github.com/lindgreendavid/data-contract-observatory/releases/tag/v1.0.0). The software is stable; prospective longitudinal evidence has only just begun.
 
@@ -359,7 +359,7 @@ still cannot support a detection-rate, delay, or false-alarm claim about product
 
 ## Try it yourself
 
-The [interactive failure lab](https://lindgreendavid.github.io/data-contract-observatory/#simulator)
+The [interactive failure lab](https://lindgreendavid.com/data-contract-observatory/#simulator)
 lets you remove a required field, change the series identity, simulate lateness, or inject an
 extreme return. The page shows the permitted conclusion for each change and keeps product version,
 prospective runs, retrospective prefixes, and synthetic cases in separate counters.
@@ -378,7 +378,7 @@ prospective runs, retrospective prefixes, and synthetic cases in separate counte
     field: "Computational Chemistry / Machine Learning",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/reaction-integrity-lab",
-    tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
+    tool: "https://lindgreendavid.com/reaction-integrity-lab/",
     report: "https://github.com/lindgreendavid/reaction-integrity-lab/blob/main/docs/research-report.md",
     body: `**Current research status:** product v1.0.0 completes the source, provenance, published-log,
 released-data split, four-cell frequency-baseline, and prespecified product-similarity audits.
@@ -444,7 +444,7 @@ performance.
 
 ## Try it yourself
 
-The [interactive accuracy-inflation microscope](https://lindgreendavid.github.io/reaction-integrity-lab/)
+The [interactive accuracy-inflation microscope](https://lindgreendavid.com/reaction-integrity-lab/)
 lets you cross the two dataset decisions, compare each reproduced baseline with its published model
 cell, vary the frozen similarity threshold, and walk through the cleaning pipeline one boundary at
 a time. It keeps completed evidence separate from neural-model artifacts that remain unavailable.
@@ -466,7 +466,7 @@ a time. It keeps completed evidence separate from neural-model artifacts that re
     field: "Numerical Analysis / Scientific Computing",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/mathlab-wasm",
-    tool: "https://lindgreendavid.github.io/mathlab-wasm/",
+    tool: "https://lindgreendavid.com/mathlab-wasm/",
     report: "https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md",
     body: `**Current research status:** stable product v1.0.0 adds a prespecified residual, forward-error, and
 conditioning diagnostic to the unchanged v0.1 and v0.2 root-finding studies. All five v1.0 cases and
@@ -499,7 +499,7 @@ candidate about \`10⁻⁵\` away produces a residual near \`10⁻¹⁰\`; becau
 root, the simple-root condition and estimate are recorded as unavailable rather than forced into a
 misleading finite number.
 
-Open the [interactive Residual Microscope](https://lindgreendavid.github.io/mathlab-wasm/#microscope)
+Open the [interactive Residual Microscope](https://lindgreendavid.com/mathlab-wasm/#microscope)
 and switch between the five frozen cases. Every displayed scientific value comes from the committed
 Rust report; JavaScript changes the view, not the result.
 
@@ -572,7 +572,7 @@ identity is withdrawn as an unsupported claim.
 
 ## Try it yourself
 
-Open the [interactive root-finding microscope](https://lindgreendavid.github.io/mathlab-wasm/),
+Open the [interactive root-finding microscope](https://lindgreendavid.com/mathlab-wasm/),
 select **Safeguarded hybrid**, then choose \`x¹⁰−1\`. The table labels every accepted move as secant,
 inverse quadratic, or bisection and shows the retained bracket beside the residual and iterate.
 
@@ -604,7 +604,7 @@ certificate.
     field: "Planetary Dynamics / Celestial Mechanics",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/jovian-resonance-lab",
-    tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
+    tool: "https://lindgreendavid.com/jovian-resonance-lab/",
     report: "https://github.com/lindgreendavid/jovian-resonance-lab/blob/main/docs/research-report-v1.0.md",
     body: `**Current research status:** product v1.0.0 preserves the original protocol-frozen thirty-year
 model ablation and adds a second protocol-frozen temporal replication on 3,653 non-overlapping
@@ -717,7 +717,7 @@ collection does not provide the same barycenter-conservation diagnostic.
 
 ## Try it yourself
 
-The [interactive Jovian Resonance Lab](https://lindgreendavid.github.io/jovian-resonance-lab/)
+The [interactive Jovian Resonance Lab](https://lindgreendavid.com/jovian-resonance-lab/)
 animates a sixty-day JUP365 vector extract, lets you scrub through the moon positions, compares each
 model's validation residual, and lets you switch among the three frozen G4J2 step sizes. The angular
 timing comes from JPL; radial spacing and body sizes are visibly rescaled to keep every moon on
@@ -753,7 +753,7 @@ Callisto remains sensitive to uncertain parameters.
     field: "Experimental Evolution / Multicellularity",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/snowflake-evolution-lab",
-    tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
+    tool: "https://lindgreendavid.com/snowflake-evolution-lab/",
     report: "https://github.com/lindgreendavid/snowflake-evolution-lab/blob/main/docs/research-report-v1.0.md",
     body: `**Current research status:** stable product v1.0.1 preserves the frozen v0.1 morphology study and
 frozen v1.0 genome-duplication result. The patch clarifies the explanatory animation without
@@ -874,7 +874,7 @@ endpoint before inspecting the combined outcome.
 
 ## Try it yourself
 
-The [interactive Snowflake Evolution Lab](https://lindgreendavid.github.io/snowflake-evolution-lab/)
+The [interactive Snowflake Evolution Lab](https://lindgreendavid.com/snowflake-evolution-lab/)
 lets you replay each population from transfer 0 to 600, switch between the published cluster-size
 and cell-shape trajectories, and compare all metabolic treatments at day 600. The new genome
 explorer adds the engineered 2N/4N contrast, all 16 chromosome copy numbers, G1 peak and morphology
@@ -915,7 +915,7 @@ simulation, measured entanglement, or an unobserved ancestral reconstruction.
     field: "Machine Learning / Representation Geometry",
     date: "2026-08-14",
     repo: "https://github.com/lindgreendavid/neural-geometry-lab",
-    tool: "https://lindgreendavid.github.io/neural-geometry-lab/",
+    tool: "https://lindgreendavid.com/neural-geometry-lab/",
     report: "https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md",
     body: `**Current research status:** stable product v1.0.0; protocol-frozen computational replication and
 stress test on one official writer-disjoint dataset. The study supports two of four prespecified
@@ -1007,7 +1007,7 @@ training choices.
 
 ## See the geometry without mistaking the picture for the metric
 
-The [interactive Geometry Theatre](https://lindgreendavid.github.io/neural-geometry-lab/) replays
+The [interactive Geometry Theatre](https://lindgreendavid.com/neural-geometry-lab/) replays
 actual saved checkpoints from seed 1001. You can switch among clean, long-tail, and noisy training;
 scrub from initialization to epoch 600; distinguish train and unseen-writer points; expose errors;
 inspect class-centre angles; and follow NC1–NC4 and accuracy through time.
@@ -1046,7 +1046,7 @@ and the interface says so directly.
     field: "Quantitative finance / Statistics",
     date: "2026-10-20",
     repo: "https://github.com/lindgreendavid/backtests-lie",
-    tool: "https://lindgreendavid.github.io/backtests-lie/",
+    tool: "https://lindgreendavid.com/backtests-lie/",
     report: "https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md",
     body: `**Status:** first public release (v0.1.0), not independently reviewed. The frozen registry reproduces from scratch with zero differences. This is an educational demonstration of selection bias, not a finding about any market and not advice.
 

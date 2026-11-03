@@ -31,7 +31,7 @@ const projects: Project[] = [
     boundary:
       "One small MLP and dataset; seeds quantify algorithmic sensitivity, and no single collapse coordinate certifies generalization.",
     article: "/posts/neural-geometry-lab-collapse",
-    tool: "https://lindgreendavid.github.io/neural-geometry-lab/",
+    tool: "https://lindgreendavid.com/neural-geometry-lab/",
   },
   {
     slug: "fairshift",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     boundary:
       "Synthetic detection (a regression test) and a current-vintage replay cannot establish historical revision rates or production reliability.",
     article: "/posts/data-contract-observatory-revision-evidence",
-    tool: "https://lindgreendavid.github.io/data-contract-observatory/",
+    tool: "https://lindgreendavid.com/data-contract-observatory/",
   },
   {
     slug: "frb",
@@ -130,7 +130,7 @@ const projects: Project[] = [
     boundary:
       "Cross-paradigm robustness evidence, not a direct replication, brain localization, consciousness marker, or diagnostic result.",
     article: "/posts/neuro-signal-lab-p3b-robustness",
-    tool: "https://lindgreendavid.github.io/neuro-signal-lab/",
+    tool: "https://lindgreendavid.com/neuro-signal-lab/",
   },
   {
     slug: "jovian-resonance",
@@ -144,7 +144,7 @@ const projects: Project[] = [
     boundary:
       "The 2031–2040 values are ephemeris predictions and restart from JUP365; no formation, ocean, or long-term-stability claim follows.",
     article: "/posts/jovian-resonance-lab-laplace-angle",
-    tool: "https://lindgreendavid.github.io/jovian-resonance-lab/",
+    tool: "https://lindgreendavid.com/jovian-resonance-lab/",
   },
   {
     slug: "reaction-integrity",
@@ -159,7 +159,7 @@ const projects: Project[] = [
     boundary:
       "Product overlap is not proof of patent-family leakage, unavailable-information leakage, or wet-lab failure; model cells remain published references.",
     article: "/posts/reaction-integrity-lab-cleaning-leakage",
-    tool: "https://lindgreendavid.github.io/reaction-integrity-lab/",
+    tool: "https://lindgreendavid.com/reaction-integrity-lab/",
   },
   {
     slug: "mathlab-wasm",
@@ -173,7 +173,7 @@ const projects: Project[] = [
     boundary:
       "Selected educational cases under an explicit additive perturbation model, not prevalence, a rigorous enclosure, or a universal stopping rule.",
     article: "/posts/mathlab-wasm-root-finding",
-    tool: "https://lindgreendavid.github.io/mathlab-wasm/",
+    tool: "https://lindgreendavid.com/mathlab-wasm/",
   },
   {
     slug: "snowflake-evolution",
@@ -187,7 +187,7 @@ const projects: Project[] = [
     boundary:
       "Source-author data with four engineered strains per group; no independent replication or joined time-resolved entanglement endpoint.",
     article: "/posts/snowflake-evolution-lab-individuality",
-    tool: "https://lindgreendavid.github.io/snowflake-evolution-lab/",
+    tool: "https://lindgreendavid.com/snowflake-evolution-lab/",
   },
 ];
 

@@ -5,7 +5,7 @@ project: Neuro Signal Lab
 field: Neuroscience
 date: 2026-08-13
 repo: https://github.com/lindgreendavid/neuro-signal-lab
-tool: https://lindgreendavid.github.io/neuro-signal-lab/
+tool: https://lindgreendavid.com/neuro-signal-lab/
 report: https://github.com/lindgreendavid/neuro-signal-lab/blob/main/docs/research-report.md
 ---
 
@@ -56,7 +56,7 @@ a neural signature of consciousness.
 
 ## Try it yourself
 
-The [interactive Neuro Signal Lab](https://lindgreendavid.github.io/neuro-signal-lab/) shows every
+The [interactive Neuro Signal Lab](https://lindgreendavid.com/neuro-signal-lab/) shows every
 participant contrast rather than only the group mean. Sort the participants, switch among the
 100, 150, and 200 µV analyses, and watch the mean and confidence interval update. The fixed 150 µV
 endpoint remains explicitly labelled so an exploratory click cannot silently rewrite the
