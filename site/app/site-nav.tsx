@@ -10,6 +10,7 @@ export default function SiteNav() {
         <Link href="/#notes">All notes</Link>
         <Link href="/#evidence-index">Evidence</Link>
         <Link href="/#study">Study guide</Link>
+        <a className="nav__keep" href="https://lindgreendavid.com">Portfolio</a>
         <a className="nav__keep" href="https://github.com/lindgreendavid">GitHub</a>
         <ThemeToggle />
       </div>
