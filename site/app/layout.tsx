@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { indexMeta } from "./content-data";
 import "./globals.css";
+import Motion from "./motion";
 
 // Sets the theme before first paint: the saved choice, else the system preference.
 const themeScript = `(function(){var d=false;try{var s=localStorage.getItem("theme");d=s?s==="dark":matchMedia("(prefers-color-scheme: dark)").matches}catch(e){d=matchMedia("(prefers-color-scheme: dark)").matches}document.documentElement.dataset.theme=d?"dark":"light"})();`;
@@ -49,7 +50,10 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Motion />
+        {children}
+      </body>
     </html>
   );
 }

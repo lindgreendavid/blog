@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Lab Notes design system: shared tokens with the portfolio. One ground, one ink, one accent;
-   surfaces separate by tone steps, not lines or shadows. Light and a warm dark theme. */
+   surfaces separate by tone steps, not lines or shadows. Light and a cool dark theme (green-black, mint accent), the same as the portfolio. */
 @font-face {
   font-family: "Geist Variable";
   font-style: normal;
@@ -45,19 +45,19 @@
   color-scheme: light;
 }
 :root[data-theme="dark"] {
-  --ground: #1a1612;
-  --paper: #251f19;
-  --panel: #362d24;
-  --mint: #2a231c;
-  --ink: #efe6d6;
-  --ink-2: #cdc1ae;
-  --ink-3: #a59885;
-  --tone: #31291f;
-  --accent: #e2b673;
-  --accent-deep: #f0cb92;
-  --on-ink: #1a1612;
-  --on-ink-2: #594d40;
-  --bright: #6a3f12;
+  --ground: #0d1210;
+  --paper: #141b17;
+  --panel: #1a231e;
+  --mint: #111815;
+  --ink: #e8efeb;
+  --ink-2: #b6c3bb;
+  --ink-3: #8e9c94;
+  --tone: #1b2420;
+  --accent: #62e3b0;
+  --accent-deep: #8cf0c8;
+  --on-ink: #0d1210;
+  --on-ink-2: #3d4a43;
+  --bright: #0b6b4b;
   color-scheme: dark;
 }
 
@@ -251,4 +251,38 @@ footer .foot-name { display: block; margin-top: clamp(24px, 5vw, 64px); font-siz
 @media (prefers-contrast: more) {
   :root { --ink-3: #2f3a34; --tone: #dde2db; }
   :root[data-theme="dark"] { --ink-3: #d8ccb8; --tone: #3a3025; }
+}
+
+/* ---- entrances (motion.tsx): rise and fade once, staggered 70ms; cards arrive tipped back and settle flat ---- */
+.reveal-ready [data-rv] { opacity: 0; }
+.reveal-ready [data-rv].in {
+  opacity: 1;
+  animation: rv 700ms var(--out) calc(var(--d, 0) * 70ms) backwards;
+}
+.reveal-ready .featured-card.in {
+  transform-origin: 50% 0;
+  animation-name: rv3d;
+  animation-duration: 900ms;
+}
+@keyframes rv {
+  from { opacity: 0; transform: translateY(24px); }
+}
+@keyframes rv3d {
+  from { opacity: 0; transform: perspective(1400px) rotateX(10deg) translateY(28px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-rv] { opacity: 1; }
+  .reveal-ready [data-rv].in { animation: none; }
+}
+
+/* ---- touch targets of at least 44px ---- */
+.brand,
+.featured-card__links a,
+.post-back a,
+a.post-back,
+.post-resources a,
+footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
