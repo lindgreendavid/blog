@@ -5,7 +5,7 @@ project: Mathlab WASM
 field: Numerical Analysis / Scientific Computing
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/mathlab-wasm
-tool: https://lindgreendavid.github.io/mathlab-wasm/
+tool: https://lindgreendavid.com/mathlab-wasm/
 report: https://github.com/lindgreendavid/mathlab-wasm/blob/main/docs/research-report.md
 ---
 
@@ -40,7 +40,7 @@ candidate about `10⁻⁵` away produces a residual near `10⁻¹⁰`; because t
 root, the simple-root condition and estimate are recorded as unavailable rather than forced into a
 misleading finite number.
 
-Open the [interactive Residual Microscope](https://lindgreendavid.github.io/mathlab-wasm/#microscope)
+Open the [interactive Residual Microscope](https://lindgreendavid.com/mathlab-wasm/#microscope)
 and switch between the five frozen cases. Every displayed scientific value comes from the committed
 Rust report; JavaScript changes the view, not the result.
 
@@ -113,7 +113,7 @@ identity is withdrawn as an unsupported claim.
 
 ## Try it yourself
 
-Open the [interactive root-finding microscope](https://lindgreendavid.github.io/mathlab-wasm/),
+Open the [interactive root-finding microscope](https://lindgreendavid.com/mathlab-wasm/),
 select **Safeguarded hybrid**, then choose `x¹⁰−1`. The table labels every accepted move as secant,
 inverse quadratic, or bisection and shows the retained bracket beside the residual and iterate.
 

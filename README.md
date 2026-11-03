@@ -8,7 +8,7 @@ A growing, text-forward publication that indexes and writes up the interactive r
 in this portfolio — one real, falsifiable question per project, one honest account of what was
 actually found.
 
-**[Open the live site](https://blog-interactive.lindgreendavid.workers.dev)**
+**[Open the live site](https://notes.lindgreendavid.com)**
 
 ## What this is
 

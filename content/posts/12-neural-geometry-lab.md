@@ -5,7 +5,7 @@ project: Neural Geometry Lab
 field: Machine Learning / Representation Geometry
 date: 2026-08-14
 repo: https://github.com/lindgreendavid/neural-geometry-lab
-tool: https://lindgreendavid.github.io/neural-geometry-lab/
+tool: https://lindgreendavid.com/neural-geometry-lab/
 report: https://github.com/lindgreendavid/neural-geometry-lab/blob/main/reports/research-report-v1.0.md
 ---
 
@@ -99,7 +99,7 @@ training choices.
 
 ## See the geometry without mistaking the picture for the metric
 
-The [interactive Geometry Theatre](https://lindgreendavid.github.io/neural-geometry-lab/) replays
+The [interactive Geometry Theatre](https://lindgreendavid.com/neural-geometry-lab/) replays
 actual saved checkpoints from seed 1001. You can switch among clean, long-tail, and noisy training;
 scrub from initialization to epoch 600; distinguish train and unseen-writer points; expose errors;
 inspect class-centre angles; and follow NC1–NC4 and accuracy through time.

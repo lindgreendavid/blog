@@ -5,7 +5,7 @@ project: Data Contract Observatory
 field: Data Engineering / Observability
 date: 2026-08-13
 repo: https://github.com/lindgreendavid/data-contract-observatory
-tool: https://lindgreendavid.github.io/data-contract-observatory/
+tool: https://lindgreendavid.com/data-contract-observatory/
 report: https://github.com/lindgreendavid/data-contract-observatory/blob/main/docs/v1-release-audit.md
 ---
 
@@ -46,7 +46,7 @@ still cannot support a detection-rate, delay, or false-alarm claim about product
 
 ## Try it yourself
 
-The [interactive failure lab](https://lindgreendavid.github.io/data-contract-observatory/#simulator)
+The [interactive failure lab](https://lindgreendavid.com/data-contract-observatory/#simulator)
 lets you remove a required field, change the series identity, simulate lateness, or inject an
 extreme return. The page shows the permitted conclusion for each change and keeps product version,
 prospective runs, retrospective prefixes, and synthetic cases in separate counters.

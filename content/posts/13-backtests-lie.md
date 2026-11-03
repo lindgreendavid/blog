@@ -5,7 +5,7 @@ project: Backtests lie
 field: Quantitative finance / Statistics
 date: 2026-10-20
 repo: https://github.com/lindgreendavid/backtests-lie
-tool: https://lindgreendavid.github.io/backtests-lie/
+tool: https://lindgreendavid.com/backtests-lie/
 report: https://github.com/lindgreendavid/backtests-lie/blob/main/docs/research-report.md
 ---
 
