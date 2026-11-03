@@ -23,15 +23,20 @@ export const metadata: Metadata = {
     "preregistered research",
     "web accessibility",
   ],
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   openGraph: {
     title: indexMeta.title,
     description: indexMeta.tagline,
     type: "website",
+    url: "/",
+    siteName: "Lab Notes",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: indexMeta.title }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: indexMeta.title,
     description: indexMeta.tagline,
+    images: ["/og/home.png"],
   },
   icons: {
     icon: "/favicon.svg",

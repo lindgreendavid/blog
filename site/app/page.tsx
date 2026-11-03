@@ -2,6 +2,8 @@ import Link from "next/link";
 import { indexBody, posts } from "./content-data";
 import { catalog, FEATURED_SLUGS, featuredCopy, kindCopy, type Kind } from "./catalog";
 import { parseSections, renderMarkdown } from "./lib/markdown";
+import JsonLd from "./json-ld";
+import { homeLd } from "./lib/seo";
 import SiteNav from "./site-nav";
 import SiteFooter from "./site-footer";
 import ResearchExplorer from "./research-explorer";
@@ -19,6 +21,7 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd data={homeLd(posts)} />
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
